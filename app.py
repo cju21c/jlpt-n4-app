@@ -10,13 +10,26 @@ import os
 # 1. 페이지 기본 설정 (모바일 최적화)
 st.set_page_config(page_title="JLPT N4 학습 앱", page_icon="🌸", layout="centered")
 
-# 2. API 키 설정 및 클라이언트 생성
-if "GEMINI_API_KEY" in st.secrets:
-    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-else:
-    GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "여기에_기본키")
+# --- 2. 사이드바: 개인 API 키 입력 설정 ---
+st.sidebar.title("⚙️ 설정")
+st.sidebar.markdown("Google AI Studio에서 무료로 발급받은 본인 API 키를 입력하면 개인 쿼터(일일 무료 한도)로 사용할 수 있습니다.")
 
-client = genai.Client(api_key=GEMINI_API_KEY)
+# 기본 세크릿 키 또는 개인 입력 키 선택
+default_key = st.secrets.get("GEMINI_API_KEY", os.environ.get("GEMINI_API_KEY", ""))
+user_api_key = st.sidebar.text_input("Gemini API Key 입력", value="", type="password", placeholder="AI Studio 키를 여기에 붙여넣으세요")
+
+# 사용자가 입력한 키가 있으면 우선 사용, 없으면 기본 키 사용
+active_api_key = user_api_key.strip() if user_api_key.strip() else default_key
+
+if not active_api_key:
+    st.sidebar.warning("⚠️ API Key가 설정되지 않았습니다. AI 문장 검토 및 사진 스캔 기능을 위해 키를 입력해 주세요.")
+
+# client 객체 생성 (키가 설정된 경우)
+client = genai.Client(api_key=active_api_key) if active_api_key else None
+
+st.sidebar.markdown("---")
+st.sidebar.markdown("[👉 Google AI Studio에서 무료 키 발급받기](https://aistudio.google.com/)")
+
 
 # 3. 데이터 로드 및 저장 함수
 def load_words():
@@ -32,6 +45,10 @@ def save_words(words_list):
 
 # 4. 사진에서 단어 자동 추출 (Gemini Vision OCR)
 def extract_words_from_image(image_bytes, mime_type):
+    if not client:
+        st.error("🛑 API Key가 설정되어 있지 않습니다. 사이드바에서 Gemini API Key를 입력해 주세요.")
+        return None
+
     prompt = """
     이 이미지는 일본어 단어장 페이지야. 이미지 안에 있는 단어 목록을 분석해서 JSON 배열 형식으로만 정밀하게 추출해줘.
     
@@ -68,12 +85,12 @@ def extract_words_from_image(image_bytes, mime_type):
         except Exception as e:
             err_msg = str(e)
             if ("429" in err_msg or "503" in err_msg or "RESOURCE_EXHAUSTED" in err_msg) and attempt < max_retries:
-                time.sleep(3)  # 3초 대기 후 재시도
+                time.sleep(3)
             else:
                 if "RESOURCE_EXHAUSTED" in err_msg or "429" in err_msg:
                     st.error(
                         "🛑 **AI 일일 무료 한도에 도달했습니다!**\n\n"
-                        "- 교재 사진 단어 스캔은 내일 다시 시도해 주세요.\n"
+                        "- 사이드바에 개인 API Key를 입력하여 사용하시거나, 내일 다시 시도해 주세요.\n"
                         "- **📝 4지선다 단어 퀴즈는 제한 없이 계속 이용 가능합니다!** 🎯"
                     )
                 else:
@@ -82,6 +99,9 @@ def extract_words_from_image(image_bytes, mime_type):
 
 # 5. AI 문장 피드백 함수
 def get_ai_feedback(word_info, user_sentence):
+    if not client:
+        return "🛑 API Key가 설정되어 있지 않습니다. 사이드바에서 Gemini API Key를 입력해 주세요."
+
     word = f"{word_info['kanji']} ({word_info['hiragana']})"
     prompt = f"""
 너는 친절하고 능숙한 일본어 선생님이야.
@@ -107,13 +127,13 @@ def get_ai_feedback(word_info, user_sentence):
         except Exception as e:
             err_msg = str(e)
             if ("429" in err_msg or "503" in err_msg or "RESOURCE_EXHAUSTED" in err_msg) and attempt < max_retries:
-                time.sleep(3)  # 3초 대기 후 재시도
+                time.sleep(3)
             else:
                 if "RESOURCE_EXHAUSTED" in err_msg or "429" in err_msg:
                     return (
                         "🛑 **AI 일일 이용 한도에 도달했습니다!**\n\n"
-                        "• **문장 검토 및 사진 스캔**: 일시적으로 중단되었으며, 내일 다시 이용 가능합니다.\n"
-                        "• **4지선다 단어 퀴즈**: 제한 없이 언제든 계속 푸실 수 있습니다! 🎯"
+                        "• **문장 검토 및 사진 스캔**: 사이드바에 본인의 무료 API Key를 입력하시면 즉시 제한 없이 이용하실 수 있습니다.\n"
+                        "• **4지선다 단어 퀴즈**: API를 사용하지 않으므로 제한 없이 언제든 푸실 수 있습니다! 🎯"
                     )
                 return f"❌ 오류 발생: {e}"
 
@@ -134,23 +154,41 @@ if "answered" not in st.session_state:
 if "user_choice" not in st.session_state:
     st.session_state.user_choice = None
 
-# 객관식 보기 4개 생성 함수
-def generate_options(current_item, all_words):
-    correct_meaning = current_item['meaning']
-    other_meanings = [w['meaning'] for w in all_words if w['meaning'] != correct_meaning]
+# --- 6. 다재다능한 동적 보기 생성 함수 ---
+def generate_options(current_item, all_words, quiz_mode):
+    # 모드에 따른 target_key(정답 field) 설정
+    if quiz_mode == "한자 ➡️ 한국어 뜻":
+        target_key = "meaning"
+    elif quiz_mode == "한자 ➡️ 히라가나 읽기":
+        target_key = "hiragana"
+    else:  # "히라가나 ➡️ 한자 표기"
+        target_key = "kanji"
+
+    correct_answer = current_item[target_key]
     
-    if len(other_meanings) < 3:
-        sample_options = ["약속", "준비", "출발", "도착"]
-        other_meanings += [m for m in sample_options if m != correct_meaning]
+    # 중복 오답 보기 추출 (정답과 같은 항목 제외)
+    other_candidates = list({w[target_key] for w in all_words if w[target_key] != correct_answer and w[target_key]})
     
-    distractors = random.sample(other_meanings, 3)
-    options = distractors + [correct_meaning]
+    # 오답 후보가 부족할 경우 더미 데이터 보충
+    if len(other_candidates) < 3:
+        dummy_data = {
+            "meaning": ["약속", "준비", "출발", "도착", "공부", "여행"],
+            "hiragana": ["やくそく", "じゅんび", "しゅっぱつ", "とうちゃく", "べんきょう", "りょこう"],
+            "kanji": ["約束", "準備", "出発", "到着", "勉強", "旅行"]
+        }
+        for dummy in dummy_data[target_key]:
+            if dummy != correct_answer and dummy not in other_candidates:
+                other_candidates.append(dummy)
+
+    distractors = random.sample(other_candidates, min(3, len(other_candidates)))
+    options = distractors + [correct_answer]
     random.shuffle(options)
-    return options
+    return options, correct_answer
+
 
 # --- UI 화면 구현 ---
 st.title("🌸 JLPT N4 학습 & 단어 스캐너")
-st.caption("💡 AI 기능(문장 검토/사진 스캔)은 일일 한도가 있으며, 단어 퀴즈는 무제한입니다.")
+st.caption("💡 단어 퀴즈는 무제한 이용 가능하며, AI 기능 공유 한도 초과 시 사이드바에 개인 API Key를 입력해 사용하세요.")
 
 tab1, tab2 = st.tabs(["📝 4지선다 퀴즈", "📸 교재 사진 단어 추가"])
 
@@ -171,39 +209,59 @@ with tab1:
             st.session_state.options = []
             st.rerun()
     else:
+        # 퀴즈 모드 선택 라디오 버튼
+        quiz_mode = st.radio(
+            "🎯 **퀴즈 모드 선택**",
+            ["한자 ➡️ 한국어 뜻", "한자 ➡️ 히라가나 읽기", "히라가나 ➡️ 한자 표기"],
+            horizontal=True
+        )
+
         total = len(st.session_state.words_db)
         idx = st.session_state.current_idx
         item = st.session_state.words_db[idx]
 
-        if not st.session_state.options:
-            st.session_state.options = generate_options(item, st.session_state.words_db)
+        # 퀴즈 모드가 변경되거나 첫 문제일 때 보기 재생성
+        if not st.session_state.options or st.session_state.get("last_quiz_mode") != quiz_mode:
+            st.session_state.options, st.session_state.correct_answer = generate_options(item, st.session_state.words_db, quiz_mode)
+            st.session_state.last_quiz_mode = quiz_mode
+            st.session_state.answered = False
 
         st.progress((idx) / total)
         st.caption(f"문제 {idx + 1} / {total} (총 {total}단어 보유 중)")
 
-        st.subheader(f"단어: {item['hiragana']}")
-        st.caption(f"한자: {item['kanji']}")
-
-        st.markdown("### 1) 알맞은 한국어 뜻을 선택하세요:")
+        # 모드별 제시 문제 표시
+        st.markdown("---")
+        if quiz_mode == "한자 ➡️ 한국어 뜻":
+            st.subheader(f"한자: {item['kanji']}")
+            st.caption(f"발음: {item['hiragana']}")
+            st.markdown("### 1) 알맞은 **한국어 뜻**을 선택하세요:")
+        elif quiz_mode == "한자 ➡️ 히라가나 읽기":
+            st.subheader(f"한자: {item['kanji']}")
+            st.caption(f"뜻: {item['meaning']}")
+            st.markdown("### 1) 알맞은 **히라가나 읽기**를 선택하세요:")
+        else:  # 히라가나 ➡️ 한자 표기
+            st.subheader(f"히라가나: {item['hiragana']}")
+            st.caption(f"뜻: {item['meaning']}")  # 동음이의어 구분을 위해 뜻을 힌트로 표시
+            st.markdown("### 1) 알맞은 **한자 표기**를 선택하세요:")
 
         user_choice = st.radio(
             "보기를 선택하세요",
             st.session_state.options,
-            key=f"radio_{idx}",
+            key=f"radio_{idx}_{quiz_mode}",
             label_visibility="collapsed"
         )
 
         if st.button("정답 확인", key=f"check_btn_{idx}", use_container_width=True):
             st.session_state.answered = True
             st.session_state.user_choice = user_choice
-            if user_choice == item['meaning']:
+            if user_choice == st.session_state.correct_answer:
                 st.session_state.score += 1
 
         if st.session_state.answered:
-            if st.session_state.user_choice == item['meaning']:
+            if st.session_state.user_choice == st.session_state.correct_answer:
                 st.success("⭕ 정답입니다!")
             else:
-                st.error(f"❌ 아쉽네요! 정답은 '{item['meaning']}' 입니다.")
+                st.error(f"❌ 아쉽네요! 정답은 '{st.session_state.correct_answer}' 입니다.")
 
         st.divider()
 
