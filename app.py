@@ -46,26 +46,39 @@ def extract_words_from_image(image_bytes, mime_type):
       {"kanji": "準備", "hiragana": "じゅんび", "meaning": "준비"}
     ]
     """
-    try:
-        image_part = Part.from_bytes(data=image_bytes, mime_type=mime_type)
-        response = client.models.generate_content(
-            model='gemini-3.8-flash',
-            contents=[image_part, prompt]
-        )
-        text_res = response.text.strip()
-        
-        if text_res.startswith("```json"):
-            text_res = text_res[7:]
-        if text_res.startswith("```"):
-            text_res = text_res[3:]
-        if text_res.endswith("```"):
-            text_res = text_res[:-3]
+    max_retries = 3
+    for attempt in range(1, max_retries + 1):
+        try:
+            image_part = Part.from_bytes(data=image_bytes, mime_type=mime_type)
+            response = client.models.generate_content(
+                model='gemini-3.8-flash',
+                contents=[image_part, prompt]
+            )
+            text_res = response.text.strip()
             
-        extracted = json.loads(text_res.strip())
-        return extracted
-    except Exception as e:
-        st.error(f"❌ 단어 인식 중 오류가 발생했습니다: {e}")
-        return None
+            if text_res.startswith("```json"):
+                text_res = text_res[7:]
+            if text_res.startswith("```"):
+                text_res = text_res[3:]
+            if text_res.endswith("```"):
+                text_res = text_res[:-3]
+                
+            extracted = json.loads(text_res.strip())
+            return extracted
+        except Exception as e:
+            err_msg = str(e)
+            if ("429" in err_msg or "503" in err_msg or "RESOURCE_EXHAUSTED" in err_msg) and attempt < max_retries:
+                time.sleep(3)  # 3초 대기 후 재시도
+            else:
+                if "RESOURCE_EXHAUSTED" in err_msg or "429" in err_msg:
+                    st.error(
+                        "🛑 **AI 일일 무료 한도에 도달했습니다!**\n\n"
+                        "- 교재 사진 단어 스캔은 내일 다시 시도해 주세요.\n"
+                        "- **📝 4지선다 단어 퀴즈는 제한 없이 계속 이용 가능합니다!** 🎯"
+                    )
+                else:
+                    st.error(f"❌ 단어 인식 중 오류가 발생했습니다: {e}")
+                return None
 
 # 5. AI 문장 피드백 함수
 def get_ai_feedback(word_info, user_sentence):
@@ -91,13 +104,18 @@ def get_ai_feedback(word_info, user_sentence):
                 contents=prompt,
             )
             return response.text
-        except ServerError as e:
-            if "503" in str(e) and attempt < max_retries:
-                time.sleep(2)
-            else:
-                return "❌ AI 서버에 연결할 수 없습니다. 나중에 다시 시도해주세요."
         except Exception as e:
-            return f"❌ 오류 발생: {e}"
+            err_msg = str(e)
+            if ("429" in err_msg or "503" in err_msg or "RESOURCE_EXHAUSTED" in err_msg) and attempt < max_retries:
+                time.sleep(3)  # 3초 대기 후 재시도
+            else:
+                if "RESOURCE_EXHAUSTED" in err_msg or "429" in err_msg:
+                    return (
+                        "🛑 **AI 일일 이용 한도에 도달했습니다!**\n\n"
+                        "• **문장 검토 및 사진 스캔**: 일시적으로 중단되었으며, 내일 다시 이용 가능합니다.\n"
+                        "• **4지선다 단어 퀴즈**: 제한 없이 언제든 계속 푸실 수 있습니다! 🎯"
+                    )
+                return f"❌ 오류 발생: {e}"
 
 # --- 세션 상태 초기화 ---
 if "words_db" not in st.session_state:
@@ -119,15 +137,12 @@ if "user_choice" not in st.session_state:
 # 객관식 보기 4개 생성 함수
 def generate_options(current_item, all_words):
     correct_meaning = current_item['meaning']
-    # 전체 단어 중 정답 외 다른 단어들의 뜻 수집
     other_meanings = [w['meaning'] for w in all_words if w['meaning'] != correct_meaning]
     
-    # 다른 뜻이 3개 미만이면 기본 오답 생성
     if len(other_meanings) < 3:
         sample_options = ["약속", "준비", "출발", "도착"]
         other_meanings += [m for m in sample_options if m != correct_meaning]
     
-    # 무작위 오답 3개 선택
     distractors = random.sample(other_meanings, 3)
     options = distractors + [correct_meaning]
     random.shuffle(options)
@@ -135,6 +150,7 @@ def generate_options(current_item, all_words):
 
 # --- UI 화면 구현 ---
 st.title("🌸 JLPT N4 학습 & 단어 스캐너")
+st.caption("💡 AI 기능(문장 검토/사진 스캔)은 일일 한도가 있으며, 단어 퀴즈는 무제한입니다.")
 
 tab1, tab2 = st.tabs(["📝 4지선다 퀴즈", "📸 교재 사진 단어 추가"])
 
@@ -159,7 +175,6 @@ with tab1:
         idx = st.session_state.current_idx
         item = st.session_state.words_db[idx]
 
-        # 문제 변경 시 보기 새로 생성
         if not st.session_state.options:
             st.session_state.options = generate_options(item, st.session_state.words_db)
 
@@ -171,7 +186,6 @@ with tab1:
 
         st.markdown("### 1) 알맞은 한국어 뜻을 선택하세요:")
 
-        # 4지선다 터치 라디오 버튼
         user_choice = st.radio(
             "보기를 선택하세요",
             st.session_state.options,
@@ -179,14 +193,12 @@ with tab1:
             label_visibility="collapsed"
         )
 
-        # 정답 확인 버튼
         if st.button("정답 확인", key=f"check_btn_{idx}", use_container_width=True):
             st.session_state.answered = True
             st.session_state.user_choice = user_choice
             if user_choice == item['meaning']:
                 st.session_state.score += 1
 
-        # 결과 출력
         if st.session_state.answered:
             if st.session_state.user_choice == item['meaning']:
                 st.success("⭕ 정답입니다!")
@@ -209,11 +221,10 @@ with tab1:
 
         st.divider()
 
-        # 다음 문제 버튼
         if st.button("다음 문제 ➡️", use_container_width=True):
             if st.session_state.current_idx + 1 < total:
                 st.session_state.current_idx += 1
-                st.session_state.options = []  # 다음 문제를 위한 보기 초기화
+                st.session_state.options = []
                 st.session_state.answered = False
             else:
                 st.session_state.quiz_finished = True
@@ -265,5 +276,3 @@ with tab2:
                     
                     st.success(f"🎉 성공! 총 {added_count}개의 새로운 단어가 DB에 자동 추가되었습니다!")
                     st.json(new_words)
-                else:
-                    st.warning("단어를 인식하지 못했습니다. 단어가 명확히 보이도록 다시 찍어주세요.")
