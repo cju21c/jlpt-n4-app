@@ -36,7 +36,7 @@ def extract_words_from_image(image_bytes, mime_type):
     이 이미지는 일본어 단어장 페이지야. 이미지 안에 있는 단어 목록을 분석해서 JSON 배열 형식으로만 정밀하게 추출해줘.
     
     응답 조건:
-    1. 오직 JSON 배열만 출력할 것 (마크다운 ```json 태그 없이 pure JSON만 출력하거나, 추출된 배열만 출력).
+    1. 오직 JSON 배열만 출력할 것.
     2. 각 객체는 "kanji", "hiragana", "meaning" 키를 포함할 것.
     3. 한자가 없는 단어(히라가나만 있는 단어)는 "kanji"에 히라가나 그대로 적을 것.
     
@@ -54,7 +54,6 @@ def extract_words_from_image(image_bytes, mime_type):
         )
         text_res = response.text.strip()
         
-        # 마크다운 래핑 제거 처리
         if text_res.startswith("```json"):
             text_res = text_res[7:]
         if text_res.startswith("```"):
@@ -110,14 +109,36 @@ if "score" not in st.session_state:
     st.session_state.score = 0
 if "quiz_finished" not in st.session_state:
     st.session_state.quiz_finished = False
+if "options" not in st.session_state:
+    st.session_state.options = []
+if "answered" not in st.session_state:
+    st.session_state.answered = False
+if "user_choice" not in st.session_state:
+    st.session_state.user_choice = None
+
+# 객관식 보기 4개 생성 함수
+def generate_options(current_item, all_words):
+    correct_meaning = current_item['meaning']
+    # 전체 단어 중 정답 외 다른 단어들의 뜻 수집
+    other_meanings = [w['meaning'] for w in all_words if w['meaning'] != correct_meaning]
+    
+    # 다른 뜻이 3개 미만이면 기본 오답 생성
+    if len(other_meanings) < 3:
+        sample_options = ["약속", "준비", "출발", "도착"]
+        other_meanings += [m for m in sample_options if m != correct_meaning]
+    
+    # 무작위 오답 3개 선택
+    distractors = random.sample(other_meanings, 3)
+    options = distractors + [correct_meaning]
+    random.shuffle(options)
+    return options
 
 # --- UI 화면 구현 ---
 st.title("🌸 JLPT N4 학습 & 단어 스캐너")
 
-# 사이드바 / 탭을 활용한 모드 선택
-tab1, tab2 = st.tabs(["📝 퀴즈 풀기", "📸 교재 사진 단어 추가"])
+tab1, tab2 = st.tabs(["📝 4지선다 퀴즈", "📸 교재 사진 단어 추가"])
 
-# ================= TAB 1: 퀴즈 풀기 =================
+# ================= TAB 1: 4지선다 퀴즈 =================
 with tab1:
     if not st.session_state.words_db:
         st.info("등록된 단어가 없습니다. '📸 교재 사진 단어 추가' 탭에서 교재 사진을 올려 단어를 등록해보세요!")
@@ -130,11 +151,17 @@ with tab1:
             st.session_state.current_idx = 0
             st.session_state.score = 0
             st.session_state.quiz_finished = False
+            st.session_state.answered = False
+            st.session_state.options = []
             st.rerun()
     else:
         total = len(st.session_state.words_db)
         idx = st.session_state.current_idx
         item = st.session_state.words_db[idx]
+
+        # 문제 변경 시 보기 새로 생성
+        if not st.session_state.options:
+            st.session_state.options = generate_options(item, st.session_state.words_db)
 
         st.progress((idx) / total)
         st.caption(f"문제 {idx + 1} / {total} (총 {total}단어 보유 중)")
@@ -142,20 +169,34 @@ with tab1:
         st.subheader(f"단어: {item['hiragana']}")
         st.caption(f"한자: {item['kanji']}")
 
-        # 1. 뜻 맞히기
-        user_meaning = st.text_input("1) 한국어 뜻을 입력하세요:", key=f"meaning_{idx}")
+        st.markdown("### 1) 알맞은 한국어 뜻을 선택하세요:")
 
-        if st.button("정답 확인", key=f"check_btn_{idx}"):
-            if user_meaning.strip() == item['meaning']:
-                st.success("⭕ 정답입니다!")
+        # 4지선다 터치 라디오 버튼
+        user_choice = st.radio(
+            "보기를 선택하세요",
+            st.session_state.options,
+            key=f"radio_{idx}",
+            label_visibility="collapsed"
+        )
+
+        # 정답 확인 버튼
+        if st.button("정답 확인", key=f"check_btn_{idx}", use_container_width=True):
+            st.session_state.answered = True
+            st.session_state.user_choice = user_choice
+            if user_choice == item['meaning']:
                 st.session_state.score += 1
+
+        # 결과 출력
+        if st.session_state.answered:
+            if st.session_state.user_choice == item['meaning']:
+                st.success("⭕ 정답입니다!")
             else:
                 st.error(f"❌ 아쉽네요! 정답은 '{item['meaning']}' 입니다.")
 
         st.divider()
 
         # 2. AI 문장 교정
-        st.markdown("### 🤖 AI 일본어 문장 교정")
+        st.markdown("### 🤖 AI 일본어 문장 교정 (선택사항)")
         user_sentence = st.text_area("제시된 단어로 일본어 문장을 만들어보세요:", placeholder="예: Ashita tomo to yakusoku ga arimasu", key=f"sent_{idx}")
 
         if st.button("✨ AI 선생님에게 문장 검토받기", type="primary", use_container_width=True, key=f"ai_btn_{idx}"):
@@ -168,9 +209,12 @@ with tab1:
 
         st.divider()
 
+        # 다음 문제 버튼
         if st.button("다음 문제 ➡️", use_container_width=True):
             if st.session_state.current_idx + 1 < total:
                 st.session_state.current_idx += 1
+                st.session_state.options = []  # 다음 문제를 위한 보기 초기화
+                st.session_state.answered = False
             else:
                 st.session_state.quiz_finished = True
             st.rerun()
@@ -180,7 +224,6 @@ with tab2:
     st.subheader("📸 단어장 사진을 올려 자동으로 등록하세요")
     st.caption("스마트폰 카메라로 교재 페이지를 직접 촬영하거나 갤러리의 이미지 파일을 선택하세요.")
 
-    # 카메라 촬영 및 파일 업로드 2가지 방식 제공
     upload_method = st.radio("업로드 방식 선택", ["📁 갤러리 이미지 선택", "📷 카메라 직접 촬영"], horizontal=True)
 
     uploaded_file = None
@@ -207,7 +250,6 @@ with tab2:
                     max_id = max([w.get('id', 0) for w in current_db], default=0)
                     
                     for item in new_words:
-                        # 중복 단어 방지 및 ID 자동 부여
                         if item.get('kanji') and item['kanji'] not in existing_kanjis:
                             max_id += 1
                             current_db.append({
@@ -222,6 +264,6 @@ with tab2:
                     st.session_state.words_db = current_db
                     
                     st.success(f"🎉 성공! 총 {added_count}개의 새로운 단어가 DB에 자동 추가되었습니다!")
-                    st.json(new_words) # 추출 결과 프리뷰 출력
+                    st.json(new_words)
                 else:
                     st.warning("단어를 인식하지 못했습니다. 단어가 명확히 보이도록 다시 찍어주세요.")
