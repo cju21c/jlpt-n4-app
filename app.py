@@ -157,38 +157,44 @@ def generate_options(current_item, all_words, quiz_mode):
 
 # --- UI 화면 구현 ---
 st.title("🌸 JLPT N4 학습 & 단어 스캐너")
-st.caption("💡 한 번에 30개씩 단어 퀴즈를 풀며 실력을 점검해보세요!")
+st.caption("💡 각 모드별로 새롭게 30문제씩 풀 수 있습니다!")
 
 tab1, tab2 = st.tabs(["📝 4지선다 퀴즈", "📸 교재 사진 단어 추가"])
 
 # ================= TAB 1: 4지선다 퀴즈 =================
 with tab1:
+    # 퀴즈 모드 선택 라디오 버튼 (상단 배치)
+    quiz_mode = st.radio(
+        "🎯 **퀴즈 모드 선택**",
+        ["한자 ➡️ 한국어 뜻", "한자 ➡️ 히라가나 읽기", "히라가나 ➡️ 한자 표기"],
+        horizontal=True
+    )
+
+    # 💡 모드가 바뀔 때마다 해당 모드 전용 세션을 새로고침(새로운 30문제 세팅)
+    if st.session_state.get("last_quiz_mode") != quiz_mode:
+        init_quiz_session()
+        st.session_state.last_quiz_mode = quiz_mode
+        st.rerun()
+
     if not st.session_state.words_db:
         st.info("등록된 단어가 없습니다. '📸 교재 사진 단어 추가' 탭에서 교재 사진을 올려 단어를 등록해보세요!")
     elif st.session_state.quiz_finished:
         st.balloons()
-        st.success(f"🎉 30개 단어 퀴즈를 완료했습니다! 최종 점수: {st.session_state.score} / {len(st.session_state.words_db)}")
-        if st.button("🔄 새로운 30문제 다시 풀기", use_container_width=True):
+        st.success(f"🎉 [{quiz_mode}] 30개 단어 퀴즈를 완료했습니다! 최종 점수: {st.session_state.score} / {len(st.session_state.words_db)}")
+        if st.button("🔄 이 모드에서 새로운 30문제 다시 풀기", use_container_width=True):
             init_quiz_session()
             st.rerun()
     else:
-        quiz_mode = st.radio(
-            "🎯 **퀴즈 모드 선택**",
-            ["한자 ➡️ 한국어 뜻", "한자 ➡️ 히라가나 읽기", "히라가나 ➡️ 한자 표기"],
-            horizontal=True
-        )
-
         total = len(st.session_state.words_db)
         idx = st.session_state.current_idx
         item = st.session_state.words_db[idx]
 
-        if not st.session_state.options or st.session_state.get("last_quiz_mode") != quiz_mode:
+        if not st.session_state.options:
             st.session_state.options, st.session_state.correct_answer = generate_options(item, st.session_state.words_db, quiz_mode)
-            st.session_state.last_quiz_mode = quiz_mode
             st.session_state.answered = False
 
         st.progress((idx) / total)
-        st.caption(f"문제 {idx + 1} / {total} (세션 단어 30개 중)")
+        st.caption(f"문제 {idx + 1} / {total} (현재 모드 세션)")
 
         st.markdown("---")
         if quiz_mode == "한자 ➡️ 한국어 뜻":
@@ -223,7 +229,6 @@ with tab1:
             else:
                 st.error(f"❌ 아쉽네요! 정답은 '{st.session_state.correct_answer}' 입니다.")
 
-            # 👉 정답 확인 바로 아래에 '다음 문제' 버튼 배치
             if st.button("다음 문제 ➡️", key=f"next_btn_{idx}", use_container_width=True, type="primary"):
                 if st.session_state.current_idx + 1 < total:
                     st.session_state.current_idx += 1
