@@ -351,7 +351,9 @@ st.sidebar.markdown("Google AI Studio에서 무료로 발급받은 본인 API �
 
 # 기본 세크릿 키 또는 개인 입력 키 선택
 default_key = st.secrets.get("GEMINI_API_KEY", os.environ.get("GEMINI_API_KEY", ""))
-user_api_key = st.sidebar.text_input("Gemini API Key 입력", value="", type="password", placeholder="AI Studio 키를 여기에 붙여넣으세요")
+with st.sidebar:
+    st.header("설정")
+    user_api_key = st.text_input("Gemini API Key 입력", value="", type="password", placeholder="AI Studio 키를 여기에 붙여넣으세요")
 
 # 사용자가 입력한 키가 있으면 우선 사용, 없으면 기본 키 사용
 active_api_key = user_api_key.strip() if user_api_key.strip() else default_key
