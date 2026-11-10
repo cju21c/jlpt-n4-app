@@ -1,904 +1,3843 @@
-[
-  {"kanji": "案内", "hiragana": "あんない", "meaning": "안내"},
-  {"kanji": "飛行機", "hiragana": "ひこうき", "meaning": "비행기"},
-  {"kanji": "約束", "hiragana": "やくそく", "meaning": "약속"},
-  {"kanji": "計画", "hiragana": "けいかく", "meaning": "계획"},
-  {"kanji": "準備", "hiragana": "じゅんび", "meaning": "준비"},
-  {"kanji": "利用", "hiragana": "りよう", "meaning": "이용"},
-  {"kanji": "注意", "hiragana": "ちゅうい", "meaning": "주의"},
-  { "hanja": "間", "hiragana": "あいだ", "meaning": "동안, 사이" },
-  { "hanja": "駅", "hiragana": "えき", "meaning": "역" },
-  { "hanja": "銀行", "hiragana": "ぎんこう", "meaning": "은행" },
-  { "hanja": "公園", "hiragana": "こうえん", "meaning": "공원" },
-  { "hanja": "食堂", "hiragana": "しょくどう", "meaning": "식당" },
-  { "hanja": "近く", "hiragana": "ちかく", "meaning": "근처" },
-  { "hanja": "遠く", "hiragana": "とおく", "meaning": "먼 곳, 멀리" },
-  { "hanja": "所", "hiragana": "ところ", "meaning": "곳" },
-  { "hanja": "病院", "hiragana": "びょういん", "meaning": "병원" },
-  { "hanja": "東", "hiragana": "ひがし", "meaning": "동쪽" },
-  { "hanja": "西", "hiragana": "にし", "meaning": "서쪽" },
-  { "hanja": "南", "hiragana": "みなみ", "meaning": "남쪽" },
-  { "hanja": "北", "hiragana": "きた", "meaning": "북쪽" },
-  { "hanja": "会場", "hiragana": "かいじょう", "meaning": "회장, 모임 장소" },
-  { "hanja": "教会", "hiragana": "きょうかい", "meaning": "교회" },
-  { "hanja": "島", "hiragana": "しま", "meaning": "섬" },
-  { "hanja": "神社", "hiragana": "じんじゃ", "meaning": "신사" },
-  { "hanja": "寺", "hiragana": "てら", "meaning": "절" },
-  { "hanja": "広場", "hiragana": "ひろば", "meaning": "광장" },
-  { "hanja": "真ん中", "hiragana": "まんなか", "meaning": "한가운데" },
-  { "hanja": "両方", "hiragana": "りょうほう", "meaning": "양쪽" },
-  { "hanja": "内", "hiragana": "うち", "meaning": "(범위) 내" },
-  { "hanja": "売り場", "hiragana": "うりば", "meaning": "매장" },
-  { "hanja": "会社", "hiragana": "かいしゃ", "meaning": "회사" },
-  { "hanja": "近所", "hiragana": "きんじょ", "meaning": "근처" },
-  { "hanja": "工場", "hiragana": "こうじょう", "meaning": "공장" },
-  { "hanja": "建物", "hiragana": "たてもの", "meaning": "건물" },
-  { "hanja": "動物園", "hiragana": "どうぶつえん", "meaning": "동물원" },
-  { "hanja": "都会", "hiragana": "とかい", "meaning": "도회, 도시" },
-  { "hanja": "場所", "hiragana": "ばしょ", "meaning": "장소" },
-  { "hanja": "本屋", "hiragana": "ほんや", "meaning": "책방, 서점" },
-  { "hanja": "港", "hiragana": "みなと", "meaning": "항구" },
-  { "hanja": "店", "hiragana": "みせ", "meaning": "가게" },
-  { "hanja": "旅館", "hiragana": "りょかん", "meaning": "여관" },
-  { "hanja": "田舎", "hiragana": "いなか", "meaning": "시골" },
-  { "hanja": "喫茶店", "hiragana": "きっさてん", "meaning": "찻집" },
-  { "hanja": "お土産", "hiragana": "おみやげ", "meaning": "기념품, 토산품" },
-  { "hanja": "結婚式", "hiragana": "けっこんしき", "meaning": "결혼식" },
-  { "hanja": "事務所", "hiragana": "じむしょ", "meaning": "사무실" },
-  { "hanja": "大使館", "hiragana": "たいしかん", "meaning": "대사관" },
-  { "hanja": "美容院", "hiragana": "びよういん", "meaning": "미용실" },
-  { "hanja": "周り", "hiragana": "まわり", "meaning": "주변" },
-  { "hanja": "表", "hiragana": "おもて", "meaning": "겉, 표면" },
-  { "hanja": "裏", "hiragana": "うら", "meaning": "뒤, 뒷면" },
-  { "hanja": "会う", "hiragana": "あう", "meaning": "만나다" },
-  { "hanja": "着く", "hiragana": "つく", "meaning": "도착하다" },
-  { "hanja": "変える", "hiragana": "かえる", "meaning": "바꾸다" },
-  { "hanja": "空く", "hiragana": "すく", "meaning": "(공간이) 비다, 허기지다" },
-  { "hanja": "間違える", "hiragana": "まちがえる", "meaning": "잘못 알다, 틀리다" },
-  { "hanja": "回る", "hiragana": "まわる", "meaning": "돌다, 돌아다니다" },
-  { "hanja": "寄る", "hiragana": "よる", "meaning": "들르다" },
-  { "hanja": "送る", "hiragana": "おくる", "meaning": "보내다" },
-  { "hanja": "待つ", "hiragana": "まつ", "meaning": "기다리다" },
-  { "hanja": "変わる", "hiragana": "かわる", "meaning": "변하다" },
-  { "hanja": "並ぶ", "hiragana": "ならぶ", "meaning": "늘어서다, 줄지어 서다" },
-  { "hanja": "迷う", "hiragana": "まよう", "meaning": "망설이다, 헤매다" },
-  { "hanja": "向かう", "hiragana": "むかう", "meaning": "향하다" },
-  { "hanja": "渡る", "hiragana": "わたる", "meaning": "건너다" },
-  { "hanja": "近い", "hiragana": "ちかい", "meaning": "가깝다" },
-  { "hanja": "遠い", "hiragana": "とおい", "meaning": "멀다" },
-  { "hanja": "広い", "hiragana": "ひろい", "meaning": "넓다" },
-  { "hanja": "古い", "hiragana": "ふるい", "meaning": "오래되다" },
-  { "hanja": "静かだ", "hiragana": "しずかだ", "meaning": "조용하다" },
-  { "hanja": "有名だ", "hiragana": "ゆうめいだ", "meaning": "유명하다" },
-  { "hanja": "", "hiragana": "にぎやかだ", "meaning": "떠들썩하다, 번화하다" },
-  { "hanja": "駅員", "hiragana": "えきいん", "meaning": "역무원" },
-  { "hanja": "会議する", "hiragana": "かいぎする", "meaning": "회의하다" },
-  { "hanja": "計画する", "hiragana": "けいかくする", "meaning": "계획하다" },
-  { "hanja": "仕事する", "hiragana": "しごとする", "meaning": "일하다" },
-  { "hanja": "店員", "hiragana": "てんいん", "meaning": "점원" },
-  { "hanja": "話", "hiragana": "はなし", "meaning": "이야기" },
-  { "hanja": "お客さん", "hiragana": "おきゃくさん", "meaning": "손님" },
-  { "hanja": "課長", "hiragana": "かちょう", "meaning": "과장" },
-  { "hanja": "機会", "hiragana": "きかい", "meaning": "기회" },
-  { "hanja": "競争する", "hiragana": "きょうそうする", "meaning": "경쟁하다" },
-  { "hanja": "結果", "hiragana": "けっか", "meaning": "결과" },
-  { "hanja": "公務員", "hiragana": "こうむいん", "meaning": "공무원" },
-  { "hanja": "", "hiragana": "つもり", "meaning": "생각, 작정, 의도" },
-  { "hanja": "歯医者", "hiragana": "はいしゃ", "meaning": "치과의사" },
-  { "hanja": "封筒", "hiragana": "ふうとう", "meaning": "봉투" },
-  { "hanja": "目的", "hiragana": "もくてき", "meaning": "목적" },
-  { "hanja": "夢", "hiragana": "ゆめ", "meaning": "꿈" },
-  { "hanja": "医者", "hiragana": "いしゃ", "meaning": "의사" },
-  { "hanja": "係り", "hiragana": "かかり", "meaning": "담당 직원" },
-  { "hanja": "手紙", "hiragana": "てがみ", "meaning": "편지" },
-  { "hanja": "社員", "hiragana": "しゃいん", "meaning": "사원" },
-  { "hanja": "場合", "hiragana": "ばあい", "meaning": "경우, 사정" },
-  { "hanja": "用事", "hiragana": "ようじ", "meaning": "용무" },
-  { "hanja": "画家", "hiragana": "がか", "meaning": "화가" },
-  { "hanja": "看護師", "hiragana": "かんごし", "meaning": "간호사" },
-  { "hanja": "切手", "hiragana": "きって", "meaning": "우표" },
-  { "hanja": "警察", "hiragana": "けいさつ", "meaning": "경찰" },
-  { "hanja": "原因", "hiragana": "げんいん", "meaning": "원인" },
-  { "hanja": "社長", "hiragana": "しゃちょう", "meaning": "사장" },
-  { "hanja": "店長", "hiragana": "てんちょう", "meaning": "점장" },
-  { "hanja": "部長", "hiragana": "ぶちょう", "meaning": "부장" },
-  { "hanja": "返事", "hiragana": "へんじする", "meaning": "답장, 대답하다" },
-  { "hanja": "約束", "hiragana": "やくそくする", "meaning": "약속하다" },
-  { "hanja": "理由", "hiragana": "りゆう", "meaning": "이유" },
-  { "hanja": "言う", "hiragana": "いう", "meaning": "말하다" },
-  { "hanja": "終わる", "hiragana": "おわる", "meaning": "끝나다" },
-  { "hanja": "進む", "hiragana": "すすむ", "meaning": "진행되다" },
-  { "hanja": "運ぶ", "hiragana": "はこぶ", "meaning": "나르다, 운반하다" },
-  { "hanja": "受け取る", "hiragana": "うけとる", "meaning": "받다, 수취하다" },
-  { "hanja": "確かめる", "hiragana": "たしかめる", "meaning": "확인하다" },
-  { "hanja": "手伝う", "hiragana": "てつだう", "meaning": "돕다" },
-  { "hanja": "似合う", "hiragana": "にあう", "meaning": "어울리다" },
-  { "hanja": "戻る", "hiragana": "もどる", "meaning": "되돌아가(오)다" },
-  { "hanja": "急ぐ", "hiragana": "いそぐ", "meaning": "서두르다" },
-  { "hanja": "調べる", "hiragana": "しらべる", "meaning": "조사하다" },
-  { "hanja": "習う", "hiragana": "ならう", "meaning": "배우다" },
-  { "hanja": "働く", "hiragana": "はたらく", "meaning": "일하다" },
-  { "hanja": "探す", "hiragana": "さがす", "meaning": "찾다" },
-  { "hanja": "勤める", "hiragana": "つとめる", "meaning": "근무하다" },
-  { "hanja": "慣れる", "hiragana": "なれる", "meaning": "익숙해지다" },
-  { "hanja": "守る", "hiragana": "まもる", "meaning": "지키다" },
-  { "hanja": "忙しい", "hiragana": "いそがしい", "meaning": "바쁘다" },
-  { "hanja": "正しい", "hiragana": "ただしい", "meaning": "바르다, 옳다" },
-  { "hanja": "無理だ", "hiragana": "むりだ", "meaning": "무리하다" },
-  { "hanja": "特別だ", "hiragana": "とくべつだ", "meaning": "특별하다" },
-  { "hanja": "真面目だ", "hiragana": "まじめだ", "meaning": "성실하다" },
-  { "hanja": "残念だ", "hiragana": "ざんねんだ", "meaning": "유감스럽다" },
-  { "hanja": "暇だ", "hiragana": "ひまだ", "meaning": "한가하다" },
-  { "hanja": "屋上", "hiragana": "おくじょう", "meaning": "옥상" },
-  { "hanja": "紙", "hiragana": "かみ", "meaning": "종이" },
-  { "hanja": "世話", "hiragana": "せわ", "meaning": "보살핌, 신세" },
-  { "hanja": "台所", "hiragana": "だいどころ", "meaning": "부엌" },
-  { "hanja": "机", "hiragana": "つくえ", "meaning": "책상" },
-  { "hanja": "日記", "hiragana": "にっき", "meaning": "일기" },
-  { "hanja": "部屋", "hiragana": "へや", "meaning": "방" },
-  { "hanja": "押入れ", "hiragana": "おしいれ", "meaning": "붙박이장" },
-  { "hanja": "", "hiragana": "おもちゃ", "meaning": "장난감" },
-  { "hanja": "家事", "hiragana": "かじ", "meaning": "가사" },
-  { "hanja": "壁", "hiragana": "かべ", "meaning": "벽" },
-  { "hanja": "", "hiragana": "ごみ", "meaning": "쓰레기" },
-  { "hanja": "洗濯機", "hiragana": "せんたくき", "meaning": "세탁기" },
-  { "hanja": "棚", "hiragana": "たな", "meaning": "선반" },
-  { "hanja": "電灯", "hiragana": "でんとう", "meaning": "전등" },
-  { "hanja": "荷物", "hiragana": "にもつ", "meaning": "짐" },
-  { "hanja": "引き出し", "hiragana": "ひきだし", "meaning": "서랍, 인출" },
-  { "hanja": "祭り", "hiragana": "まつり", "meaning": "축제" },
-  { "hanja": "お宅", "hiragana": "おたく", "meaning": "댁" },
-  { "hanja": "水道", "hiragana": "すいどう", "meaning": "수도(상수도)" },
-  { "hanja": "洗濯する", "hiragana": "せんたくする", "meaning": "세탁하다" },
-  { "hanja": "地下", "hiragana": "ちか", "meaning": "지하" },
-  { "hanja": "電気", "hiragana": "でんき", "meaning": "전기, 전등" },
-  { "hanja": "人形", "hiragana": "にんぎょう", "meaning": "인형" },
-  { "hanja": "門", "hiragana": "もん", "meaning": "문" },
-  { "hanja": "鏡", "hiragana": "かがみ", "meaning": "거울" },
-  { "hanja": "家電", "hiragana": "かでん", "meaning": "가전" },
-  { "hanja": "故障する", "hiragana": "こしょうする", "meaning": "고장 나다" },
-  { "hanja": "", "hiragana": "じゃまする", "meaning": "방해, 훼방하다" },
-  { "hanja": "掃除", "hiragana": "そうじ", "meaning": "청소" },
-  { "hanja": "暖房", "hiragana": "だんぼう", "meaning": "난방" },
-  { "hanja": "冷房", "hiragana": "れいぼう", "meaning": "냉방" },
-  { "hanja": "", "hiragana": "どろぼう", "meaning": "도둑" },
-  { "hanja": "番組", "hiragana": "ばんぐみ", "meaning": "프로그램" },
-  { "hanja": "", "hiragana": "ふとん", "meaning": "이불" },
-  { "hanja": "留守", "hiragana": "るす", "meaning": "부재중" },
-  { "hanja": "必要だ", "hiragana": "ひつようだ", "meaning": "필요하다" },
-  { "hanja": "結婚だ", "hiragana": "けっこんだ", "meaning": "결혼하다" },
-  { "hanja": "嫌だ", "hiragana": "いやだ", "meaning": "싫다" },
-  { "hanja": "", "hiragana": "きれいだ", "meaning": "깨끗하다, 아름답다" },
-  { "hanja": "洗う", "hiragana": "あらう", "meaning": "씻다, 빨래하다" },
-  { "hanja": "起きる", "hiragana": "おきる", "meaning": "일어나다" },
-  { "hanja": "思う", "hiragana": "おもう", "meaning": "생각하다" },
-  { "hanja": "貸す", "hiragana": "かす", "meaning": "빌려주다" },
-  { "hanja": "住む", "hiragana": "すむ", "meaning": "살다" },
-  { "hanja": "鳴る", "hiragana": "なる", "meaning": "(전화가) 울리다" },
-  { "hanja": "驚く", "hiragana": "おどろく", "meaning": "놀라다" },
-  { "hanja": "乾く", "hiragana": "かわく", "meaning": "마르다, 건조되다" },
-  { "hanja": "", "hiragana": "さわる", "meaning": "만지다" },
-  { "hanja": "訪ねる", "hiragana": "たずねる", "meaning": "방문하다" },
-  { "hanja": "包む", "hiragana": "つつむ", "meaning": "싸다, 포장하다" },
-  { "hanja": "出かける", "hiragana": "でかける", "meaning": "외출하다" },
-  { "hanja": "掃く", "hiragana": "はく", "meaning": "쓸다" },
-  { "hanja": "拭く", "hiragana": "ふく", "meaning": "닦다, 걸레질하다" },
-  { "hanja": "笑う", "hiragana": "わらう", "meaning": "웃다" },
-  { "hanja": "歩く", "hiragana": "あるく", "meaning": "걷다" },
-  { "hanja": "置く", "hiragana": "おく", "meaning": "놓다, 두다" },
-  { "hanja": "返す", "hiragana": "かえす", "meaning": "돌려주다, 반납하다" },
-  { "hanja": "借りる", "hiragana": "かりる", "meaning": "빌리다" },
-  { "hanja": "眠る", "hiragana": "ねむる", "meaning": "잠자다, 잠들다" },
-  { "hanja": "生きる", "hiragana": "いきる", "meaning": "살다, 생존하다" },
-  { "hanja": "飾る", "hiragana": "かざる", "meaning": "장식하다" },
-  { "hanja": "来る", "hiragana": "くる", "meaning": "오다" },
-  { "hanja": "叱る", "hiragana": "しかる", "meaning": "혼내다" },
-  { "hanja": "付く", "hiragana": "つく", "meaning": "붙다" },
-  { "hanja": "付ける", "hiragana": "つける", "meaning": "붙이다, (불 등을) 켜다" },
-  { "hanja": "寝る", "hiragana": "ねる", "meaning": "자다, 눕다" },
-  { "hanja": "引っ越す", "hiragana": "ひっこす", "meaning": "이사하다" },
-  { "hanja": "喜ぶ", "hiragana": "よろこぶ", "meaning": "기뻐하다" },
-  { "hanja": "重い", "hiragana": "おもい", "meaning": "무겁다" },
-  { "hanja": "うれしい", "hiragana": "うれしい", "meaning": "기쁘다" },
-  { "hanja": "汚い", "hiragana": "きたない", "meaning": "더럽다, 지저分하다" },
-  { "hanja": "", "hiragana": "さびしい", "meaning": "쓸쓸하다, 적적하다" },
-  { "hanja": "軽い", "hiragana": "かるい", "meaning": "가볍다" },
-  { "hanja": "悲しい", "hiragana": "かなしい", "meaning": "슬프다" },
-  { "hanja": "こわい", "hiragana": "こわい", "meaning": "무섭다" },
-  { "hanja": "狭い", "hiragana": "せまい", "meaning": "좁다" },
-  { "hanja": "春", "hiragana": "はる", "meaning": "봄" },
-  { "hanja": "夏", "hiragana": "なつ", "meaning": "여름" },
-  { "hanja": "秋", "hiragana": "あき", "meaning": "가을" },
-  { "hanja": "冬", "hiragana": "ふゆ", "meaning": "겨울" },
-  { "hanja": "空気", "hiragana": "くうき", "meaning": "공기" },
-  { "hanja": "空", "hiragana": "そら", "meaning": "하늘" },
-  { "hanja": "天気", "hiragana": "てんき", "meaning": "날씨" },
-  { "hanja": "花", "hiragana": "はな", "meaning": "꽃" },
-  { "hanja": "光", "hiragana": "ひかり", "meaning": "빛" },
-  { "hanja": "雪", "hiragana": "ゆき", "meaning": "눈" },
-  { "hanja": "犬", "hiragana": "いぬ", "meaning": "개" },
-  { "hanja": "馬", "hiragana": "うま", "meaning": "말" },
-  { "hanja": "季節", "hiragana": "きせつ", "meaning": "계절" },
-  { "hanja": "景色", "hiragana": "けしき", "meaning": "경치" },
-  { "hanja": "地震", "hiragana": "じしん", "meaning": "지진" },
-  { "hanja": "葉", "hiragana": "は", "meaning": "잎" },
-  { "hanja": "火", "hiragana": "ひ", "meaning": "불" },
-  { "hanja": "湖", "hiragana": "みずうみ", "meaning": "호수" },
-  { "hanja": "山道", "hiragana": "やまみち", "meaning": "산길" },
-  { "hanja": "海", "hiragana": "うみ", "meaning": "바다" },
-  { "hanja": "石", "hiragana": "いし", "meaning": "돌" },
-  { "hanja": "池", "hiragana": "いけ", "meaning": "연못" },
-  { "hanja": "風", "hiragana": "かぜ", "meaning": "바람" },
-  { "hanja": "雲", "hiragana": "くも", "meaning": "구름" },
-  { "hanja": "台風", "hiragana": "たいふう", "meaning": "태풍" },
-  { "hanja": "天気予報", "hiragana": "てんきよほう", "meaning": "일기예보" },
-  { "hanja": "林", "hiragana": "はやし", "meaning": "수풀, 숲" },
-  { "hanja": "森", "hiragana": "もり", "meaning": "숲" },
-  { "hanja": "動物", "hiragana": "どうぶつ", "meaning": "동물" },
-  { "hanja": "植物", "hiragana": "しょくぶつ", "meaning": "식물" },
-  { "hanja": "牛", "hiragana": "うし", "meaning": "소" },
-  { "hanja": "鳥", "hiragana": "とり", "meaning": "새" },
-  { "hanja": "草", "hiragana": "くさ", "meaning": "풀" },
-  { "hanja": "坂", "hiragana": "さか", "meaning": "언덕" },
-  { "hanja": "月", "hiragana": "つき", "meaning": "달" },
-  { "hanja": "日", "hiragana": "ひ", "meaning": "해" },
-  { "hanja": "星", "hiragana": "ほし", "meaning": "별" },
-  { "hanja": "虫", "hiragana": "むし", "meaning": "벌레" },
-  { "hanja": "動く", "hiragana": "うごく", "meaning": "움직이다" },
-  { "hanja": "光る", "hiragana": "ひかる", "meaning": "빛나다" },
-  { "hanja": "植える", "hiragana": "うえる", "meaning": "심다" },
-  { "hanja": "聞こえる", "hiragana": "きこえる", "meaning": "들리다" },
-  { "hanja": "さす", "hiragana": "さす", "meaning": "(우산을) 쓰다" },
-  { "hanja": "育てる", "hiragana": "そだてる", "meaning": "키우다" },
-  { "hanja": "登る", "hiragana": "のぼる", "meaning": "(높은 곳에) 오르다" },
-  { "hanja": "吹く", "hiragana": "ふく", "meaning": "(바람이) 불다" },
-  { "hanja": "燃える", "hiragana": "もえる", "meaning": "타다" },
-  { "hanja": "汚す", "hiragana": "よごす", "meaning": "더럽히다" },
-  { "hanja": "見る", "hiragana": "みる", "meaning": "보다" },
-  { "hanja": "見せる", "hiragana": "みせる", "meaning": "보여 주다" },
-  { "hanja": "飼う", "hiragana": "かう", "meaning": "기르다, 사육하다" },
-  { "hanja": "暮れる", "hiragana": "くれる", "meaning": "(날이) 저물다" },
-  { "hanja": "捨てる", "hiragana": "すてる", "meaning": "버리다" },
-  { "hanja": "ぬれる", "hiragana": "ぬれる", "meaning": "젖다" },
-  { "hanja": "拾う", "hiragana": "ひろう", "meaning": "줍다" },
-  { "hanja": "見える", "hiragana": "みえる", "meaning": "보이다" },
-  { "hanja": "止む", "hiragana": "やむ", "meaning": "(비가) 그치다, 멈추다" },
-  { "hanja": "汚れる", "hiragana": "よごれる", "meaning": "때 묻다, 더러워지다" },
-  { "hanja": "明るい", "hiragana": "あかるい", "meaning": "밝다" },
-  { "hanja": "暗い", "hiragana": "くらい", "meaning": "어둡다" },
-  { "hanja": "美しい", "hiragana": "うつくしい", "meaning": "아름답다" },
-  { "hanja": "悪い", "hiragana": "わるい", "meaning": "나쁘다" },
-  { "hanja": "浅い", "hiragana": "あさい", "meaning": "얕다" },
-  { "hanja": "深い", "hiragana": "ふかい", "meaning": "깊다" },
-  { "hanja": "暑い", "hiragana": "あつい", "meaning": "덥다" },
-  { "hanja": "熱い", "hiragana": "あつい", "meaning": "뜨겁다" },
-  { "hanja": "厚い", "hiragana": "あつい", "meaning": "두껍다" },
-  { "hanja": "寒い", "hiragana": "さむい", "meaning": "춥다" },
-  { "hanja": "あたたかい", "hiragana": "あたたかい", "meaning": "(날씨 등이) 따뜻하다" },
-  { "hanja": "すずしい", "hiragana": "すずしい", "meaning": "시원하다, 선선하다" },
-  { "hanja": "", "hiragana": "やっと", "meaning": "이제야 겨우, 간신히" },
-  { "hanja": "安心する", "hiragana": "あんしんする", "meaning": "안심하다" },
-  { "hanja": "地下鉄", "hiragana": "ちかてつ", "meaning": "지하철" },
-  { "hanja": "交通", "hiragana": "こうつう", "meaning": "교통" },
-  { "hanja": "空港", "hiragana": "くうこう", "meaning": "공항" },
-  { "hanja": "地図", "hiragana": "ちず", "meaning": "지도" },
-  { "hanja": "二台", "hiragana": "にだい", "meaning": "두 대(수량)" },
-  { "hanja": "案内하는", "hiragana": "あんないする", "meaning": "안내하다" },
-  { "hanja": "入り口", "hiragana": "いりぐち", "meaning": "입구" },
-  { "hanja": "火事", "hiragana": "かじ", "meaning": "화재" },
-  { "hanja": "交番", "hiragana": "こうばん", "meaning": "파출소" },
-  { "hanja": "駐車場", "hiragana": "ちゅうしゃじょう", "meaning": "주차장" },
-  { "hanja": "道路", "hiragana": "どうろ", "meaning": "도로" },
-  { "hanja": "飛行機", "hiragana": "ひこうき", "meaning": "비행기" },
-  { "hanja": "忘れもの", "hiragana": "わすれもの", "meaning": "잊은 물건, 분실물" },
-  { "hanja": "運転する", "hiragana": "うんてんする", "meaning": "운전하다" },
-  { "hanja": "自動車", "hiragana": "じどうしゃ", "meaning": "자동차" },
-  { "hanja": "自転車", "hiragana": "じてんしゃ", "meaning": "자전거" },
-  { "hanja": "急行", "hiragana": "きゅうこう", "meaning": "급행" },
-  { "hanja": "特急", "hiragana": "とっきゅう", "meaning": "특급" },
-  { "hanja": "船", "hiragana": "ふね", "meaning": "배" },
-  { "hanja": "行き方", "hiragana": "いきかた / ゆきかた", "meaning": "가는 법" },
-  { "hanja": "お知らせ", "hiragana": "おしらせ", "meaning": "알림, 안내문" },
-  { "hanja": "交差点", "hiragana": "こうさてん", "meaning": "교차점, 교차로" },
-  { "hanja": "事故", "hiragana": "じこ", "meaning": "사고" },
-  { "hanja": "出口", "hiragana": "でぐち", "meaning": "출구" },
-  { "hanja": "乗り物", "hiragana": "のりもの", "meaning": "탈것, 교통수단" },
-  { "hanja": "予約する", "hiragana": "よやくする", "meaning": "예약하다" },
-  { "hanja": "利用する", "hiragana": "りようする", "meaning": "이용하다" },
-  { "hanja": "速い", "hiragana": "はやい", "meaning": "(속도가) 빠르다" },
-  { "hanja": "あぶない", "hiragana": "あぶない", "meaning": "위험하다" },
-  { "hanja": "不便だ", "hiragana": "ふべんだ", "meaning": "불편하다" },
-  { "hanja": "便利だ", "hiragana": "べんりだ", "meaning": "편리하다" },
-  { "hanja": "大丈夫だ", "hiragana": "だいじょうぶだ", "meaning": "괜찮다" },
-  { "hanja": "複雑だ", "hiragana": "ふくざつだ", "meaning": "복잡하다" },
-  { "hanja": "安全だ", "hiragana": "あんぜんだ", "meaning": "안전하다" },
-  { "hanja": "危険だ", "hiragana": "きけんだ", "meaning": "위험하다" },
-  { "hanja": "だめだ", "hiragana": "だめだ", "meaning": "안 되다, 소용없다" },
-  { "hanja": "変だ", "hiragana": "へんだ", "meaning": "이상하다" },
-  { "hanja": "押す", "hiragana": "おす", "meaning": "밀다, 누르다" },
-  { "hanja": "引く", "hiragana": "ひく", "meaning": "당기다" },
-  { "hanja": "通る", "hiragana": "とおる", "meaning": "통과하다, 지나가다" },
-  { "hanja": "込む", "hiragana": "こむ", "meaning": "붐비다" },
-  { "hanja": "過ぎる", "hiragana": "すぎる", "meaning": "지나다, 통과하다" },
-  { "hanja": "伝える", "hiragana": "つたえる", "meaning": "알리다, 전달하다" },
-  { "hanja": "盗む", "hiragana": "ぬすむ", "meaning": "훔치다" },
-  { "hanja": "増える", "hiragana": "ふえる", "meaning": "늘다, 증가하다" },
-  { "hanja": "揺れる", "hiragana": "ゆれる", "meaning": "흔들리다" },
-  { "hanja": "困る", "hiragana": "こまる", "meaning": "곤란하다" },
-  { "hanja": "乗る", "hiragana": "のる", "meaning": "타다" },
-  { "hanja": "打つ", "hiragana": "うつ", "meaning": "때리다, 치다, 부딪다" },
-  { "hanja": "知らせる", "hiragana": "しらせる", "meaning": "알려 주다" },
-  { "hanja": "すべる", "hiragana": "すべる", "meaning": "미끄러지다" },
-  { "hanja": "つながる", "hiragana": "つながる", "meaning": "연결되다" },
-  { "hanja": "乗りかえる", "hiragana": "のりかえる", "meaning": "갈아타다" },
-  { "hanja": "減る", "hiragana": "へる", "meaning": "줄다, 감소하다" },
-  { "hanja": "忘れる", "hiragana": "わすれる", "meaning": "잊다, (물건을) 잊고 두고 오다" },
-  { "hanja": "開く", "hiragana": "あく", "meaning": "열리다" },
-  { "hanja": "集まる", "hiragana": "あつまる", "meaning": "모이다" },
-  { "hanja": "落ちる", "hiragana": "おちる", "meaning": "떨어지다" },
-  { "hanja": "決まる", "hiragana": "きまる", "meaning": "정해지다" },
-  { "hanja": "切れる", "hiragana": "きれる", "meaning": "끊어지다" },
-  { "hanja": "建つ", "hiragana": "たつ", "meaning": "(건물이) 세워지다" },
-  { "hanja": "止まる", "hiragana": "とまる", "meaning": "멈추다" },
-  { "hanja": "始まる", "hiragana": "はじまる", "meaning": "시작되다" },
-  { "hanja": "閉まる", "hiragana": "しまる", "meaning": "닫히다" },
-  { "hanja": "立つ", "hiragana": "たつ", "meaning": "서다" },
-  { "hanja": "出る", "hiragana": "でる", "meaning": "내다, 제출하다" },
-  { "hanja": "開ける", "hiragana": "あける", "meaning": "열다" },
-  { "hanja": "集める", "hiragana": "あつめる", "meaning": "모으다" },
-  { "hanja": "落とす", "hiragana": "おとす", "meaning": "떨어뜨리다" },
-  { "hanja": "決める", "hiragana": "きめる", "meaning": "정하다" },
-  { "hanja": "切る", "hiragana": "きる", "meaning": "자르다" },
-  { "hanja": "建てる", "hiragana": "たてる", "meaning": "(건물을) 세우다, 짓다" },
-  { "hanja": "止める", "hiragana": "とめる", "meaning": "세우다, 정지하다" },
-  { "hanja": "始める", "hiragana": "はじめる", "meaning": "시작하다" },
-  { "hanja": "閉める", "hiragana": "しめる", "meaning": "닫다" },
-  { "hanja": "立てる", "hiragana": "たてる", "meaning": "세우다" },
-  { "hanja": "出る", "hiragana": "でる", "meaning": "나가(오)다" },
-  { "hanja": "工事する", "hiragana": "こうじする", "meaning": "공사하다" },
-  { "hanja": "出発する", "hiragana": "しゅっぱつする", "meaning": "출발하다" },
-  { "hanja": "心配する", "hiragana": "しんぱいする", "meaning": "걱정하다" },
-  { "hanja": "注意する", "hiragana": "ちゅういする", "meaning": "주의하다" },
-  { "hanja": "反対する", "hiragana": "はんたいする", "meaning": "반대하다" },
-  { "hanja": "感動する", "hiragana": "かんどうする", "meaning": "감동하다" },
-  { "hanja": "緊張する", "hiragana": "きんちょうする", "meaning": "긴장하다" },
-  { "hanja": "喧嘩する", "hiragana": "けんかする", "meaning": "싸움하다" },
-  { "hanja": "賛成する", "hiragana": "さんせいする", "meaning": "찬성하다" },
-  { "hanja": "失敗する", "hiragana": "しっぱいする", "meaning": "실패하다" },
-  { "hanja": "招待する", "hiragana": "しょうたいする", "meaning": "초대하다" },
-  { "hanja": "戦争する", "hiragana": "せんそうする", "meaning": "전쟁하다" },
-  { "hanja": "到着する", "hiragana": "とうちゃくする", "meaning": "도착하다" },
-  { "hanja": "配達する", "hiragana": "はいたつする", "meaning": "배달하다" },
-  { "hanja": "翻訳する", "hiragana": "ほんやくする", "meaning": "번역하다" },
-  { "hanja": "試合する", "hiragana": "しあいする", "meaning": "시합하다" },
-  { "hanja": "紹介する", "hiragana": "しょうかいする", "meaning": "소개하다" },
-  { "hanja": "生産する", "hiragana": "せいさんする", "meaning": "생산하다" },
-  { "hanja": "中止する", "hiragana": "ちゅうしする", "meaning": "중지하다" },
-  { "hanja": "確認する", "hiragana": "かくにんする", "meaning": "확인하다" },
-  { "hanja": "帰国する", "hiragana": "きこくする", "meaning": "귀국하다" },
-  { "hanja": "化粧する", "hiragana": "けしょうする", "meaning": "화장하다" },
-  { "hanja": "参加する", "hiragana": "さんかする", "meaning": "참가하다" },
-  { "hanja": "散歩する", "hiragana": "さんぽする", "meaning": "산책하다" },
-  { "hanja": "準備する", "hiragana": "じゅんびする", "meaning": "준비하다" },
-  { "hanja": "生活する", "hiragana": "せいかつする", "meaning": "생활하다" },
-  { "hanja": "相談する", "hiragana": "そうだんする", "meaning": "상담하다" },
-  { "hanja": "寝坊する", "hiragana": "ねぼうする", "meaning": "늦잠 자다" },
-  { "hanja": "放送する", "hiragana": "ほうそうする", "meaning": "방송하다" },
-  { "hanja": "連絡する", "hiragana": "れんらくする", "meaning": "연락하다" },
-  { "hanja": "", "hiragana": "いつも", "meaning": "항상, 늘" },
-  { "hanja": "大変", "hiragana": "たいへん", "meaning": "매우, 무척" },
-  { "hanja": "", "hiragana": "まっすぐ", "meaning": "똑바로, 곧장" },
-  { "hanja": "", "hiragana": "もちろん", "meaning": "물론" },
-  { "hanja": "", "hiragana": "すこし", "meaning": "조금" },
-  { "hanja": "本当に", "hiragana": "ほんとうに", "meaning": "정말로" },
-  { "hanja": "", "hiragana": "もうすぐ", "meaning": "이제 곧, 머지않아" },
-  { "hanja": "", "hiragana": "もっと", "meaning": "좀 더" },
-  { "hanja": "考える", "hiragana": "かんがえる", "meaning": "생각하다" },
-  { "hanja": "走る", "hiragana": "はしる", "meaning": "달리다" },
-  { "hanja": "比べる", "hiragana": "くらべる", "meaning": "비교하다" },
-  { "hanja": "祈る", "hiragana": "いのる", "meaning": "기도하다, 기원하다" },
-  { "hanja": "泣く", "hiragana": "なく", "meaning": "울다" },
-  { "hanja": "外す", "hiragana": "はずす", "meaning": "떼어 내다, 벗기다" },
-  { "hanja": "踏む", "hiragana": "ふむ", "meaning": "밟다" },
-  { "hanja": "渡す", "hiragana": "わたす", "meaning": "건네다, 넘기다" },
-  { "hanja": "答える", "hiragana": "こたえる", "meaning": "대답하다" },
-  { "hanja": "持つ", "hiragana": "もつ", "meaning": "가지다, 들다" },
-  { "hanja": "", "hiragana": "つかまえる", "meaning": "(범인을) 붙잡다, 붙들다" },
-  { "hanja": "する", "hiragana": "する", "meaning": "(운전, 구경 등) 공적인 하다" },
-  { "hanja": "逃げる", "hiragana": "にげる", "meaning": "도망가다" },
-  { "hanja": "貼る", "hiragana": "はる", "meaning": "붙이다" },
-  { "hanja": "やる", "hiragana": "やる", "meaning": "(1)주다 (2)하다" },
-  { "hanja": "大人しい", "hiragana": "おとなしい", "meaning": "얌전하다" },
-  { "hanja": "", "hiragana": "すばらしい", "meaning": "훌륭하다, 멋지다" },
-  { "hanja": "", "hiragana": "ひどい", "meaning": "심하다" },
-  { "hanja": "", "hiragana": "おかしい", "meaning": "이상하다, 우습다" },
-  { "hanja": "", "hiragana": "すごい", "meaning": "굉장하다" },
-  { "hanja": "恥ずかしい", "hiragana": "はずかしい", "meaning": "부끄럽다" },
-  { "hanja": "失礼だ", "hiragana": "しつれいだ", "meaning": "무례하다, 예의없다" },
-  { "hanja": "自由だ", "hiragana": "じゆうだ", "meaning": "자유롭다" },
-  { "hanja": "丁寧だ", "hiragana": "ていねいだ", "meaning": "정중하다, 신중하다" },
-  { "hanja": "味", "hiragana": "あじ", "meaning": "맛" },
-  { "hanja": "牛肉", "hiragana": "ぎゅうにく", "meaning": "소고기" },
-  { "hanja": "", "hiragana": "あさごはん", "meaning": "아침 식사, 아침밥" },
-  { "hanja": "", "hiragana": "ひるごはん", "meaning": "점심 식사, 점심밥" },
-  { "hanja": "", "hiragana": "ばんごはん", "meaning": "저녁 식사, 저녁밥" },
-  { "hanja": "", "hiragana": "ゆうはん", "meaning": "저녁 식사, 저녁밥" },
-  { "hanja": "食料品", "hiragana": "しょくりょうひん", "meaning": "식료품" },
-  { "hanja": "野菜", "hiragana": "やさい", "meaning": "채소" },
-  { "hanja": "用意する", "hiragana": "よういする", "meaning": "준비하다" },
-  { "hanja": "お湯", "hiragana": "おゆ", "meaning": "뜨거운 물" },
-  { "hanja": "", "hiragana": "ごちそう", "meaning": "대접함, 맛있는 요리" },
-  { "hanja": "食品", "hiragana": "しょくひん", "meaning": "식품" },
-  { "hanja": "", "hiragana": "たまねぎ", "meaning": "양파" },
-  { "hanja": "匂い", "hiragana": "におい", "meaning": "냄새" },
-  { "hanja": "道具", "hiragana": "どうぐ", "meaning": "도구" },
-  { "hanja": "", "hiragana": "おちゃ", "meaning": "차" },
-  { "hanja": "氷", "hiragana": "こおり", "meaning": "얼음" },
-  { "hanja": "米", "hiragana": "こめ", "meaning": "쌀" },
-  { "hanja": "食事する", "hiragana": "しょくじする", "meaning": "식사하다" },
-  { "hanja": "食べ物", "hiragana": "たべもの", "meaning": "음식" },
-  { "hanja": "豆", "hiragana": "まめ", "meaning": "콩" },
-  { "hanja": "魚", "hiragana": "さかな", "meaning": "물고기, 생선" },
-  { "hanja": "料理する", "hiragana": "りょうりする", "meaning": "요리하다" },
-  { "hanja": "缶", "hiragana": "かん", "meaning": "캔" },
-  { "hanja": "材料", "hiragana": "ざいりょう", "meaning": "재료" },
-  { "hanja": "", "hiragana": "すいか", "meaning": "수박" },
-  { "hanja": "", "hiragana": "みかん", "meaning": "귤" },
-  { "hanja": "葡萄", "hiragana": "ぶどう", "meaning": "포도" },
-  { "hanja": "", "hiragana": "りんご", "meaning": "사과" },
-  { "hanja": "冷蔵庫", "hiragana": "れいぞうこ", "meaning": "냉장고" },
-  { "hanja": "", "hiragana": "いっぱい", "meaning": "많이" },
-  { "hanja": "", "hiragana": "じゅうぶん", "meaning": "충분히" },
-  { "hanja": "", "hiragana": "できるだけ", "meaning": "가능한 한, 가급적" },
-  { "hanja": "", "hiragana": "もっとも", "meaning": "가장" },
-  { "hanja": "必ず", "hiragana": "かならず", "meaning": "반드시" },
-  { "hanja": "", "hiragana": "ぜひ", "meaning": "부디, 꼭" },
-  { "hanja": "", "hiragana": "まず", "meaning": "우선, 먼저" },
-  { "hanja": "", "hiragana": "よく", "meaning": "잘, 자주" },
-  { "hanja": "入れる", "hiragana": "いれる", "meaning": "넣다" },
-  { "hanja": "作る", "hiragana": "つくる", "meaning": "만들다" },
-  { "hanja": "", "hiragana": "かむ", "meaning": "씹다" },
-  { "hanja": "頼む", "hiragana": "たのむ", "meaning": "부탁하다, 주문하다" },
-  { "hanja": "残る", "hiragana": "のこる", "meaning": "남다" },
-  { "hanja": "焼く", "hiragana": "やく", "meaning": "태우다, 굽다" },
-  { "hanja": "焼ける", "hiragana": "やける", "meaning": "구워지다" },
-  { "hanja": "使う", "hiragana": "つかう", "meaning": "사용하다" },
-  { "hanja": "飲む", "hiragana": "のむ", "meaning": "마시다" },
-  { "hanja": "取る", "hiragana": "とる", "meaning": "잡다, 집어 오다" },
-  { "hanja": "冷める", "hiragana": "さめる", "meaning": "식다" },
-  { "hanja": "冷える", "hiragana": "ひえる", "meaning": "식だ, 차가워지다" },
-  { "hanja": "冷やす", "hiragana": "ひやす", "meaning": "식히다, 차게하다" },
-  { "hanja": "大きい", "hiragana": "おおきい", "meaning": "크다" },
-  { "hanja": "温かい", "hiragana": "あたたかい", "meaning": "(물, 음식 등이) 따뜻하다" },
-  { "hanja": "薄い", "hiragana": "うすい", "meaning": "(1)얇다 (2)연하다" },
-  { "hanja": "美味しい", "hiragana": "おいしい", "meaning": "맛있다" },
-  { "hanja": "辛い", "hiragana": "からい", "meaning": "맵다" },
-  { "hanja": "硬い", "hiragana": "かたい", "meaning": "딱딱하다" },
-  { "hanja": "足りない", "hiragana": "たりない", "meaning": "부족하다" },
-  { "hanja": "冷たい", "hiragana": "つめたい", "meaning": "차갑다" },
-  { "hanja": "小さい", "hiragana": "ちいさい", "meaning": "작다" },
-  { "hanja": "暖かい", "hiragana": "あたたかい", "meaning": "(날씨 등이) 따뜻하다" },
-  { "hanja": "甘い", "hiragana": "あまい", "meaning": "달다" },
-  { "hanja": "旨い", "hiragana": "うまい", "meaning": "맛있다, 잘하다" },
-  { "hanja": "苦い", "hiragana": "にがい", "meaning": "쓰다" },
-  { "hanja": "", "hiragana": "やわらかい", "meaning": "부드럽다" },
-  { "hanja": "細かい", "hiragana": "こ細かい", "meaning": "잘다, 자세하다" },
-  { "hanja": "", "hiragana": "ぬるい", "meaning": "미지근하다" },
-  { "hanja": "十分だ", "hiragana": "じゅうぶんだ", "meaning": "충분하다" },
-  { "hanja": "適当だ", "hiragana": "てきとうだ", "meaning": "적당하다, 알맞다" },
-  { "hanja": "好きだ", "hiragana": "すきだ", "meaning": "좋아하다" },
-  { "hanja": "嫌いだ", "hiragana": "きらいだ", "meaning": "싫어하다" },
-  { "hanja": "兄", "hiragana": "あに", "meaning": "형, 오빠" },
-  { "hanja": "弟", "hiragana": "おとうと", "meaning": "남동생" },
-  { "hanja": "家族", "hiragana": "かぞく", "meaning": "가족" },
-  { "hanja": "主人", "hiragana": "しゅじん", "meaning": "남편, 주인" },
-  { "hanja": "女性", "hiragana": "じょせい", "meaning": "여성" },
-  { "hanja": "両親", "hiragana": "りょうしん", "meaning": "부모님" },
-  { "hanja": "親", "hiragana": "おや", "meaning": "어버이, 부모" },
-  { "hanja": "遠慮する", "hiragana": "えんりょする", "meaning": "사양하다" },
-  { "hanja": "大勢", "hiragana": "おおぜい", "meaning": "여럿, 많은 사람" },
-  { "hanja": "夫", "hiragana": "おっと", "meaning": "남편" },
-  { "hanja": "妻", "hiragana": "つま", "meaning": "아내" },
-  { "hanja": "彼女", "hiragana": "かのじょ", "meaning": "그녀" },
-  { "hanja": "関係", "hiragana": "かんけい", "meaning": "관계" },
-  { "hanja": "祖父", "hiragana": "そふ", "meaning": "조부, 할아버지" },
-  { "hanja": "祖母", "hiragana": "そぼ", "meaning": "조모, 할머니" },
-  { "hanja": "娘", "hiragana": "むすめ", "meaning": "딸" },
-  { "hanja": "息子", "hiragana": "むすこ", "meaning": "아들" },
-  { "hanja": "姉", "hiragana": "あね", "meaning": "누나, 언니" },
-  { "hanja": "妹", "hiragana": "いもうと", "meaning": "여동생" },
-  { "hanja": "兄弟", "hiragana": "きょうだい", "meaning": "형제" },
-  { "hanja": "自分", "hiragana": "じぶん", "meaning": "자기, 자신" },
-  { "hanja": "男性", "hiragana": "だんせい", "meaning": "남성" },
-  { "hanja": "挨拶する", "hiragana": "あいさつする", "meaning": "인사하다" },
-  { "hanja": "", "hiragana": "うそ", "meaning": "거짓말" },
-  { "hanja": "お祝い", "hiragana": "おいわい", "meaning": "축하, 축하 선물" },
-  { "hanja": "お子さん", "hiragana": "おこさん", "meaning": "자녀분" },
-  { "hanja": "お見合い", "hiragana": "おみあい", "meaning": "맞선" },
-  { "hanja": "家庭", "hiragana": "かてい", "meaning": "가정" },
-  { "hanja": "彼", "hiragana": "かれ", "meaning": "그" },
-  { "hanja": "君", "hiragana": "きみ", "meaning": "너" },
-  { "hanja": "子供", "hiragana": "こども", "meaning": "(어린) 아이" },
-  { "hanja": "父親", "hiragana": "ちちおや", "meaning": "부친, 아버지" },
-  { "hanja": "母親", "hiragana": "ははおや", "meaning": "모친, 어머니" },
-  { "hanja": "お礼", "hiragana": "おれい", "meaning": "사례(의 말), 사례 선물" },
-  { "hanja": "親切だ", "hiragana": "しんせつだ", "meaning": "친절하다" },
-  { "hanja": "大切だ", "hiragana": "たいせつだ", "meaning": "소중하다, 중요하다" },
-  { "hanja": "重要だ", "hiragana": "じゅうようだ", "meaning": "중요하다" },
-  { "hanja": "大事だ", "hiragana": "だいじだ", "meaning": "소중하다, 중요하다" },
-  { "hanja": "生まれる", "hiragana": "うまれる", "meaning": "태어나다" },
-  { "hanja": "別れる", "hiragana": "わかれる", "meaning": "헤어지다" },
-  { "hanja": "謝る", "hiragana": "あやまる", "meaning": "사과하다" },
-  { "hanja": "怒る", "hiragana": "おこる", "meaning": "화내다" },
-  { "hanja": "", "hiragana": "つれる", "meaning": "데리고 가다" },
-  { "hanja": "褒める", "hiragana": "ほめる", "meaning": "칭찬하다" },
-  { "hanja": "信じる", "hiragana": "しんじる", "meaning": "믿다" },
-  { "hanja": "知る", "hiragana": "しる", "meaning": "알다" },
-  { "hanja": "", "hiragana": "あげる", "meaning": "(내가 남에게) 주다" },
-  { "hanja": "", "hiragana": "くれる", "meaning": "(남이 나에게) 주다" },
-  { "hanja": "", "hiragana": "もらう", "meaning": "받다" },
-  { "hanja": "似る", "hiragana": "にる", "meaning": "닮다" },
-  { "hanja": "迎える", "hiragana": "むかえる", "meaning": "맞이하다" },
-  { "hanja": "呼ぶ", "hiragana": "よぶ", "meaning": "부르다" },
-  { "hanja": "多い", "hiragana": "おおい", "meaning": "많다" },
-  { "hanja": "厳しい", "hiragana": "きびしい", "meaning": "엄하다, 심하다" },
-  { "hanja": "若い", "hiragana": "わかい", "meaning": "젊다" },
-  { "hanja": "少ない", "hiragana": "すくない", "meaning": "적다" },
-  { "hanja": "優しい", "hiragana": "やさしい", "meaning": "상냥하다, 마음씨가 곱다" },
-  { "hanja": "", "hiragana": "あまり(~ない)", "meaning": "(1)그다지(~않다) (2)너무" },
-  { "hanja": "", "hiragana": "けっして(~ない)", "meaning": "결코(~않다)" },
-  { "hanja": "", "hiragana": "ぜんぜん(~ない)", "meaning": "전혀(~않다)" },
-  { "hanja": "", "hiragana": "それほど(~ない)", "meaning": "(1)그만큼(~않다) (2)그다지" },
-  { "hanja": "", "hiragana": "そんなに(~ない)", "meaning": "그다지(~않다)" },
-  { "hanja": "", "hiragana": "ちっとも(~ない)", "meaning": "조금도(~않다)" },
-  { "hanja": "", "hiragana": "なかなか(~ない)", "meaning": "(1)좀처럼(~않다) (2)꽤, 상당히, 매우" },
-  { "hanja": "", "hiragana": "ほとんど(~ない)", "meaning": "거의(~않다)" },
-  { "hanja": "歌", "hiragana": "うた", "meaning": "노래" },
-  { "hanja": "映画", "hiragana": "えいが", "meaning": "영화" },
-  { "hanja": "経験する", "hiragana": "けいけんする", "meaning": "경험하다" },
-  { "hanja": "写真", "hiragana": "しゃしん", "meaning": "사진" },
-  { "hanja": "美術", "hiragana": "びじゅつ", "meaning": "미술" },
-  { "hanja": "予定", "hiragana": "よてい", "meaning": "예정" },
-  { "hanja": "", "hiragana": "おしゃべりする", "meaning": "수다, 잡담하다" },
-  { "hanja": "思い出", "hiragana": "おもいで", "meaning": "추억" },
-  { "hanja": "", "hiragana": "サッカー", "meaning": "축구" },
-  { "hanja": "趣味", "hiragana": "しゅみ", "meaning": "취미" },
-  { "hanja": "楽しみ", "hiragana": "たのしみ", "meaning": "즐거움, 낙" },
-  { "hanja": "", "hiragana": "テニス", "meaning": "테니스" },
-  { "hanja": "", "hiragana": "バレーボール", "meaning": "배구" },
-  { "hanja": "花見", "hiragana": "はなみ", "meaning": "꽃구경, 꽃놀이" },
-  { "hanja": "運動する", "hiragana": "うんどうする", "meaning": "운동하다" },
-  { "hanja": "音楽", "hiragana": "おんがく", "meaning": "음악" },
-  { "hanja": "見物する", "hiragana": "けんぶつする", "meaning": "구경하다" },
-  { "hanja": "小説", "hiragana": "しょうせつ", "meaning": "소설" },
-  { "hanja": "野球", "hiragana": "やきゅう", "meaning": "야구" },
-  { "hanja": "旅行する", "hiragana": "りょこうする", "meaning": "여행하다" },
-  { "hanja": "踊り", "hiragana": "おどり", "meaning": "춤" },
-  { "hanja": "興味", "hiragana": "きょうみ", "meaning": "흥미" },
-  { "hanja": "柔道", "hiragana": "じゅうどう", "meaning": "유도" },
-  { "hanja": "水泳", "hiragana": "すいえい", "meaning": "수영하다" },
-  { "hanja": "展覧会", "hiragana": "てんらんかい", "meaning": "전람회" },
-  { "hanja": "", "hiragana": "バスケットボール", "meaning": "농구" },
-  { "hanja": "", "hiragana": "まんが", "meaning": "만화" },
-  { "hanja": "山登り", "hiragana": "やまのぼり", "meaning": "등산" },
-  { "hanja": "楽しい", "hiragana": "たのしい", "meaning": "즐겁다" },
-  { "hanja": "", "hiragana": "つまらない", "meaning": "시시하다, 하찮다" },
-  { "hanja": "上手だ", "hiragana": "じょうずだ", "meaning": "잘하다, 능숙하다" },
-  { "hanja": "下手だ", "hiragana": "へただ", "meaning": "서툴다" },
-  { "hanja": "歌う", "hiragana": "うたう", "meaning": "(노래를) 부르다" },
-  { "hanja": "泳ぐ", "hiragana": "およぐ", "meaning": "헤엄치다" },
-  { "hanja": "読む", "hiragana": "よむ", "meaning": "읽다" },
-  { "hanja": "遊ぶ", "hiragana": "あそぶ", "meaning": "놀다" },
-  { "hanja": "勝つ", "hiragana": "かつ", "meaning": "이기다" },
-  { "hanja": "負ける", "hiragana": "まける", "meaning": "지다" },
-  { "hanja": "弾く", "hiragana": "ひく", "meaning": "(악기를) 치다, 켜다, 연주하다" },
-  { "hanja": "泊まる", "hiragana": "とまる", "meaning": "숙박하다, 머무르다" },
-  { "hanja": "思い出す", "hiragana": "おもいだす", "meaning": "생각나다" },
-  { "hanja": "聞く", "hiragana": "きく", "meaning": "듣다, 묻다" },
-  { "hanja": "聞こえる", "hiragana": "きこえる", "meaning": "들리다" },
-  { "hanja": "釣る", "hiragana": "つる", "meaning": "낚시하다" },
-  { "hanja": "踊る", "hiragana": "おどる", "meaning": "춤추다" },
-  { "hanja": "楽しむ", "hiragana": "たのしむ", "meaning": "즐기다" },
-  { "hanja": "投げる", "hiragana": "なげる", "meaning": "던지다" },
-  { "hanja": "折れる", "hiragana": "おれる", "meaning": "접히다, 부러지다" },
-  { "hanja": "掛かる", "hiragana": "かかる", "meaning": "걸리다, (시간이) 들다" },
-  { "hanja": "片付く", "hiragana": "かたづく", "meaning": "정리되다" },
-  { "hanja": "壊れる", "hiragana": "こわれる", "meaning": "고장 나다" },
-  { "hanja": "続く", "hiragana": "つづく", "meaning": "이어지다, 계속되다" },
-  { "hanja": "届く", "hiragana": "とどく", "meaning": "도착하다" },
-  { "hanja": "直る", "hiragana": "なおる", "meaning": "고쳐지다" },
-  { "hanja": "なくなる", "hiragana": "なくなる", "meaning": "없어지다" },
-  { "hanja": "見つかる", "hiragana": "みつかる", "meaning": "발견되다" },
-  { "hanja": "沸く", "hiragana": "わく", "meaning": "(물이) 끓다" },
-  { "hanja": "割れる", "hiragana": "われる", "meaning": "깨지다" },
-  { "hanja": "消える", "hiragana": "きえる", "meaning": "꺼지다" },
-  { "hanja": "折る", "hiragana": "おる", "meaning": "꺾다" },
-  { "hanja": "掛ける", "hiragana": "かける", "meaning": "걸다, (자물쇠 등을) 잠그다" },
-  { "hanja": "片付ける", "hiragana": "かたづける", "meaning": "정리하다" },
-  { "hanja": "壊す", "hiragana": "こわす", "meaning": "부수다, 고장 내다" },
-  { "hanja": "続ける", "hiragana": "つづける", "meaning": "계속하다" },
-  { "hanja": "届ける", "hiragana": "とどける", "meaning": "보내다" },
-  { "hanja": "直す", "hiragana": "なおす", "meaning": "고치다, 수리하다" },
-  { "hanja": "なくす", "hiragana": "なくす", "meaning": "잃다, 분실하다" },
-  { "hanja": "見つける", "hiragana": "みつける", "meaning": "발견하다" },
-  { "hanja": "沸かす", "hiragana": "わかす", "meaning": "(물을) 끓이다" },
-  { "hanja": "割る", "hiragana": "わる", "meaning": "깨다" },
-  { "hanja": "消す", "hiragana": "けす", "meaning": "끄다" },
-  { "hanja": "医学", "hiragana": "いがく", "meaning": "의학" },
-  { "hanja": "足", "hiragana": "あし", "meaning": "다리" },
-  { "hanja": "音", "hiragana": "おと", "meaning": "소리, 음" },
-  { "hanja": "声", "hiragana": "こえ", "meaning": "목소리" },
-  { "hanja": "薬屋", "hiragana": "くすりや", "meaning": "약국" },
-  { "hanja": "気分", "hiragana": "きぶん", "meaning": "기분" },
-  { "hanja": "力", "hiragana": "ちから", "meaning": "힘" },
-  { "hanja": "手", "hiragana": "て", "meaning": "손" },
-  { "hanja": "病気", "hiragana": "びょうき", "meaning": "병" },
-  { "hanja": "目", "hiragana": "め", "meaning": "눈" },
-  { "hanja": "背", "hiragana": "せ", "meaning": "키, 신장" },
-  { "hanja": "お腹", "hiragana": "おなか", "meaning": "배, 위장" },
-  { "hanja": "髪", "hiragana": "かみ", "meaning": "머리카락" },
-  { "hanja": "気持ち", "hiragana": "きもち", "meaning": "기분, 감정" },
-  { "hanja": "具合", "hiragana": "ぐあい", "meaning": "상태, 컨디션" },
-  { "hanja": "怪我", "hiragana": "けが", "meaning": "부상" },
-  { "hanja": "習慣", "hiragana": "しゅうかん", "meaning": "습관" },
-  { "hanja": "血", "hiragana": "ち", "meaning": "피" },
-  { "hanja": "熱", "hiragana": "ねつ", "meaning": "열" },
-  { "hanja": "歯", "hiragana": "は", "meaning": "이, 치아" },
-  { "hanja": "体", "hiragana": "からだ", "meaning": "몸" },
-  { "hanja": "頭", "hiragana": "あたま", "meaning": "머리" },
-  { "hanja": "顔", "hiragana": "かお", "meaning": "얼굴" },
-  { "hanja": "薬", "hiragana": "くすり", "meaning": "약" },
-  { "hanja": "首", "hiragana": "くび", "meaning": "목, 고개" },
-  { "hanja": "心", "hiragana": "こころ", "meaning": "마음" },
-  { "hanja": "退院する", "hiragana": "たいいんする", "meaning": "퇴원하다" },
-  { "hanja": "入院する", "hiragana": "にゅういんする", "meaning": "입원하다" },
-  { "hanja": "耳", "hiragana": "みみ", "meaning": "귀" },
-  { "hanja": "お見舞い", "hiragana": "おみまい", "meaning": "병문안" },
-  { "hanja": "腕", "hiragana": "うで", "meaning": "팔" },
-  { "hanja": "風邪", "hiragana": "かぜ", "meaning": "감기" },
-  { "hanja": "傷", "hiragana": "きず", "meaning": "상처" },
-  { "hanja": "禁煙", "hiragana": "きんえん", "meaning": "금연" },
-  { "hanja": "毛", "hiragana": "け", "meaning": "털" },
-  { "hanja": "健康", "hiragana": "けんこう", "meaning": "건강" },
-  { "hanja": "背中", "hiragana": "せなか", "meaning": "등" },
-  { "hanja": "喉", "hiragana": "のど", "meaning": "목, 목구멍" },
-  { "hanja": "指", "hiragana": "ゆび", "meaning": "손가락" },
-  { "hanja": "死ぬ", "hiragana": "しぬ", "meaning": "죽다" },
-  { "hanja": "閉じる", "hiragana": "とじる", "meaning": "(책을) 덮다, (눈을) 감다, (문을) 닫다" },
-  { "hanja": "治る", "hiragana": "なおる", "meaning": "(병이) 낫다" },
-  { "hanja": "磨く", "hiragana": "みがく", "meaning": "(이를) 닦다" },
-  { "hanja": "辞める", "hiragana": "やめる", "meaning": "(담배 등을) 끊다" },
-  { "hanja": "倒れる", "hiragana": "たおれる", "meaning": "쓰러지다" },
-  { "hanja": "", "hiragana": "ぬる", "meaning": "바르다" },
-  { "hanja": "", "hiragana": "やせる", "meaning": "마르다" },
-  { "hanja": "太る", "hiragana": "ふとる", "meaning": "살찌다" },
-  { "hanja": "低い", "hiragana": "ひくい", "meaning": "낮다, 작다" },
-  { "hanja": "眠い", "hiragana": "ねむい", "meaning": "졸리다" },
-  { "hanja": "太い", "hiragana": "ふとい", "meaning": "굵다" },
-  { "hanja": "細い", "hiragana": "ほそい", "meaning": "가늘다, 좁다" },
-  { "hanja": "", "hiragana": "いたい", "meaning": "아프다" },
-  { "hanja": "強い", "hiragana": "つよい", "meaning": "세다, 강하다" },
-  { "hanja": "弱い", "hiragana": "よわい", "meaning": "약하다" },
-  { "hanja": "元気だ", "hiragana": "げんきだ", "meaning": "건강하다, 활발하다" },
-  { "hanja": "心配だ", "hiragana": "しんぱいだ", "meaning": "걱정스럽다" },
-  { "hanja": "", "hiragana": "きゅうに", "meaning": "갑자기" },
-  { "hanja": "", "hiragana": "べつに", "meaning": "별로, 특별히" },
-  { "hanja": "", "hiragana": "たぶん", "meaning": "아마도" },
-  { "hanja": "", "hiragana": "とくに", "meaning": "특히" },
-  { "hanja": "", "hiragana": "たまに", "meaning": "가끔" },
-  { "hanja": "", "hiragana": "ひじょうに", "meaning": "대단히" },
-  { "hanja": "文", "hiragana": "ぶん", "meaning": "글, 문장" },
-  { "hanja": "意味", "hiragana": "いみ", "meaning": "의미" },
-  { "hanja": "会話", "hiragana": "かいわ", "meaning": "회화" },
-  { "hanja": "漢字", "hiragana": "かんじ", "meaning": "한자" },
-  { "hanja": "国語", "hiragana": "こくご", "meaning": "국어" },
-  { "hanja": "研究する", "hiragana": "けんきゅうする", "meaning": "연구하다" },
-  { "hanja": "試験する", "hiragana": "しけんする", "meaning": "시험하다" },
-  { "hanja": "質問する", "hiragana": "しつもんする", "meaning": "질문하다" },
-  { "hanja": "出席する", "hiragana": "しゅっせきする", "meaning": "출석하다" },
-  { "hanja": "説明する", "hiragana": "せつめいする", "meaning": "설명하다" },
-  { "hanja": "地理", "hiragana": "ちり", "meaning": "지리" },
-  { "hanja": "発音する", "hiragana": "はつおんする", "meaning": "발음하다" },
-  { "hanja": "教室", "hiragana": "きょうしつ", "meaning": "교실" },
-  { "hanja": "問題", "hiragana": "もんだい", "meaning": "문제" },
-  { "hanja": "講義する", "hiragana": "こうぎする", "meaning": "강의하다" },
-  { "hanja": "後輩", "hiragana": "こうはい", "meaning": "후배" },
-  { "hanja": "字", "hiragana": "じ", "meaning": "글씨" },
-  { "hanja": "冗談", "hiragana": "じょうだん", "meaning": "농담" },
-  { "hanja": "線", "hiragana": "せん", "meaning": "선" },
-  { "hanja": "専門", "hiragana": "せんもん", "meaning": "전문, 전공" },
-  { "hanja": "遅刻する", "hiragana": "ちこくする", "meaning": "지각하다" },
-  { "hanja": "夏休み", "hiragana": "なつやすみ", "meaning": "여름 방학" },
-  { "hanja": "二十歳", "hiragana": "はたち", "meaning": "스무 살" },
-  { "hanja": "文法", "hiragana": "ぶんぽう", "meaning": "문법" },
-  { "hanja": "歴史", "hiragana": "れきし", "meaning": "역사" },
-  { "hanja": "意見", "hiragana": "いけん", "meaning": "의견" },
-  { "hanja": "英語", "hiragana": "えいご", "meaning": "영어" },
-  { "hanja": "科学", "hiragana": "かがく", "meaning": "과학" },
-  { "hanja": "文学", "hiragana": "ぶんがく", "meaning": "문학" },
-  { "hanja": "校長", "hiragana": "こうちょう", "meaning": "교장" },
-  { "hanja": "作文する", "hiragana": "さくぶんする", "meaning": "작문하다" },
-  { "hanja": "辞書", "hiragana": "じしょ", "meaning": "사전" },
-  { "hanja": "授業する", "hiragana": "じゅぎょうする", "meaning": "수업하다" },
-  { "hanja": "席", "hiragana": "せき", "meaning": "자리" },
-  { "hanja": "体育", "hiragana": "たいいく", "meaning": "체육" },
-  { "hanja": "図書館", "hiragana": "としょかん", "meaning": "도서관" },
-  { "hanja": "文化", "hiragana": "ぶんか", "meaning": "문화" },
-  { "hanja": "勉強する", "hiragana": "べんきょうする", "meaning": "공부하다" },
-  { "hanja": "消しゴム", "hiragana": "けしゴム", "meaning": "지우개" },
-  { "hanja": "高校", "hiragana": "こうこう", "meaning": "고등학교" },
-  { "hanja": "黒板", "hiragana": "こくばん", "meaning": "칠판" },
-  { "hanja": "小学校", "hiragana": "しょうがっこう", "meaning": "초등학교" },
-  { "hanja": "数学", "hiragana": "すうがく", "meaning": "수학" },
-  { "hanja": "先輩", "hiragana": "せんぱい", "meaning": "선배" },
-  { "hanja": "卒業する", "hiragana": "そつぎょうする", "meaning": "졸업하다" },
-  { "hanja": "中学校", "hiragana": "ちゅうがっこう", "meaning": "중학교" },
-  { "hanja": "入学する", "hiragana": "にゅうがくする", "meaning": "입학하다" },
-  { "hanja": "復習する", "hiragana": "ふくしゅうする", "meaning": "복습하다" },
-  { "hanja": "予習する", "hiragana": "よしゅうする", "meaning": "예習하다" },
-  { "hanja": "練習する", "hiragana": "れんしゅうする", "meaning": "연습하다" },
-  { "hanja": "行う", "hiragana": "おこなう", "meaning": "행하다" },
-  { "hanja": "帰る", "hiragana": "かえる", "meaning": "돌아가(오)다" },
-  { "hanja": "通う", "hiragana": "かよう", "meaning": "다니다" },
-  { "hanja": "受かる", "hiragana": "うかる", "meaning": "(시험에) 합격하다" },
-  { "hanja": "覚える", "hiragana": "おぼえる", "meaning": "익히다, 외우다" },
-  { "hanja": "騒ぐ", "hiragana": "さわぐ", "meaning": "떠들다" },
-  { "hanja": "尋ねる", "hiragana": "たずねる", "meaning": "묻다, 질문하다" },
-  { "hanja": "申し込む", "hiragana": "もうしこむ", "meaning": "신청하다" },
-  { "hanja": "教える", "hiragana": "おしえる", "meaning": "가르치다" },
-  { "hanja": "数える", "hiragana": "かぞえる", "meaning": "(수를) 세다" },
-  { "hanja": "", "hiragana": "いじめる", "meaning": "괴롭히다" },
-  { "hanja": "受ける", "hiragana": "うける", "meaning": "받다, (시험을) 치르다" },
-  { "hanja": "頑張る", "hiragana": "がんばる", "meaning": "분발하다, 힘내다" },
-  { "hanja": "済む", "hiragana": "すむ", "meaning": "끝나다, 해결되다" },
-  { "hanja": "出来る", "hiragana": "できる", "meaning": "생기다, 가능하다" },
-  { "hanja": "", "hiragana": "うるさい", "meaning": "시끄럽다" },
-  { "hanja": "懐かしい", "hiragana": "なつかしい", "meaning": "그립다" },
-  { "hanja": "難しい", "hiragana": "むずかしい", "meaning": "어렵다" },
-  { "hanja": "易しい", "hiragana": "やさしい", "meaning": "쉽다, 용이하다" },
-  { "hanja": "簡単だ", "hiragana": "かんたんだ", "meaning": "간단하다, 쉽다" },
-  { "hanja": "熱心だ", "hiragana": "ねっしんだ", "meaning": "열심이다" },
-  { "hanja": "一生懸命だ", "hiragana": "いっしょうけんめいだ", "meaning": "열심히 하다" },
-  { "hanja": "営業する", "hiragana": "えいぎょうする", "meaning": "영업하다" },
-  { "hanja": "工業", "hiragana": "こうぎょう", "meaning": "공업" },
-  { "hanja": "産業", "hiragana": "さんぎょう", "meaning": "산업" },
-  { "hanja": "市民", "hiragana": "しみん", "meaning": "시민" },
-  { "hanja": "住所", "hiragana": "じゅうしょ", "meaning": "주소" },
-  { "hanja": "新聞", "hiragana": "しんぶん", "meaning": "신문" },
-  { "hanja": "世界", "hiragana": "せかい", "meaning": "세계" },
-  { "hanja": "無料", "hiragana": "むりょう", "meaning": "무료" },
-  { "hanja": "海外", "hiragana": "かいがい", "meaning": "해외" },
-  { "hanja": "お金持ち", "hiragana": "おかねもち", "meaning": "부자" },
-  { "hanja": "原料", "hiragana": "げんりょう", "meaning": "원료" },
-  { "hanja": "情報", "hiragana": "じょうほう", "meaning": "정보" },
-  { "hanja": "政治", "hiragana": "せいじ", "meaning": "정치" },
-  { "hanja": "石油", "hiragana": "せきゆ", "meaning": "석유" },
-  { "hanja": "日本製", "hiragana": "にほんせい", "meaning": "일본 제품" },
-  { "hanja": "農業", "hiragana": "のうぎょう", "meaning": "농업" },
-  { "hanja": "売店", "hiragana": "ばいてん", "meaning": "매점" },
-  { "hanja": "料金", "hiragana": "りょうきん", "meaning": "요금" },
-  { "hanja": "国産", "hiragana": "こくさん", "meaning": "국산" },
-  { "hanja": "国民", "hiragana": "こくみん", "meaning": "국민" },
-  { "hanja": "品物", "hiragana": "しなもの", "meaning": "물건, 상품" },
-  { "hanja": "社会", "hiragana": "しゃかい", "meaning": "사회" },
-  { "hanja": "人口", "hiragana": "じんこう", "meaning": "인구" },
-  { "hanja": "西洋", "hiragana": "せいよう", "meaning": "서양" },
-  { "hanja": "電話代", "hiragana": "でんわだい", "meaning": "전화 요금" },
-  { "hanja": "", "hiragana": "おつり", "meaning": "거스름돈" },
-  { "hanja": "経済", "hiragana": "けいざい", "meaning": "경제" },
-  { "hanja": "機械", "hiragana": "きかい", "meaning": "기계" },
-  { "hanja": "国際", "hiragana": "こくさい", "meaning": "국제" },
-  { "hanja": "書類", "hiragana": "しょるい", "meaning": "서류" },
-  { "hanja": "製品", "hiragana": "せいひん", "meaning": "제품" },
-  { "hanja": "貯金", "hiragana": "ちょきん", "meaning": "저금하다" },
-  { "hanja": "値段", "hiragana": "ねだん", "meaning": "가격" },
-  { "hanja": "貿易", "hiragana": "ぼうえき", "meaning": "무역" },
-  { "hanja": "輸出する", "hiragana": "ゆしゅつする", "meaning": "수출하다" },
-  { "hanja": "輸入する", "hiragana": "ゆにゅうする", "meaning": "수입하다" },
-  { "hanja": "売る", "hiragana": "うる", "meaning": "팔다" },
-  { "hanja": "足す", "hiragana": "たす", "meaning": "더하다" },
-  { "hanja": "上がる", "hiragana": "あがる", "meaning": "(물가 등이) 오르다" },
-  { "hanja": "払う", "hiragana": "はらう", "meaning": "지불하다" },
-  { "hanja": "売れる", "hiragana": "うれる", "meaning": "팔리다" },
-  { "hanja": "買う", "hiragana": "かう", "meaning": "사다" },
-  { "hanja": "足りる", "hiragana": "たりる", "meaning": "충분하다" },
-  { "hanja": "配る", "hiragana": "くばる", "meaning": "나눠 주다" },
-  { "hanja": "安い", "hiragana": "やすい", "meaning": "싸다" },
-  { "hanja": "高い", "hiragana": "たかい", "meaning": "비싸다, 높다" },
-  { "hanja": "", "hiragana": "ほしい", "meaning": "갖고 싶다, 원하다" },
-  { "hanja": "盛んだ", "hiragana": "さかんだ", "meaning": "활발하다, 번창하다" },
-  { "hanja": "", "hiragana": "そろそろ", "meaning": "이제 곧, 슬슬" },
-  { "hanja": "", "hiragana": "ときどき", "meaning": "때때로, 가끔" },
-  { "hanja": "", "hiragana": "どきどき", "meaning": "두근두근" },
-  { "hanja": "", "hiragana": "にこにこ", "meaning": "생글생글, 싱글벙글" },
-  { "hanja": "", "hiragana": "だんだん", "meaning": "점점" },
-  { "hanja": "", "hiragana": "とうとう", "meaning": "드디어" },
-  { "hanja": "", "hiragana": "どんどん", "meaning": "점점, 순조롭게, 계속해서" },
-  { "hanja": "朝", "hiragana": "あさ", "meaning": "아침" },
-  { "hanja": "今度", "hiragana": "こんど", "meaning": "이번, 다음번" },
-  { "hanja": "一度", "hiragana": "いちど", "meaning": "한 번, 일회, 한 차례" },
-  { "hanja": "今朝", "hiragana": "けさ", "meaning": "오늘 아침" },
-  { "hanja": "今夜", "hiragana": "こんや", "meaning": "오늘 밤" },
-  { "hanja": "午後", "hiragana": "ごご", "meaning": "오후" },
-  { "hanja": "午前", "hiragana": "ごぜん", "meaning": "오전" },
-  { "hanja": "昼", "hiragana": "ひる", "meaning": "낮, 정오" },
-  { "hanja": "昼休み", "hiragana": "ひるやすみ", "meaning": "점심시간" },
-  { "hanja": "昼間", "hiragana": "ひるま", "meaning": "낮 동안" },
-  { "hanja": "夕方", "hiragana": "ゆうがた", "meaning": "저녁 무렵" },
-  { "hanja": "夕べ", "hiragana": "ゆうべ", "meaning": "어제 저녁, 어젯밤" },
-  { "hanja": "頃", "hiragana": "ころ", "meaning": "요즘" },
-  { "hanja": "正月", "hiragana": "しょうがつ", "meaning": "설, 정초" },
-  { "hanja": "一月", "hiragana": "ひとつき", "meaning": "한 달" },
-  { "hanja": "昔", "hiragana": "むかし", "meaning": "옛날" },
-  { "hanja": "色", "hiragana": "いろ", "meaning": "색, 색깔" },
-  { "hanja": "時計", "hiragana": "とけい", "meaning": "시계" },
-  { "hanja": "洋服", "hiragana": "ようふく", "meaning": "양복" },
-  { "hanja": "上着", "hiragana": "うわぎ", "meaning": "겉옷" },
-  { "hanja": "試着する", "hiragana": "しちゃくする", "meaning": "시착하다, 입어 봄" },
-  { "hanja": "指輪", "hiragana": "ゆびわ", "meaning": "반지" },
-  { "hanja": "着物", "hiragana": "きもの", "meaning": "기모노(일본 전통의옷)" },
-  { "hanja": "", "hiragana": "いか", "meaning": "이하" },
-  { "hanja": "", "hiragana": "いじょう", "meaning": "이상" },
-  { "hanja": "", "hiragana": "いない", "meaning": "이내" },
-  { "hanja": "", "hiragana": "いがい", "meaning": "이외" },
-  { "hanja": "", "hiragana": "いぜん", "meaning": "이전" },
-  { "hanja": "", "hiragana": "いご", "meaning": "이후" },
-  { "hanja": "", "hiragana": "さいきん", "meaning": "최근" },
-  { "hanja": "", "hiragana": "さいしょ", "meaning": "최초" },
-  { "hanja": "", "hiragana": "さいご", "meaning": "최후" },
-  { "hanja": "時代", "hiragana": "じだい", "meaning": "시대" },
-  { "hanja": "毎朝", "hiragana": "まいあさ", "meaning": "매일 아침" },
-  { "hanja": "間", "hiragana": "あいだ", "meaning": "일전, 요전" },
-  { "hanja": "将来", "hiragana": "しょうらい", "meaning": "장래, 미래" },
-  { "hanja": "途中", "hiragana": "とちゅう", "meaning": "도중" },
-  { "hanja": "普通", "hiragana": "ふつう", "meaning": "보통" },
-  { "hanja": "都合", "hiragana": "つごう", "meaning": "형편, 사정" },
-  { "hanja": "服", "hiragana": "ふく", "meaning": "옷" },
-  { "hanja": "茶色", "hiragana": "ちゃいろ", "meaning": "갈색" },
-  { "hanja": "緑", "hiragana": "みどり", "meaning": "녹색, 새싹" },
-  { "hanja": "下着", "hiragana": "したぎ", "meaning": "속옷" },
-  { "hanja": "手袋", "hiragana": "てぶくろ", "meaning": "장갑" },
-  { "hanja": "腕時計", "hiragana": "うでどけい", "meaning": "손목시계" },
-  { "hanja": "格好", "hiragana": "かっこう", "meaning": "모습, 모양, 꼴" },
-  { "hanja": "合う", "hiragana": "あう", "meaning": "맞다, 어울리다" },
-  { "hanja": "着る", "hiragana": "きる", "meaning": "입다" },
-  { "hanja": "遅れる", "hiragana": "おくれる", "meaning": "늦다" },
-  { "hanja": "違う", "hiragana": "ちがう", "meaning": "다르다" },
-  { "hanja": "取り替える", "hiragana": "とりかえる", "meaning": "바꾸다, 교환하다" },
-  { "hanja": "履く", "hiragana": "はく", "meaning": "신다, (바지 등을) 입다" },
-  { "hanja": "空く", "hiragana": "あく", "meaning": "(자리·시간이) 비다" },
-  { "hanja": "選ぶ", "hiragana": "えらぶ", "meaning": "선택하다" },
-  { "hanja": "", "hiragana": "かぶる", "meaning": "(모자 등을) 쓰다" },
-  { "hanja": "取れる", "hiragana": "とれる", "meaning": "떨어지다, 빠지다" },
-  { "hanja": "脱ぐ", "hiragana": "ぬぐ", "meaning": "벗다" },
-  { "hanja": "間に合う", "hiragana": "まニアう", "meaning": "시간에 맞게 당도하다" },
-  { "hanja": "青い", "hiragana": "あおい", "meaning": "파랗다" },
-  { "hanja": "赤い", "hiragana": "あかい", "meaning": "빨갛다" },
-  { "hanja": "黒い", "hiragana": "くろい", "meaning": "까맣다" },
-  { "hanja": "早い", "hiragana": "はやい", "meaning": "(시간이) 이르다" },
-  { "hanja": "珍しい", "hiragana": "めずらしい", "meaning": "진귀하다, 드물다" },
-  { "hanja": "白い", "hiragana": "しろい", "meaning": "하얗다" },
-  { "hanja": "新しい", "hiragana": "あたらしい", "meaning": "새롭다" },
-  { "hanja": "長い", "hiragana": "ながい", "meaning": "길다" },
-  { "hanja": "短い", "hiragana": "みじかい", "meaning": "짧다" },
-  { "hanja": "黄色い", "hiragana": "きいろい", "meaning": "노랗다" },
-  { "hanja": "同じだ", "hiragana": "おなじだ", "meaning": "같다" },
-  { "hanja": "", "hiragana": "さっき", "meaning": "아까, 조금 전" },
-  { "hanja": "", "hiragana": "ちょうど", "meaning": "마침, 꼭" },
-  { "hanja": "", "hiragana": "うっかり", "meaning": "깜빡, 무심코" },
-  { "hanja": "", "hiragana": "しっかり", "meaning": "제대로" },
-  { "hanja": "", "hiragana": "はっきり", "meaning": "확실히" },
-  { "hanja": "", "hiragana": "やっぱり / やはり", "meaning": "역시" },
-  { "hanja": "", "hiragana": "ずっと", "meaning": "쭉, 계속" },
-  { "hanja": "", "hiragana": "はやく", "meaning": "빨리, 급히" },
-  { "hanja": "", "hiragana": "ぐっすり", "meaning": "푹(깊은 잠을 자는 모양)" },
-  { "hanja": "", "hiragana": "すっかり", "meaning": "완전히, 모두" },
-  { "hanja": "", "hiragana": "びっくり", "meaning": "깜짝 놀람" },
-  { "hanja": "", "hiragana": "ゆっくり", "meaning": "천천히" },
-  {"kanji": "案内", "hiragana": "あんない", "meaning": "안내"},
-  {"kanji": "飛行機", "hiragana": "ひこうき", "meaning": "비행기"},
-  {"kanji": "約束", "hiragana": "やくそく", "meaning": "약속"},
-  {"kanji": "計画", "hiragana": "けいかく", "meaning": "계획"},
-  {"kanji": "準備", "hiragana": "じゅんび", "meaning": "준비"},
-  {"kanji": "利用", "hiragana": "りよう", "meaning": "이용"},
-  {"kanji": "注意", "hiragana": "ちゅうい", "meaning": "주의"}]
+ [
+  {"hanja": "案内", "hiragana": "あんない", "meaning": "안내"},
+  {"hanja": "飛行機", "hiragana": "ひこうき", "meaning": "비행기"},
+  {"hanja": "約束", "hiragana": "やくそく", "meaning": "약속"},
+  {"hanja": "計画", "hiragana": "けいかく", "meaning": "계획"},
+  {"hanja": "準備", "hiragana": "じゅんび", "meaning": "준비"},
+  {"hanja": "利用", "hiragana": "りよう", "meaning": "이용"},
+  {"hanja": "注意", "hiragana": "ちゅうい", "meaning": "주의"},
+  {"hanja": "間", "hiragana": "あいだ", "meaning": "동안, 사이"},
+  {"hanja": "駅", "hiragana": "えき", "meaning": "역"},
+  {"hanja": "銀行", "hiragana": "ぎんこう", "meaning": "은행"},
+  {"hanja": "公園", "hiragana": "こうえん", "meaning": "공원"},
+  {"hanja": "食堂", "hiragana": "しょくどう", "meaning": "식당"},
+  {"hanja": "近く", "hiragana": "ちかく", "meaning": "근처"},
+  {"hanja": "遠く", "hiragana": "とおく", "meaning": "먼 곳, 멀리"},
+  {"hanja": "所", "hiragana": "ところ", "meaning": "곳"},
+  {"hanja": "病院", "hiragana": "びょういん", "meaning": "병원"},
+  {"hanja": "東", "hiragana": "ひがし", "meaning": "동쪽"},
+  {"hanja": "西", "hiragana": "にし", "meaning": "서쪽"},
+  {"hanja": "南", "hiragana": "みなみ", "meaning": "남쪽"},
+  {"hanja": "北", "hiragana": "きた", "meaning": "북쪽"},
+  {"hanja": "会場", "hiragana": "かいじょう", "meaning": "회장, 모임 장소"},
+  {"hanja": "教会", "hiragana": "きょうかい", "meaning": "교회"},
+  {"hanja": "島", "hiragana": "しま", "meaning": "섬"},
+  {"hanja": "神社", "hiragana": "じんじゃ", "meaning": "신사"},
+  {"hanja": "寺", "hiragana": "てら", "meaning": "절"},
+  {"hanja": "広場", "hiragana": "ひろば", "meaning": "광장"},
+  {"hanja": "真ん中", "hiragana": "まんなか", "meaning": "한가운데"},
+  {"hanja": "両方", "hiragana": "りょうほう", "meaning": "양쪽"},
+  {"hanja": "内", "hiragana": "うち", "meaning": "(범위) 내"},
+  {"hanja": "売り場", "hiragana": "うりば", "meaning": "매장"},
+  {"hanja": "会社", "hiragana": "かいしゃ", "meaning": "회사"},
+  {"hanja": "近所", "hiragana": "きんじょ", "meaning": "근처"},
+  {"hanja": "工場", "hiragana": "こうじょう", "meaning": "공장"},
+  {"hanja": "建物", "hiragana": "たてもの", "meaning": "건물"},
+  {"hanja": "動物園", "hiragana": "どうぶつえん", "meaning": "동물원"},
+  {"hanja": "都会", "hiragana": "とかい", "meaning": "도회, 도시"},
+  {"hanja": "場所", "hiragana": "ばしょ", "meaning": "장소"},
+  {"hanja": "本屋", "hiragana": "ほんや", "meaning": "책방, 서점"},
+  {"hanja": "港", "hiragana": "みなと", "meaning": "항구"},
+  {"hanja": "店", "hiragana": "みせ", "meaning": "가게"},
+  {"hanja": "旅館", "hiragana": "りょかん", "meaning": "여관"},
+  {"hanja": "田舎", "hiragana": "いなか", "meaning": "시골"},
+  {"hanja": "喫茶店", "hiragana": "きっさてん", "meaning": "찻집"},
+  {"hanja": "お土産", "hiragana": "おみやげ", "meaning": "기념품, 토산품"},
+  {"hanja": "結婚式", "hiragana": "けっこんしき", "meaning": "결혼식"},
+  {"hanja": "事務所", "hiragana": "じむしょ", "meaning": "사무실"},
+  {"hanja": "大使館", "hiragana": "たいしかん", "meaning": "대사관"},
+  {"hanja": "美容院", "hiragana": "びよういん", "meaning": "미용실"},
+  {"hanja": "周り", "hiragana": "まわり", "meaning": "주변"},
+  {"hanja": "表", "hiragana": "おもて", "meaning": "겉, 표面"},
+  {"hanja": "裏", "hiragana": "うら", "meaning": "뒤, 뒷면"},
+  {"hanja": "会う", "hiragana": "あう", "meaning": "만나다"},
+  {"hanja": "着く", "hiragana": "つく", "meaning": "도착하다"},
+  {"hanja": "変える", "hiragana": "かえる", "meaning": "바꾸다"},
+  {"hanja": "空く", "hiragana": "すく", "meaning": "(공간이) 비다, 허기지다"},
+  {"hanja": "間違える", "hiragana": "まちがえる", "meaning": "잘못 알다, 틀리다"},
+  {"hanja": "回る", "hiragana": "まわる", "meaning": "돌다, 돌아다니다"},
+  {"hanja": "寄る", "hiragana": "よる", "meaning": "들르다"},
+  {"hanja": "送る", "hiragana": "おくる", "meaning": "보내다"},
+  {"hanja": "待つ", "hiragana": "まつ", "meaning": "기다리다"},
+  {"hanja": "変わる", "hiragana": "かわる", "meaning": "변하다"},
+  {"hanja": "並ぶ", "hiragana": "ならぶ", "meaning": "늘어서다, 줄지어 서다"},
+  {"hanja": "迷う", "hiragana": "まよう", "meaning": "망설이다, 헤매다"},
+  {"hanja": "向かう", "hiragana": "むかう", "meaning": "향하다"},
+  {"hanja": "渡る", "hiragana": "わたる", "meaning": "건너다"},
+  {"hanja": "近い", "hiragana": "ちかい", "meaning": "가깝다"},
+  {"hanja": "遠い", "hiragana": "とおい", "meaning": "멀다"},
+  {"hanja": "広い", "hiragana": "ひろい", "meaning": "넓다"},
+  {"hanja": "古い", "hiragana": "ふるい", "meaning": "오래되다"},
+  {"hanja": "静かだ", "hiragana": "しずかだ", "meaning": "조용하다"},
+  {"hanja": "有名だ", "hiragana": "ゆうめいだ", "meaning": "유명하다"},
+  {"hanja": "賑やかだ", "hiragana": "にぎやかだ", "meaning": "떠들썩하다, 번화하다"},
+  {"hanja": "駅員", "hiragana": "えきいん", "meaning": "역무원"},
+  {"hanja": "会議する", "hiragana": "かいぎする", "meaning": "회의하다"},
+  {"hanja": "計画する", "hiragana": "けいかくする", "meaning": "계획하다"},
+  {"hanja": "仕事する", "hiragana": "しごとする", "meaning": "일하다"},
+  {"hanja": "店員", "hiragana": "てんいん", "meaning": "점원"},
+  {"hanja": "話", "hiragana": "はなし", "meaning": "이야기"},
+  {"hanja": "お客さん", "hiragana": "おきゃくさん", "meaning": "손님"},
+  {"hanja": "課長", "hiragana": "かちょう", "meaning": "과장"},
+  {"hanja": "機会", "hiragana": "きかい", "meaning": "기회"},
+  {"hanja": "競争する", "hiragana": "きょうそうする", "meaning": "경쟁하다"},
+  {"hanja": "結果", "hiragana": "けっか", "meaning": "결과"},
+  {"hanja": "公務員", "hiragana": "こうむいん", "meaning": "공무원"},
+  {"hanja": "積もり", "hiragana": "つもり", "meaning": "생각, 작정, 의도"},
+  {"hanja": "歯医者", "hiragana": "はいしゃ", "meaning": "치과의사"},
+  {"hanja": "封筒", "hiragana": "ふうとう", "meaning": "봉투"},
+  {"hanja": "目的", "hiragana": "もくてき", "meaning": "목적"},
+  {"hanja": "夢", "hiragana": "ゆめ", "meaning": "꿈"},
+  {"hanja": "医者", "hiragana": "いしゃ", "meaning": "의사"},
+  {"hanja": "係り", "hiragana": "かかり", "meaning": "담당 직원"},
+  {"hanja": "手紙", "hiragana": "てがみ", "meaning": "편지"},
+  {"hanja": "社員", "hiragana": "しゃいん", "meaning": "사원"},
+  {"hanja": "場合", "hiragana": "ばあい", "meaning": "경우, 사정"},
+  {"hanja": "用事", "hiragana": "ようじ", "meaning": "용무"},
+  {"hanja": "画家", "hiragana": "がか", "meaning": "화가"},
+  {"hanja": "看護師", "hiragana": "かんごし", "meaning": "간호사"},
+  {"hanja": "切手", "hiragana": "きって", "meaning": "우표"},
+  {"hanja": "警察", "hiragana": "けいさつ", "meaning": "경찰"},
+  {"hanja": "原因", "hiragana": "げんいん", "meaning": "원인"},
+  {"hanja": "社長", "hiragana": "しゃちょう", "meaning": "사장"},
+  {"hanja": "店長", "hiragana": "てんちょう", "meaning": "점장"},
+  {"hanja": "部長", "hiragana": "ぶちょう", "meaning": "부장"},
+  {"hanja": "返事する", "hiragana": "へんじする", "meaning": "답장, 대답하다"},
+  {"hanja": "約束", "hiragana": "やくそく", "meaning": "약속"},
+  {"hanja": "理由", "hiragana": "りゆう", "meaning": "이유"},
+  {"hanja": "言う", "hiragana": "いう", "meaning": "말하다"},
+  {"hanja": "終わる", "hiragana": "おわる", "meaning": "끝나다"},
+  {"hanja": "進む", "hiragana": "すすむ", "meaning": "진行되다"},
+  {"hanja": "運ぶ", "hiragana": "はこぶ", "meaning": "나르다, 운반하다"},
+  {"hanja": "受け取る", "hiragana": "うけとる", "meaning": "받다, 수취하다"},
+  {"hanja": "確かめる", "hiragana": "たしかめる", "meaning": "확인하다"},
+  {"hanja": "手伝う", "hiragana": "てつだう", "meaning": "돕다"},
+  {"hanja": "似合う", "hiragana": "にあう", "meaning": "어울리다"},
+  {"hanja": "戻る", "hiragana": "もどる", "meaning": "되돌아가(오)다"},
+  {"hanja": "急ぐ", "hiragana": "いそぐ", "meaning": "서두르다"},
+  {"hanja": "調べる", "hiragana": "しらべる", "meaning": "조사하다"},
+  {"hanja": "習う", "hiragana": "ならう", "meaning": "배우다"},
+  {"hanja": "働く", "hiragana": "はたらく", "meaning": "일하다"},
+  {"hanja": "探す", "hiragana": "さがす", "meaning": "찾다"},
+  {"hanja": "勤める", "hiragana": "つとめる", "meaning": "근무하다"},
+  {"hanja": "慣れる", "hiragana": "なれる", "meaning": "익숙해지다"},
+  {"hanja": "守る", "hiragana": "まもる", "meaning": "지키다"},
+  {"hanja": "忙しい", "hiragana": "いそがしい", "meaning": "바쁘다"},
+  {"hanja": "正しい", "hiragana": "ただしい", "meaning": "바르다, 옳다"},
+  {"hanja": "無理だ", "hiragana": "むりだ", "meaning": "무리하다"},
+  {"hanja": "特別だ", "hiragana": "とくべつだ", "meaning": "특별하다"},
+  {"hanja": "真面目だ", "hiragana": "まじめだ", "meaning": "성실하다"},
+  {"hanja": "残念だ", "hiragana": "ざんねんだ", "meaning": "유감스럽다"},
+  {"hanja": "暇だ", "hiragana": "ひまだ", "meaning": "한가하다"},
+  {"hanja": "屋上", "hiragana": "おくじょう", "meaning": "옥상"},
+  {"hanja": "紙", "hiragana": "かみ", "meaning": "종이"},
+  {"hanja": "世話", "hiragana": "せわ", "meaning": "보살핌, 신세"},
+  {"hanja": "台所", "hiragana": "だいどころ", "meaning": "부엌"},
+  {"hanja": "机", "hiragana": "つくえ", "meaning": "책상"},
+  {"hanja": "日記", "hiragana": "にっき", "meaning": "일기"},
+  {"hanja": "部屋", "hiragana": "へや", "meaning": "방"},
+  {"hanja": "押入れ", "hiragana": "おしいれ", "meaning": "붙박이장"},
+  {"hanja": "玩具", "hiragana": "おもちゃ", "meaning": "장난감"},
+  {"hanja": "家事", "hiragana": "かじ", "meaning": "가사"},
+  {"hanja": "壁", "hiragana": "かべ", "meaning": "벽"},
+  {"hanja": "", "hiragana": "ごみ", "meaning": "쓰레기"},
+  {"hanja": "洗濯機", "hiragana": "せんたくき", "meaning": "세탁기"},
+  {"hanja": "棚", "hiragana": "たな", "meaning": "선반"},
+  {"hanja": "電灯", "hiragana": "でんとう", "meaning": "전등"},
+  {"hanja": "荷物", "hiragana": "にもつ", "meaning": "짐"},
+  {"hanja": "引き出し", "hiragana": "ひきだし", "meaning": "서랍, 인출"},
+  {"hanja": "祭り", "hiragana": "まつり", "meaning": "축제"},
+  {"hanja": "お宅", "hiragana": "おたく", "meaning": "댁"},
+  {"hanja": "水道", "hiragana": "すいどう", "meaning": "수도(상수도)"},
+  {"hanja": "洗濯する", "hiragana": "せんたくする", "meaning": "세탁하다"},
+  {"hanja": "地下", "hiragana": "ちか", "meaning": "지하"},
+  {"hanja": "電気", "hiragana": "でんき", "meaning": "전기, 전등"},
+  {"hanja": "人形", "hiragana": "にんぎょう", "meaning": "인形"},
+  {"hanja": "門", "hiragana": "もん", "meaning": "문"},
+  {"hanja": "鏡", "hiragana": "かがみ", "meaning": "거울"},
+  {"hanja": "家電", "hiragana": "かでん", "meaning": "가전"},
+  {"hanja": "故障する", "hiragana": "こしょうする", "meaning": "고장 나다"},
+  {"hanja": "邪魔する", "hiragana": "じゃまする", "meaning": "방해, 훼방하다"},
+  {"hanja": "掃除", "hiragana": "そうじ", "meaning": "청소"},
+  {
+    "hanja": "暖房",
+    "hiragana": "だんぼう",
+    "meaning": "난방"
+  },
+  {
+    "hanja": "冷房",
+    "hiragana": "れいぼう",
+    "meaning": "냉방"
+  },
+  {
+    "hanja": "泥棒",
+    "hiragana": "どろぼう",
+    "meaning": "도둑"
+  },
+  {
+    "hanja": "番組",
+    "hiragana": "ばんぐみ",
+    "meaning": "프로그램"
+  },
+  {
+    "hanja": "布団",
+    "hiragana": "ふとん",
+    "meaning": "이불"
+  },
+  {
+    "hanja": "留守",
+    "hiragana": "るす",
+    "meaning": "부재중"
+  },
+  {
+    "hanja": "必要だ",
+    "hiragana": "ひつようだ",
+    "meaning": "필요하다"
+  },
+  {
+    "hanja": "結婚だ",
+    "hiragana": "けっこんだ",
+    "meaning": "결혼하다"
+  },
+  {
+    "hanja": "嫌だ",
+    "hiragana": "いやだ",
+    "meaning": "싫다"
+  },
+  {
+    "hanja": "綺麗だ",
+    "hiragana": "きれいだ",
+    "meaning": "깨끗하다, 아름답다"
+  },
+  {
+    "hanja": "洗う",
+    "hiragana": "あらう",
+    "meaning": "씻다, 빨래하다"
+  },
+  {
+    "hanja": "起きる",
+    "hiragana": "おきる",
+    "meaning": "일어나다"
+  },
+  {
+    "hanja": "思う",
+    "hiragana": "おもう",
+    "meaning": "생각하다"
+  },
+  {
+    "hanja": "貸す",
+    "hiragana": "かす",
+    "meaning": "빌려주다"
+  },
+  {
+    "hanja": "住む",
+    "hiragana": "すむ",
+    "meaning": "살다"
+  },
+  {
+    "hanja": "鳴る",
+    "hiragana": "なる",
+    "meaning": "(전화가) 울리다"
+  },
+  {
+    "hanja": "驚く",
+    "hiragana": "おどろく",
+    "meaning": "놀라다"
+  },
+  {
+    "hanja": "乾く",
+    "hiragana": "かわく",
+    "meaning": "마르다, 건조되다"
+  },
+  {
+    "hanja": "触る",
+    "hiragana": "さわる",
+    "meaning": "만지다"
+  },
+  {
+    "hanja": "訪ねる",
+    "hiragana": "たずねる",
+    "meaning": "방문하다"
+  },
+  {
+    "hanja": "包む",
+    "hiragana": "つつむ",
+    "meaning": "싸다, 포장하다"
+  },
+  {
+    "hanja": "出かける",
+    "hiragana": "でかける",
+    "meaning": "외출하다"
+  },
+  {
+    "hanja": "掃く",
+    "hiragana": "はく",
+    "meaning": "쓸다"
+  },
+  {
+    "hanja": "拭く",
+    "hiragana": "ふく",
+    "meaning": "닦다, 걸레질하다"
+  },
+  {
+    "hanja": "笑う",
+    "hiragana": "わらう",
+    "meaning": "웃다"
+  },
+  {
+    "hanja": "歩く",
+    "hiragana": "あるく",
+    "meaning": "걷다"
+  },
+  {
+    "hanja": "置く",
+    "hiragana": "おく",
+    "meaning": "놓다, 두다"
+  },
+  {
+    "hanja": "返す",
+    "hiragana": "かえす",
+    "meaning": "돌려주다, 반납하다"
+  },
+  {
+    "hanja": "借りる",
+    "hiragana": "かりる",
+    "meaning": "빌리다"
+  },
+  {
+    "hanja": "眠る",
+    "hiragana": "ねむる",
+    "meaning": "잠자다, 잠들다"
+  },
+  {
+    "hanja": "生きる",
+    "hiragana": "いきる",
+    "meaning": "살다, 생존하다"
+  },
+  {
+    "hanja": "飾る",
+    "hiragana": "かざる",
+    "meaning": "장식하다"
+  },
+  {
+    "hanja": "来る",
+    "hiragana": "くる",
+    "meaning": "오다"
+  },
+  {
+    "hanja": "叱る",
+    "hiragana": "しかる",
+    "meaning": "혼내다"
+  },
+  {
+    "hanja": "付く",
+    "hiragana": "つく",
+    "meaning": "붙다"
+  },
+  {
+    "hanja": "付ける",
+    "hiragana": "つける",
+    "meaning": "붙이다, (불 등을) 켜다"
+  },
+  {
+    "hanja": "寝る",
+    "hiragana": "ねる",
+    "meaning": "자다, 눕다"
+  },
+  {
+    "hanja": "引っ越す",
+    "hiragana": "ひっこす",
+    "meaning": "이사하다"
+  },
+  {
+    "hanja": "喜ぶ",
+    "hiragana": "よろこぶ",
+    "meaning": "기뻐하다"
+  },
+  {
+    "hanja": "重い",
+    "hiragana": "おもい",
+    "meaning": "무겁다"
+  },
+  {
+    "hanja": "うれしい",
+    "hiragana": "うれしい",
+    "meaning": "기쁘다"
+  },
+  {
+    "hanja": "汚い",
+    "hiragana": "きたない",
+    "meaning": "더럽다, 지저분하다"
+  },
+  {
+    "hanja": "寂しい",
+    "hiragana": "さびしい",
+    "meaning": "쓸쓸하다, 적적하다"
+  },
+  {
+    "hanja": "軽い",
+    "hiragana": "かるい",
+    "meaning": "가볍다"
+  },
+  {
+    "hanja": "悲しい",
+    "hiragana": "かなしい",
+    "meaning": "슬프다"
+  },
+  {
+    "hanja": "こわい",
+    "hiragana": "こわい",
+    "meaning": "무섭다"
+  },
+  {
+    "hanja": "狭い",
+    "hiragana": "せまい",
+    "meaning": "좁다"
+  },
+  {
+    "hanja": "春",
+    "hiragana": "はる",
+    "meaning": "봄"
+  },
+  {
+    "hanja": "夏",
+    "hiragana": "なつ",
+    "meaning": "여름"
+  },
+  {
+    "hanja": "秋",
+    "hiragana": "あき",
+    "meaning": "가을"
+  },
+  {
+    "hanja": "冬",
+    "hiragana": "ふゆ",
+    "meaning": "겨울"
+  },
+  {
+    "hanja": "空気",
+    "hiragana": "くうき",
+    "meaning": "공기"
+  },
+  {
+    "hanja": "空",
+    "hiragana": "そら",
+    "meaning": "하늘"
+  },
+  {
+    "hanja": "天気",
+    "hiragana": "てんき",
+    "meaning": "날씨"
+  },
+  {
+    "hanja": "花",
+    "hiragana": "はな",
+    "meaning": "꽃"
+  },
+  {
+    "hanja": "光",
+    "hiragana": "ひかり",
+    "meaning": "빛"
+  },
+  {
+    "hanja": "雪",
+    "hiragana": "ゆき",
+    "meaning": "눈"
+  },
+  {
+    "hanja": "犬",
+    "hiragana": "いぬ",
+    "meaning": "개"
+  },
+  {
+    "hanja": "馬",
+    "hiragana": "うま",
+    "meaning": "말"
+  },
+  {
+    "hanja": "季節",
+    "hiragana": "きせつ",
+    "meaning": "계절"
+  },
+  {
+    "hanja": "景色",
+    "hiragana": "けしき",
+    "meaning": "경치"
+  },
+  {
+    "hanja": "地震",
+    "hiragana": "じしん",
+    "meaning": "지진"
+  },
+  {
+    "hanja": "葉",
+    "hiragana": "は",
+    "meaning": "잎"
+  },
+  {
+    "hanja": "火",
+    "hiragana": "ひ",
+    "meaning": "불"
+  },
+  {
+    "hanja": "湖",
+    "hiragana": "みずうみ",
+    "meaning": "호수"
+  },
+  {
+    "hanja": "山道",
+    "hiragana": "やまみち",
+    "meaning": "산길"
+  },
+  {
+    "hanja": "海",
+    "hiragana": "うみ",
+    "meaning": "바다"
+  },
+  {
+    "hanja": "石",
+    "hiragana": "いし",
+    "meaning": "돌"
+  },
+  {
+    "hanja": "池",
+    "hiragana": "いけ",
+    "meaning": "연못"
+  },
+  {
+    "hanja": "風",
+    "hiragana": "かぜ",
+    "meaning": "바람"
+  },
+  {
+    "hanja": "雲",
+    "hiragana": "くも",
+    "meaning": "구름"
+  },
+  {
+    "hanja": "台風",
+    "hiragana": "たいふう",
+    "meaning": "태풍"
+  },
+  {
+    "hanja": "天気予報",
+    "hiragana": "てんきよほう",
+    "meaning": "일기예보"
+  },
+  {
+    "hanja": "林",
+    "hiragana": "はやし",
+    "meaning": "수풀, 숲"
+  },
+  {
+    "hanja": "森",
+    "hiragana": "もり",
+    "meaning": "숲"
+  },
+  {
+    "hanja": "動物",
+    "hiragana": "どうぶつ",
+    "meaning": "동물"
+  },
+  {
+    "hanja": "植物",
+    "hiragana": "しょくぶつ",
+    "meaning": "식물"
+  },
+  {
+    "hanja": "牛",
+    "hiragana": "うし",
+    "meaning": "소"
+  },
+  {
+    "hanja": "鳥",
+    "hiragana": "とり",
+    "meaning": "새"
+  },
+  {
+    "hanja": "草",
+    "hiragana": "くさ",
+    "meaning": "풀"
+  },
+  {
+    "hanja": "坂",
+    "hiragana": "さか",
+    "meaning": "언덕"
+  },
+  {
+    "hanja": "月",
+    "hiragana": "つき",
+    "meaning": "달"
+  },
+  {
+    "hanja": "日",
+    "hiragana": "ひ",
+    "meaning": "해"
+  },
+  {
+    "hanja": "星",
+    "hiragana": "ほし",
+    "meaning": "별"
+  },
+  {
+    "hanja": "虫",
+    "hiragana": "むし",
+    "meaning": "벌레"
+  },
+  {
+    "hanja": "動く",
+    "hiragana": "うごく",
+    "meaning": "움직이다"
+  },
+  {
+    "hanja": "光る",
+    "hiragana": "ひかる",
+    "meaning": "빛나다"
+  },
+  {
+    "hanja": "植える",
+    "hiragana": "うえる",
+    "meaning": "심다"
+  },
+  {
+    "hanja": "聞こえる",
+    "hiragana": "きこえる",
+    "meaning": "들리다"
+  },
+  {
+    "hanja": "さす",
+    "hiragana": "さす",
+    "meaning": "(우산을) 쓰다"
+  },
+  {
+    "hanja": "育てる",
+    "hiragana": "そだてる",
+    "meaning": "키우다"
+  },
+  {
+    "hanja": "登る",
+    "hiragana": "のぼる",
+    "meaning": "(높은 곳에) 오르다"
+  },
+  {
+    "hanja": "吹く",
+    "hiragana": "ふく",
+    "meaning": "(바람이) 불だ"
+  },
+  {
+    "hanja": "燃える",
+    "hiragana": "もえる",
+    "meaning": "타다"
+  },
+  {
+    "hanja": "汚す",
+    "hiragana": "よごす",
+    "meaning": "더럽히다"
+  },
+  {
+    "hanja": "見る",
+    "hiragana": "みる",
+    "meaning": "보다"
+  },
+  {
+    "hanja": "見せる",
+    "hiragana": "みせる",
+    "meaning": "보여 주다"
+  },
+  {
+    "hanja": "飼う",
+    "hiragana": "かう",
+    "meaning": "기르다, 사육하다"
+  },
+  {
+    "hanja": "暮れる",
+    "hiragana": "くれる",
+    "meaning": "(날이) 저물다"
+  },
+  {
+    "hanja": "捨てる",
+    "hiragana": "すてる",
+    "meaning": "버리다"
+  },
+  {
+    "hanja": "ぬれる",
+    "hiragana": "ぬれる",
+    "meaning": "젖다"
+  },
+  {
+    "hanja": "拾う",
+    "hiragana": "ひろう",
+    "meaning": "줍다"
+  },
+  {
+    "hanja": "見える",
+    "hiragana": "みえる",
+    "meaning": "보이다"
+  },
+  {
+    "hanja": "止む",
+    "hiragana": "やむ",
+    "meaning": "(비가) 그치다, 멈추다"
+  },
+  {
+    "hanja": "汚れる",
+    "hiragana": "よごれる",
+    "meaning": "때 묻다, 더러워지다"
+  },
+  {
+    "hanja": "明るい",
+    "hiragana": "あかるい",
+    "meaning": "밝다"
+  },
+  {
+    "hanja": "暗い",
+    "hiragana": "くらい",
+    "meaning": "어둡다"
+  },
+  {
+    "hanja": "美しい",
+    "hiragana": "うつくしい",
+    "meaning": "아름답다"
+  },
+  {
+    "hanja": "悪い",
+    "hiragana": "わるい",
+    "meaning": "나쁘다"
+  },
+  {
+    "hanja": "浅い",
+    "hiragana": "あさい",
+    "meaning": "얕다"
+  },
+  {
+    "hanja": "深い",
+    "hiragana": "ふかい",
+    "meaning": "깊다"
+  },
+  {
+    "hanja": "暑い",
+    "hiragana": "あつい",
+    "meaning": "덥다"
+  },
+  {
+    "hanja": "熱い",
+    "hiragana": "あつい",
+    "meaning": "뜨겁다"
+  },
+  {
+    "hanja": "厚い",
+    "hiragana": "あつい",
+    "meaning": "두껍다"
+  },
+  {
+    "hanja": "寒い",
+    "hiragana": "さむい",
+    "meaning": "춥다"
+  },
+  {
+    "hanja": "あたたかい",
+    "hiragana": "あたたかい",
+    "meaning": "(날씨 등이) 따뜻하다"
+  },
+  {
+    "hanja": "すずしい",
+    "hiragana": "すずしい",
+    "meaning": "시원하다, 선선하다"
+  },
+  {
+    "hanja": "",
+    "hiragana": "やっと",
+    "meaning": "이제야 겨우, 간신히"
+  },
+  {
+    "hanja": "安心する",
+    "hiragana": "あんしんする",
+    "meaning": "안심하다"
+  },
+  {
+    "hanja": "地下鉄",
+    "hiragana": "ちかてつ",
+    "meaning": "지하철"
+  },
+  {
+    "hanja": "交通",
+    "hiragana": "こうつう",
+    "meaning": "교통"
+  },
+  {
+    "hanja": "空港",
+    "hiragana": "くうこう",
+    "meaning": "공항"
+  },
+  {
+    "hanja": "地図",
+    "hiragana": "ちず",
+    "meaning": "지도"
+  },
+  {
+    "hanja": "二台",
+    "hiragana": "にだい",
+    "meaning": "두 대(수량)"
+  },
+  {
+    "hanja": "案内する",
+    "hiragana": "あんないする",
+    "meaning": "안내하다"
+  },
+  {
+    "hanja": "入り口",
+    "hiragana": "いりぐち",
+    "meaning": "입구"
+  },
+  {
+    "hanja": "火事",
+    "hiragana": "かじ",
+    "meaning": "화재"
+  },
+  {
+    "hanja": "交番",
+    "hiragana": "こうばん",
+    "meaning": "파출소"
+  },
+  {
+    "hanja": "駐車場",
+    "hiragana": "ちゅうしゃじょう",
+    "meaning": "주차장"
+  },
+  {
+    "hanja": "道路",
+    "hiragana": "どうろ",
+    "meaning": "도로"
+  },
+  {
+    "hanja": "飛行機",
+    "hiragana": "ひこうき",
+    "meaning": "비행기"
+  },
+  {
+    "hanja": "忘れもの",
+    "hiragana": "わすれもの",
+    "meaning": "잊은 물건, 분실물"
+  },
+  {
+    "hanja": "運転する",
+    "hiragana": "うんてんする",
+    "meaning": "운전하다"
+  },
+  {
+    "hanja": "自動車",
+    "hiragana": "じどうしゃ",
+    "meaning": "자동차"
+  },
+  {
+    "hanja": "自転車",
+    "hiragana": "じてんしゃ",
+    "meaning": "자전거"
+  },
+  {
+    "hanja": "急行",
+    "hiragana": "きゅうこう",
+    "meaning": "급행"
+  },
+  {
+    "hanja": "特急",
+    "hiragana": "とっきゅう",
+    "meaning": "특급"
+  },
+  {
+    "hanja": "船",
+    "hiragana": "ふね",
+    "meaning": "배"
+  },
+  {
+    "hanja": "行き方",
+    "hiragana": "いきかた / ゆきかた",
+    "meaning": "가는 법"
+  },
+  {
+    "hanja": "お知らせ",
+    "hiragana": "おしらせ",
+    "meaning": "알림, 안내문"
+  },
+  {
+    "hanja": "交差点",
+    "hiragana": "こうさてん",
+    "meaning": "교차점, 교차로"
+  },
+  {
+    "hanja": "事故",
+    "hiragana": "じこ",
+    "meaning": "사고"
+  },
+  {
+    "hanja": "出口",
+    "hiragana": "でぐち",
+    "meaning": "출구"
+  },
+  {
+    "hanja": "乗り物",
+    "hiragana": "のりもの",
+    "meaning": "탈것, 교통수단"
+  },
+  {
+    "hanja": "予約する",
+    "hiragana": "よやくする",
+    "meaning": "예약하다"
+  },
+  {
+    "hanja": "利用する",
+    "hiragana": "りようする",
+    "meaning": "이용하다"
+  },
+  {
+    "hanja": "速い",
+    "hiragana": "はやい",
+    "meaning": "(속도가) 빠르다"
+  },
+  {
+    "hanja": "あぶない",
+    "hiragana": "あぶない",
+    "meaning": "위험하다"
+  },
+  {
+    "hanja": "不便だ",
+    "hiragana": "ふべんだ",
+    "meaning": "불편하다"
+  },
+  {
+    "hanja": "便利だ",
+    "hiragana": "べんりだ",
+    "meaning": "편리하다"
+  },
+  {
+    "hanja": "大丈夫だ",
+    "hiragana": "だいじょうぶだ",
+    "meaning": "괜찮다"
+  },
+  {
+    "hanja": "複雑だ",
+    "hiragana": "ふくざつだ",
+    "meaning": "복잡하다"
+  },
+  {
+    "hanja": "安全だ",
+    "hiragana": "あんぜんだ",
+    "meaning": "안전하다"
+  },
+  {
+    "hanja": "危険だ",
+    "hiragana": "きけんだ",
+    "meaning": "위험하다"
+  },
+  {
+    "hanja": "だめだ",
+    "hiragana": "だめだ",
+    "meaning": "안 되다, 소용없다"
+  },
+  {
+    "hanja": "変だ",
+    "hiragana": "へんだ",
+    "meaning": "이상하다"
+  },
+  {
+    "hanja": "押す",
+    "hiragana": "おす",
+    "meaning": "밀다, 누르다"
+  },
+  {
+    "hanja": "引く",
+    "hiragana": "ひく",
+    "meaning": "당기다"
+  },
+  {
+    "hanja": "通る",
+    "hiragana": "とおる",
+    "meaning": "통과하다, 지나가다"
+  },
+  {
+    "hanja": "込む",
+    "hiragana": "こむ",
+    "meaning": "붐비다"
+  },
+  {
+    "hanja": "過ぎる",
+    "hiragana": "すぎる",
+    "meaning": "지나다, 통과하다"
+  },
+  {
+    "hanja": "伝える",
+    "hiragana": "つたえる",
+    "meaning": "알리다, 전달하다"
+  },
+  {
+    "hanja": "盗む",
+    "hiragana": "ぬすむ",
+    "meaning": "훔치다"
+  },
+  {
+    "hanja": "増える",
+    "hiragana": "ふえる",
+    "meaning": "늘다, 증가하다"
+  },
+  {
+    "hanja": "揺れる",
+    "hiragana": "ゆれる",
+    "meaning": "흔들리다"
+  },
+  {
+    "hanja": "困る",
+    "hiragana": "こまる",
+    "meaning": "곤란하다"
+  },
+  {
+    "hanja": "乗る",
+    "hiragana": "のる",
+    "meaning": "타다"
+  },
+  {
+    "hanja": "打つ",
+    "hiragana": "うつ",
+    "meaning": "때리다, 치다, 부딪다"
+  },
+  {
+    "hanja": "知らせる",
+    "hiragana": "しらせる",
+    "meaning": "알려 주다"
+  },
+  {
+    "hanja": "すべる",
+    "hiragana": "すべる",
+    "meaning": "미끄러지다"
+  },
+  {
+    "hanja": "つながる",
+    "hiragana": "つながる",
+    "meaning": "연결되다"
+  },
+  {
+    "hanja": "乗りかえる",
+    "hiragana": "のりかえる",
+    "meaning": "갈아타다"
+  },
+  {
+    "hanja": "減る",
+    "hiragana": "へる",
+    "meaning": "줄다, 감소하다"
+  },
+  {
+    "hanja": "忘れる",
+    "hiragana": "わすれる",
+    "meaning": "잊다, (물건을) 잊고 두고 오다"
+  },
+  {
+    "hanja": "開く",
+    "hiragana": "あく",
+    "meaning": "열리다"
+  },
+  {
+    "hanja": "集まる",
+    "hiragana": "あつまる",
+    "meaning": "모이다"
+  },
+  {
+    "hanja": "落ちる",
+    "hiragana": "おちる",
+    "meaning": "떨어지다"
+  },
+  {
+    "hanja": "決まる",
+    "hiragana": "きまる",
+    "meaning": "정해지다"
+  },
+  {
+    "hanja": "切れる",
+    "hiragana": "きれる",
+    "meaning": "끊어지다"
+  },
+  {
+    "hanja": "建つ",
+    "hiragana": "たつ",
+    "meaning": "(건물이) 세워지다"
+  },
+  {
+    "hanja": "止まる",
+    "hiragana": "とまる",
+    "meaning": "멈추다"
+  },
+  {
+    "hanja": "始まる",
+    "hiragana": "はじまる",
+    "meaning": "시작되다"
+  },
+  {
+    "hanja": "閉まる",
+    "hiragana": "しまる",
+    "meaning": "닫히다"
+  },
+  {
+    "hanja": "立つ",
+    "hiragana": "たつ",
+    "meaning": "서다"
+  },
+  {
+    "hanja": "出る",
+    "hiragana": "でる",
+    "meaning": "내다, 제출하다"
+  },
+  {
+    "hanja": "開ける",
+    "hiragana": "あける",
+    "meaning": "열다"
+  },
+  {
+    "hanja": "集める",
+    "hiragana": "あつめる",
+    "meaning": "모으다"
+  },
+  {
+    "hanja": "落とす",
+    "hiragana": "おとす",
+    "meaning": "떨어뜨리다"
+  },
+  {
+    "hanja": "決める",
+    "hiragana": "きめる",
+    "meaning": "정하다"
+  },
+  {
+    "hanja": "切る",
+    "hiragana": "きる",
+    "meaning": "자르다"
+  },
+  {
+    "hanja": "建てる",
+    "hiragana": "たてる",
+    "meaning": "(건물을) 세우다, 짓다"
+  },
+  {
+    "hanja": "止める",
+    "hiragana": "とめる",
+    "meaning": "세우다, 정지하다"
+  },
+  {
+    "hanja": "始める",
+    "hiragana": "はじめる",
+    "meaning": "시작하다"
+  },
+  {
+    "hanja": "閉める",
+    "hiragana": "しめる",
+    "meaning": "닫다"
+  },
+  {
+    "hanja": "立てる",
+    "hiragana": "たてる",
+    "meaning": "세우다"
+  },
+  {
+    "hanja": "出る",
+    "hiragana": "でる",
+    "meaning": "나가(오)다"
+  },
+  {
+    "hanja": "工事する",
+    "hiragana": "こうじする",
+    "meaning": "공사하다"
+  },
+  {
+    "hanja": "出発する",
+    "hiragana": "しゅっぱつする",
+    "meaning": "출발하다"
+  },
+  {
+    "hanja": "心配する",
+    "hiragana": "しんぱいする",
+    "meaning": "걱정하다"
+  },
+  {
+    "hanja": "注意する",
+    "hiragana": "ちゅういする",
+    "meaning": "주의하다"
+  },
+  {
+    "hanja": "反対する",
+    "hiragana": "はんたいする",
+    "meaning": "반대하다"
+  },
+  {
+    "hanja": "感動する",
+    "hiragana": "かんどうする",
+    "meaning": "감동하다"
+  },
+  {
+    "hanja": "緊張する",
+    "hiragana": "きんちょうする",
+    "meaning": "긴장하다"
+  },
+  {
+    "hanja": "喧嘩する",
+    "hiragana": "けんかする",
+    "meaning": "싸움하다"
+  },
+  {
+    "hanja": "賛成하는",
+    "hiragana": "さんせいする",
+    "meaning": "찬성하다"
+  },
+  {
+    "hanja": "失敗する",
+    "hiragana": "しっぱいする",
+    "meaning": "실패하다"
+  },
+  {
+    "hanja": "招待する",
+    "hiragana": "しょうたいする",
+    "meaning": "초대하다"
+  },
+  {
+    "hanja": "戦争する",
+    "hiragana": "せんそうする",
+    "meaning": "전쟁하다"
+  },
+  {
+    "hanja": "到着する",
+    "hiragana": "とうちゃくする",
+    "meaning": "도착하다"
+  },
+  {
+    "hanja": "配達する",
+    "hiragana": "はいたつする",
+    "meaning": "배달하다"
+  },
+  {
+    "hanja": "翻訳する",
+    "hiragana": "ほんやくする",
+    "meaning": "번역하다"
+  },
+  {
+    "hanja": "試合する",
+    "hiragana": "しあいする",
+    "meaning": "시합하다"
+  },
+  {
+    "hanja": "紹介する",
+    "hiragana": "しょうかいする",
+    "meaning": "소개하다"
+  },
+  {
+    "hanja": "生産する",
+    "hiragana": "せいさんする",
+    "meaning": "생산하다"
+  },
+  {
+    "hanja": "中止する",
+    "hiragana": "ちゅうしする",
+    "meaning": "중지하다"
+  },
+  {
+    "hanja": "確認する",
+    "hiragana": "かくにんする",
+    "meaning": "확인하다"
+  },
+  {
+    "hanja": "帰国する",
+    "hiragana": "きこくする",
+    "meaning": "귀국하다"
+  },
+  {
+    "hanja": "化粧する",
+    "hiragana": "けしょうする",
+    "meaning": "화장하다"
+  },
+  {
+    "hanja": "参加する",
+    "hiragana": "さんかする",
+    "meaning": "참가하다"
+  },
+  {
+    "hanja": "散歩する",
+    "hiragana": "さんぽする",
+    "meaning": "산책하다"
+  },
+  {
+    "hanja": "準備する",
+    "hiragana": "じゅんびする",
+    "meaning": "준비하다"
+  },
+  {
+    "hanja": "生活する",
+    "hiragana": "せいかつする",
+    "meaning": "생활하다"
+  },
+  {
+    "hanja": "相談する",
+    "hiragana": "そうだんする",
+    "meaning": "상담하다"
+  },
+  {
+    "hanja": "寝坊する",
+    "hiragana": "ねぼうする",
+    "meaning": "늦잠 자다"
+  },
+  {
+    "hanja": "放送する",
+    "hiragana": "ほうそうする",
+    "meaning": "방송하다"
+  },
+  {
+    "hanja": "連絡する",
+    "hiragana": "れんらくする",
+    "meaning": "연락하다"
+  },
+  {
+    "hanja": "",
+    "hiragana": "いつも",
+    "meaning": "항상, 늘"
+  },
+  {
+    "hanja": "大変",
+    "hiragana": "たいへん",
+    "meaning": "매우, 무척"
+  },
+  {
+    "hanja": "",
+    "hiragana": "まっすぐ",
+    "meaning": "똑바로, 곧장"
+  },
+  {
+    "hanja": "",
+    "hiragana": "もちろん",
+    "meaning": "물론"
+  },
+  {
+    "hanja": "",
+    "hiragana": "すこし",
+    "meaning": "조금"
+  },
+  {
+    "hanja": "本当に",
+    "hiragana": "ほんとうに",
+    "meaning": "정말로"
+  },
+  {
+    "hanja": "",
+    "hiragana": "もうすぐ",
+    "meaning": "이제 곧, 머지않아"
+  },
+  {
+    "hanja": "",
+    "hiragana": "もっと",
+    "meaning": "좀 더"
+  },
+  {
+    "hanja": "考える",
+    "hiragana": "かんがえる",
+    "meaning": "생각하다"
+  },
+  {
+    "hanja": "走る",
+    "hiragana": "はしる",
+    "meaning": "달리다"
+  },
+  {
+    "hanja": "比べる",
+    "hiragana": "くらべる",
+    "meaning": "비교하다"
+  },
+  {
+    "hanja": "祈る",
+    "hiragana": "いのる",
+    "meaning": "기도하다, 기원하다"
+  },
+  {
+    "hanja": "泣く",
+    "hiragana": "なく",
+    "meaning": "울다"
+  },
+  {
+    "hanja": "外す",
+    "hiragana": "はずす",
+    "meaning": "떼어 내다, 벗기다"
+  },
+  {
+    "hanja": "踏む",
+    "hiragana": "ふむ",
+    "meaning": "밟다"
+  },
+  {
+    "hanja": "渡す",
+    "hiragana": "わたす",
+    "meaning": "건네다, 넘기다"
+  },
+  {
+    "hanja": "答える",
+    "hiragana": "こたえる",
+    "meaning": "대답하다"
+  },
+  {
+    "hanja": "持つ",
+    "hiragana": "もつ",
+    "meaning": "가지다, 들다"
+  },
+  {
+    "hanja": "捕まえる",
+    "hiragana": "つかまえる",
+    "meaning": "(범인을) 붙잡다, 붙들다"
+  },
+  {
+    "hanja": "する",
+    "hiragana": "する",
+    "meaning": "(운전, 구경 등) 공적인 하다"
+  },
+  {
+    "hanja": "逃げる",
+    "hiragana": "にげる",
+    "meaning": "도망가다"
+  },
+  {
+    "hanja": "貼る",
+    "hiragana": "はる",
+    "meaning": "붙이다"
+  },
+  {
+    "hanja": "やる",
+    "hiragana": "やる",
+    "meaning": "(1)주다 (2)하다"
+  },
+  {
+    "hanja": "大人しい",
+    "hiragana": "おとなしい",
+    "meaning": "얌전하다"
+  },
+  {
+    "hanja": "素晴らしい",
+    "hiragana": "すばらしい",
+    "meaning": "훌륭하다, 멋지다"
+  },
+  {
+    "hanja": "酷い",
+    "hiragana": "ひどい",
+    "meaning": "심하다"
+  },
+  {
+    "hanja": "可笑しい",
+    "hiragana": "おかしい",
+    "meaning": "이상하다, 우습다"
+  },
+  {
+    "hanja": "凄い",
+    "hiragana": "すごい",
+    "meaning": "굉장하다"
+  },
+  {
+    "hanja": "恥ずかしい",
+    "hiragana": "はずかしい",
+    "meaning": "부끄럽다"
+  },
+  {
+    "hanja": "失礼だ",
+    "hiragana": "しつれいだ",
+    "meaning": "무례하다, 예의없다"
+  },
+  {
+    "hanja": "自由だ",
+    "hiragana": "じゆうだ",
+    "meaning": "자유롭다"
+  },
+  {
+    "hanja": "丁寧だ",
+    "hiragana": "ていねいだ",
+    "meaning": "정중하다, 신중하다"
+  },
+  {
+    "hanja": "味",
+    "hiragana": "あじ",
+    "meaning": "맛"
+  },
+  {
+    "hanja": "牛肉",
+    "hiragana": "ぎゅうにく",
+    "meaning": "소고기"
+  },
+  {
+    "hanja": "朝ご飯",
+    "hiragana": "あさごはん",
+    "meaning": "아침 식사, 아침밥"
+  },
+  {
+    "hanja": "昼ご飯",
+    "hiragana": "ひるごはん",
+    "meaning": "점심 식사, 점심밥"
+  },
+  {
+    "hanja": "晩ご飯",
+    "hiragana": "ばんごはん",
+    "meaning": "저녁 식사, 저녁밥"
+  },
+  {
+    "hanja": "夕飯",
+    "hiragana": "ゆうはん",
+    "meaning": "저녁 식사, 저녁밥"
+  },
+  {
+    "hanja": "食料品",
+    "hiragana": "しょくりょうひん",
+    "meaning": "식료품"
+  },
+  {
+    "hanja": "野菜",
+    "hiragana": "やさい",
+    "meaning": "채소"
+  },
+  {
+    "hanja": "用意する",
+    "hiragana": "よういする",
+    "meaning": "준비하다"
+  },
+  {
+    "hanja": "お湯",
+    "hiragana": "おゆ",
+    "meaning": "뜨거운 물"
+  },
+  {
+    "hanja": "ご馳走",
+    "hiragana": "ごちそう",
+    "meaning": "대접함, 맛있는 요리"
+  },
+  {
+    "hanja": "食品",
+    "hiragana": "しょくひん",
+    "meaning": "식품"
+  },
+  {
+    "hanja": "玉ねぎ",
+    "hiragana": "たまねぎ",
+    "meaning": "양파"
+  },
+  {
+    "hanja": "匂い",
+    "hiragana": "におい",
+    "meaning": "냄새"
+  },
+  {
+    "hanja": "道具",
+    "hiragana": "どうぐ",
+    "meaning": "도구"
+  },
+  {
+    "hanja": "お茶",
+    "hiragana": "おちゃ",
+    "meaning": "차"
+  },
+  {
+    "hanja": "氷",
+    "hiragana": "こおり",
+    "meaning": "얼음"
+  },
+  {
+    "hanja": "米",
+    "hiragana": "こめ",
+    "meaning": "쌀"
+  },
+  {
+    "hanja": "食事する",
+    "hiragana": "しょくじする",
+    "meaning": "식사하다"
+  },
+  {
+    "hanja": "食べ物",
+    "hiragana": "たべもの",
+    "meaning": "음식"
+  },
+  {
+    "hanja": "豆",
+    "hiragana": "まめ",
+    "meaning": "콩"
+  },
+  {
+    "hanja": "魚",
+    "hiragana": "さかな",
+    "meaning": "물고기, 생선"
+  },
+  {
+    "hanja": "料理する",
+    "hiragana": "りょうりする",
+    "meaning": "요리하다"
+  },
+  {
+    "hanja": "缶",
+    "hiragana": "かん",
+    "meaning": "캔"
+  },
+  {
+    "hanja": "材料",
+    "hiragana": "ざいりょう",
+    "meaning": "재료"
+  },
+  {
+    "hanja": "西瓜",
+    "hiragana": "すいか",
+    "meaning": "수박"
+  },
+  {
+    "hanja": "蜜柑",
+    "hiragana": "みかん",
+    "meaning": "귤"
+  },
+  {
+    "hanja": "葡萄",
+    "hiragana": "ぶどう",
+    "meaning": "포도"
+  },
+  {
+    "hanja": "林檎",
+    "hiragana": "りんご",
+    "meaning": "사과"
+  },
+  {
+    "hanja": "冷蔵庫",
+    "hiragana": "れいぞうこ",
+    "meaning": "냉장고"
+  },
+  {
+    "hanja": "",
+    "hiragana": "いっぱい",
+    "meaning": "많이"
+  },
+  {
+    "hanja": "",
+    "hiragana": "じゅうぶん",
+    "meaning": "충분히"
+  },
+  {
+    "hanja": "",
+    "hiragana": "できるだけ",
+    "meaning": "가능한 한, 가급적"
+  },
+  {
+    "hanja": "",
+    "hiragana": "もっとも",
+    "meaning": "가장"
+  },
+  {
+    "hanja": "必ず",
+    "hiragana": "かならず",
+    "meaning": "반드시"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ぜひ",
+    "meaning": "부디, 꼭"
+  },
+  {
+    "hanja": "",
+    "hiragana": "まず",
+    "meaning": "우선, 먼저"
+  },
+  {
+    "hanja": "",
+    "hiragana": "よく",
+    "meaning": "잘, 자주"
+  },
+  {
+    "hanja": "入れる",
+    "hiragana": "いれる",
+    "meaning": "넣다"
+  },
+  {
+    "hanja": "作る",
+    "hiragana": "つくる",
+    "meaning": "만들다"
+  },
+  {
+    "hanja": "噛む",
+    "hiragana": "かむ",
+    "meaning": "씹다"
+  },
+  {
+    "hanja": "頼む",
+    "hiragana": "たのむ",
+    "meaning": "부탁하다, 주문하다"
+  },
+  {
+    "hanja": "残る",
+    "hiragana": "のこる",
+    "meaning": "남다"
+  },
+  {
+    "hanja": "焼く",
+    "hiragana": "やく",
+    "meaning": "태우다, 굽다"
+  },
+  {
+    "hanja": "焼ける",
+    "hiragana": "やける",
+    "meaning": "구워지다"
+  },
+  {
+    "hanja": "使う",
+    "hiragana": "つかう",
+    "meaning": "사용하다"
+  },
+  {
+    "hanja": "飲む",
+    "hiragana": "のむ",
+    "meaning": "마시다"
+  },
+  {
+    "hanja": "取る",
+    "hiragana": "とる",
+    "meaning": "잡다, 집어 오다"
+  },
+  {
+    "hanja": "冷める",
+    "hiragana": "さめる",
+    "meaning": "식다"
+  },
+  {
+    "hanja": "冷える",
+    "hiragana": "ひえる",
+    "meaning": "식다, 차가워지다"
+  },
+  {
+    "hanja": "冷やす",
+    "hiragana": "ひやす",
+    "meaning": "식히다, 차게하다"
+  },
+  {
+    "hanja": "大きい",
+    "hiragana": "おおきい",
+    "meaning": "크다"
+  },
+  {
+    "hanja": "温かい",
+    "hiragana": "あたたかい",
+    "meaning": "(물, 음식 등이) 따뜻하다"
+  },
+  {
+    "hanja": "薄い",
+    "hiragana": "うすい",
+    "meaning": "(1)얇다 (2)연하다"
+  },
+  {
+    "hanja": "美味しい",
+    "hiragana": "おいしい",
+    "meaning": "맛있다"
+  },
+  {
+    "hanja": "辛い",
+    "hiragana": "からい",
+    "meaning": "맵다"
+  },
+  {
+    "hanja": "硬い",
+    "hiragana": "かたい",
+    "meaning": "딱딱하다"
+  },
+  {
+    "hanja": "足りない",
+    "hiragana": "たりない",
+    "meaning": "부족하다"
+  },
+  {
+    "hanja": "冷たい",
+    "hiragana": "つめたい",
+    "meaning": "차갑다"
+  },
+  {
+    "hanja": "小さい",
+    "hiragana": "ちいさい",
+    "meaning": "작다"
+  },
+  {
+    "hanja": "暖かい",
+    "hiragana": "あたたかい",
+    "meaning": "(날씨 등이) 따뜻하다"
+  },
+  {
+    "hanja": "甘い",
+    "hiragana": "あまい",
+    "meaning": "달다"
+  },
+  {
+    "hanja": "旨い",
+    "hiragana": "うまい",
+    "meaning": "맛있다, 잘하다"
+  },
+  {
+    "hanja": "苦い",
+    "hiragana": "にがい",
+    "meaning": "쓰다"
+  },
+  {
+    "hanja": "柔らかい",
+    "hiragana": "やわらかい",
+    "meaning": "부드럽다"
+  },
+  {
+    "hanja": "細かい",
+    "hiragana": "こ細かい",
+    "meaning": "잘다, 자세하다"
+  },
+  {
+    "hanja": "温い",
+    "hiragana": "ぬるい",
+    "meaning": "미지근하다"
+  },
+  {
+    "hanja": "十分だ",
+    "hiragana": "じゅうぶんだ",
+    "meaning": "충분하다"
+  },
+  {
+    "hanja": "適当だ",
+    "hiragana": "てきとうだ",
+    "meaning": "적당하다, 알맞다"
+  },
+  {
+    "hanja": "好きだ",
+    "hiragana": "すきだ",
+    "meaning": "좋아하다"
+  },
+  {
+    "hanja": "嫌いだ",
+    "hiragana": "きらいだ",
+    "meaning": "싫어하다"
+  },
+  {
+    "hanja": "兄",
+    "hiragana": "あに",
+    "meaning": "형, 오빠"
+  },
+  {
+    "hanja": "弟",
+    "hiragana": "おとうと",
+    "meaning": "남동생"
+  },
+  {
+    "hanja": "家族",
+    "hiragana": "かぞく",
+    "meaning": "가족"
+  },
+  {
+    "hanja": "主人",
+    "hiragana": "しゅじん",
+    "meaning": "남편, 주인"
+  },
+  {
+    "hanja": "女性",
+    "hiragana": "じょせい",
+    "meaning": "여성"
+  },
+  {
+    "hanja": "両親",
+    "hiragana": "りょうしん",
+    "meaning": "부모님"
+  },
+  {
+    "hanja": "親",
+    "hiragana": "おや",
+    "meaning": "어버이, 부모"
+  },
+  {
+    "hanja": "遠慮する",
+    "hiragana": "えんりょする",
+    "meaning": "사양하다"
+  },
+  {
+    "hanja": "大勢",
+    "hiragana": "おおぜい",
+    "meaning": "여럿, 많은 사람"
+  },
+  {
+    "hanja": "夫",
+    "hiragana": "おっと",
+    "meaning": "남편"
+  },
+  {
+    "hanja": "妻",
+    "hiragana": "つま",
+    "meaning": "아내"
+  },
+  {
+    "hanja": "彼女",
+    "hiragana": "かのじょ",
+    "meaning": "그녀"
+  },
+  {
+    "hanja": "関係",
+    "hiragana": "かんけい",
+    "meaning": "관계"
+  },
+  {
+    "hanja": "祖父",
+    "hiragana": "そふ",
+    "meaning": "조부, 할아버지"
+  },
+  {
+    "hanja": "祖母",
+    "hiragana": "そぼ",
+    "meaning": "조모, 할머니"
+  },
+  {
+    "hanja": "娘",
+    "hiragana": "むすめ",
+    "meaning": "딸"
+  },
+  {
+    "hanja": "息子",
+    "hiragana": "むすこ",
+    "meaning": "아들"
+  },
+  {
+    "hanja": "姉",
+    "hiragana": "あね",
+    "meaning": "누나, 언니"
+  },
+  {
+    "hanja": "妹",
+    "hiragana": "いもうと",
+    "meaning": "여동생"
+  },
+  {
+    "hanja": "兄弟",
+    "hiragana": "きょうだい",
+    "meaning": "형제"
+  },
+  {
+    "hanja": "自分",
+    "hiragana": "じぶん",
+    "meaning": "자기, 자신"
+  },
+  {
+    "hanja": "男性",
+    "hiragana": "だんせい",
+    "meaning": "남성"
+  },
+  {
+    "hanja": "挨拶する",
+    "hiragana": "あいさつする",
+    "meaning": "인사하다"
+  },
+  {
+    "hanja": "嘘",
+    "hiragana": "うそ",
+    "meaning": "거짓말"
+  },
+  {
+    "hanja": "お祝い",
+    "hiragana": "おいわい",
+    "meaning": "축하, 축하 선물"
+  },
+  {
+    "hanja": "お子さん",
+    "hiragana": "おこさん",
+    "meaning": "자녀분"
+  },
+  {
+    "hanja": "お見合い",
+    "hiragana": "おみあい",
+    "meaning": "맞선"
+  },
+  {
+    "hanja": "家庭",
+    "hiragana": "かてい",
+    "meaning": "가정"
+  },
+  {
+    "hanja": "彼",
+    "hiragana": "かれ",
+    "meaning": "그"
+  },
+  {
+    "hanja": "君",
+    "hiragana": "きみ",
+    "meaning": "너"
+  },
+  {
+    "hanja": "子供",
+    "hiragana": "こども",
+    "meaning": "(어린) 아이"
+  },
+  {
+    "hanja": "父親",
+    "hiragana": "ちちおや",
+    "meaning": "부친, 아버지"
+  },
+  {
+    "hanja": "母親",
+    "hiragana": "ははおや",
+    "meaning": "모친, 어머니"
+  },
+  {
+    "hanja": "お礼",
+    "hiragana": "おれい",
+    "meaning": "사례(의 말), 사례 선물"
+  },
+  {
+    "hanja": "親切だ",
+    "hiragana": "しんせつだ",
+    "meaning": "친절하다"
+  },
+  {
+    "hanja": "大切だ",
+    "hiragana": "たいせつだ",
+    "meaning": "소중하다, 중요하다"
+  },
+  {
+    "hanja": "重要だ",
+    "hiragana": "じゅうようだ",
+    "meaning": "중요하다"
+  },
+  {
+    "hanja": "大事だ",
+    "hiragana": "だいじだ",
+    "meaning": "소중하다, 중요하다"
+  },
+  {
+    "hanja": "生まれる",
+    "hiragana": "うまれる",
+    "meaning": "태어나다"
+  },
+  {
+    "hanja": "別れる",
+    "hiragana": "わかれる",
+    "meaning": "헤어지다"
+  },
+  {
+    "hanja": "謝る",
+    "hiragana": "あやまる",
+    "meaning": "사과하다"
+  },
+  {
+    "hanja": "怒る",
+    "hiragana": "おこる",
+    "meaning": "화내다"
+  },
+  {
+    "hanja": "連れる",
+    "hiragana": "つれる",
+    "meaning": "데리고 가다"
+  },
+  {
+    "hanja": "褒める",
+    "hiragana": "ほめる",
+    "meaning": "칭찬하다"
+  },
+  {
+    "hanja": "信じる",
+    "hiragana": "しんじる",
+    "meaning": "믿다"
+  },
+  {
+    "hanja": "知る",
+    "hiragana": "しる",
+    "meaning": "알다"
+  },
+  {
+    "hanja": "上げる",
+    "hiragana": "あげる",
+    "meaning": "(내가 남에게) 주다"
+  },
+  {
+    "hanja": "呉れる",
+    "hiragana": "くれる",
+    "meaning": "(남이 나에게) 주다"
+  },
+  {
+    "hanja": "貰う",
+    "hiragana": "もらう",
+    "meaning": "받다"
+  },
+  {
+    "hanja": "似る",
+    "hiragana": "にる",
+    "meaning": "닮다"
+  },
+  {
+    "hanja": "迎える",
+    "hiragana": "むかえる",
+    "meaning": "맞이하다"
+  },
+  {
+    "hanja": "呼ぶ",
+    "hiragana": "よぶ",
+    "meaning": "부르다"
+  },
+  {
+    "hanja": "多い",
+    "hiragana": "おおい",
+    "meaning": "많다"
+  },
+  {
+    "hanja": "厳しい",
+    "hiragana": "きびしい",
+    "meaning": "엄하다, 심하다"
+  },
+  {
+    "hanja": "若い",
+    "hiragana": "わかい",
+    "meaning": "젊다"
+  },
+  {
+    "hanja": "少ない",
+    "hiragana": "すくない",
+    "meaning": "적다"
+  },
+  {
+    "hanja": "優しい",
+    "hiragana": "やさしい",
+    "meaning": "상냥하다, 마음씨가 곱다"
+  },
+  {
+    "hanja": "",
+    "hiragana": "あまり(~ない)",
+    "meaning": "(1)그다지(~않다) (2)너무"
+  },
+  {
+    "hanja": "",
+    "hiragana": "けっして(~ない)",
+    "meaning": "결코(~않다)"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ぜんぜん(~ない)",
+    "meaning": "전혀(~않다)"
+  },
+  {
+    "hanja": "",
+    "hiragana": "それほど(~ない)",
+    "meaning": "(1)그만큼(~않다) (2)그다지"
+  },
+  {
+    "hanja": "",
+    "hiragana": "そんなに(~ない)",
+    "meaning": "그다지(~않다)"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ちっとも(~ない)",
+    "meaning": "조금도(~않다)"
+  },
+  {
+    "hanja": "",
+    "hiragana": "なかなか(~ない)",
+    "meaning": "(1)좀처럼(~않だ) (2)꽤, 상당히, 매우"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ほとんど(~ない)",
+    "meaning": "거의(~않다)"
+  },
+  {
+    "hanja": "歌",
+    "hiragana": "うた",
+    "meaning": "노래"
+  },
+  {
+    "hanja": "映画",
+    "hiragana": "えいが",
+    "meaning": "영화"
+  },
+  {
+    "hanja": "経験する",
+    "hiragana": "けいけんする",
+    "meaning": "경험하다"
+  },
+  {
+    "hanja": "写真",
+    "hiragana": "しゃしん",
+    "meaning": "사진"
+  },
+  {
+    "hanja": "美術",
+    "hiragana": "びじゅつ",
+    "meaning": "미술"
+  },
+  {
+    "hanja": "予定",
+    "hiragana": "よてい",
+    "meaning": "예정"
+  },
+  {
+    "hanja": "お喋りする",
+    "hiragana": "おしゃべりする",
+    "meaning": "수다, 잡담하다"
+  },
+  {
+    "hanja": "思い出",
+    "hiragana": "おもいで",
+    "meaning": "추억"
+  },
+  {
+    "hanja": "",
+    "hiragana": "サッカー",
+    "meaning": "축구"
+  },
+  {
+    "hanja": "趣味",
+    "hiragana": "しゅみ",
+    "meaning": "취미"
+  },
+  {
+    "hanja": "楽しみ",
+    "hiragana": "たのしみ",
+    "meaning": "즐거움, 낙"
+  },
+  {
+    "hanja": "",
+    "hiragana": "テニス",
+    "meaning": "테니스"
+  },
+  {
+    "hanja": "",
+    "hiragana": "バレーボール",
+    "meaning": "배구"
+  },
+  {
+    "hanja": "花見",
+    "hiragana": "はなみ",
+    "meaning": "꽃구경, 꽃놀이"
+  },
+  {
+    "hanja": "運動する",
+    "hiragana": "うんどうする",
+    "meaning": "운동하다"
+  },
+  {
+    "hanja": "音楽",
+    "hiragana": "おんがく",
+    "meaning": "음악"
+  },
+  {
+    "hanja": "見物する",
+    "hiragana": "けんぶつする",
+    "meaning": "구경하다"
+  },
+  {
+    "hanja": "小説",
+    "hiragana": "しょうせつ",
+    "meaning": "소설"
+  },
+  {
+    "hanja": "野球",
+    "hiragana": "やきゅう",
+    "meaning": "야구"
+  },
+  {
+    "hanja": "旅行する",
+    "hiragana": "りょこうする",
+    "meaning": "여행하다"
+  },
+  {
+    "hanja": "踊り",
+    "hiragana": "おどり",
+    "meaning": "춤"
+  },
+  {
+    "hanja": "興味",
+    "hiragana": "きょうみ",
+    "meaning": "흥미"
+  },
+  {
+    "hanja": "柔道",
+    "hiragana": "じゅうどう",
+    "meaning": "유도"
+  },
+  {
+    "hanja": "水泳",
+    "hiragana": "すいえい",
+    "meaning": "수영하다"
+  },
+  {
+    "hanja": "展覧会",
+    "hiragana": "てんらんかい",
+    "meaning": "전람회"
+  },
+  {
+    "hanja": "",
+    "hiragana": "バスケットボール",
+    "meaning": "농구"
+  },
+  {
+    "hanja": "漫画",
+    "hiragana": "まんが",
+    "meaning": "만화"
+  },
+  {
+    "hanja": "山登り",
+    "hiragana": "やまのぼり",
+    "meaning": "등산"
+  },
+  {
+    "hanja": "楽しい",
+    "hiragana": "たのしい",
+    "meaning": "즐겁다"
+  },
+  {
+    "hanja": "詰まらない",
+    "hiragana": "つまらない",
+    "meaning": "시시하다, 하찮다"
+  },
+  {
+    "hanja": "上手だ",
+    "hiragana": "じょうずだ",
+    "meaning": "잘하다, 능숙하다"
+  },
+  {
+    "hanja": "下手だ",
+    "hiragana": "へただ",
+    "meaning": "서툴다"
+  },
+  {
+    "hanja": "歌う",
+    "hiragana": "うたう",
+    "meaning": "(노래를) 부르다"
+  },
+  {
+    "hanja": "泳ぐ",
+    "hiragana": "およぐ",
+    "meaning": "헤엄치다"
+  },
+  {
+    "hanja": "読む",
+    "hiragana": "よむ",
+    "meaning": "읽다"
+  },
+  {
+    "hanja": "遊ぶ",
+    "hiragana": "あそぶ",
+    "meaning": "놀다"
+  },
+  {
+    "hanja": "勝つ",
+    "hiragana": "かつ",
+    "meaning": "이기다"
+  },
+  {
+    "hanja": "負ける",
+    "hiragana": "まける",
+    "meaning": "지다"
+  },
+  {
+    "hanja": "弾く",
+    "hiragana": "ひく",
+    "meaning": "(악기를) 치다, 켜다, 연주하다"
+  },
+  {
+    "hanja": "泊まる",
+    "hiragana": "とまる",
+    "meaning": "숙박하다, 머무르다"
+  },
+  {
+    "hanja": "思い出す",
+    "hiragana": "おもいだす",
+    "meaning": "생각나다"
+  },
+  {
+    "hanja": "聞く",
+    "hiragana": "きく",
+    "meaning": "듣다, 묻다"
+  },
+  {
+    "hanja": "聞こえる",
+    "hiragana": "きこえる",
+    "meaning": "들리다"
+  },
+  {
+    "hanja": "釣る",
+    "hiragana": "つる",
+    "meaning": "낚시하다"
+  },
+  {
+    "hanja": "踊る",
+    "hiragana": "おどる",
+    "meaning": "춤추다"
+  },
+  {
+    "hanja": "楽しむ",
+    "hiragana": "たのしむ",
+    "meaning": "즐기다"
+  },
+  {
+    "hanja": "投げる",
+    "hiragana": "なげる",
+    "meaning": "던지다"
+  },
+  {
+    "hanja": "折れる",
+    "hiragana": "おれる",
+    "meaning": "접히다, 부러지다"
+  },
+  {
+    "hanja": "掛かる",
+    "hiragana": "かかる",
+    "meaning": "걸리다, (시간이) 들다"
+  },
+  {
+    "hanja": "片付く",
+    "hiragana": "かたづく",
+    "meaning": "정리되다"
+  },
+  {
+    "hanja": "壊れる",
+    "hiragana": "こわれる",
+    "meaning": "고장 나다"
+  },
+  {
+    "hanja": "続く",
+    "hiragana": "つづく",
+    "meaning": "이어지다, 계속되다"
+  },
+  {
+    "hanja": "届く",
+    "hiragana": "とどく",
+    "meaning": "도착하다"
+  },
+  {
+    "hanja": "直る",
+    "hiragana": "なおる",
+    "meaning": "고쳐지다"
+  },
+  {
+    "hanja": "なくなる",
+    "hiragana": "なくなる",
+    "meaning": "없어지다"
+  },
+  {
+    "hanja": "見つかる",
+    "hiragana": "みつかる",
+    "meaning": "발견되다"
+  },
+  {
+    "hanja": "沸く",
+    "hiragana": "わく",
+    "meaning": "(물이) 끓다"
+  },
+  {
+    "hanja": "割れる",
+    "hiragana": "われる",
+    "meaning": "깨지다"
+  },
+  {
+    "hanja": "消える",
+    "hiragana": "きえる",
+    "meaning": "꺼지다"
+  },
+  {
+    "hanja": "折る",
+    "hiragana": "おる",
+    "meaning": "꺾다"
+  },
+  {
+    "hanja": "掛ける",
+    "hiragana": "かける",
+    "meaning": "걸다, (자물쇠 등을) 잠그다"
+  },
+  {
+    "hanja": "片付ける",
+    "hiragana": "かたづける",
+    "meaning": "정리하다"
+  },
+  {
+    "hanja": "壊す",
+    "hiragana": "こわす",
+    "meaning": "부수다, 고장 내다"
+  },
+  {
+    "hanja": "続ける",
+    "hiragana": "つづける",
+    "meaning": "계속하다"
+  },
+  {
+    "hanja": "届ける",
+    "hiragana": "とどける",
+    "meaning": "보내다"
+  },
+  {
+    "hanja": "直す",
+    "hiragana": "なおす",
+    "meaning": "고치다, 수리하다"
+  },
+  {
+    "hanja": "なくす",
+    "hiragana": "なくす",
+    "meaning": "잃다, 분실하다"
+  },
+  {
+    "hanja": "見つける",
+    "hiragana": "みつける",
+    "meaning": "발견하다"
+  },
+  {
+    "hanja": "沸かす",
+    "hiragana": "わかす",
+    "meaning": "(물을) 끓이다"
+  },
+  {
+    "hanja": "割る",
+    "hiragana": "わる",
+    "meaning": "깨다"
+  },
+  {
+    "hanja": "消す",
+    "hiragana": "けす",
+    "meaning": "끄다"
+  },
+  {
+    "hanja": "医学",
+    "hiragana": "いがく",
+    "meaning": "의학"
+  },
+  {
+    "hanja": "足",
+    "hiragana": "あし",
+    "meaning": "다리"
+  },
+  {
+    "hanja": "音",
+    "hiragana": "おと",
+    "meaning": "소리, 음"
+  },
+  {
+    "hanja": "声",
+    "hiragana": "こえ",
+    "meaning": "목소리"
+  },
+  {
+    "hanja": "薬屋",
+    "hiragana": "くすりや",
+    "meaning": "약국"
+  },
+  {
+    "hanja": "気分",
+    "hiragana": "きぶん",
+    "meaning": "기분"
+  },
+  {
+    "hanja": "力",
+    "hiragana": "ちから",
+    "meaning": "힘"
+  },
+  {
+    "hanja": "手",
+    "hiragana": "て",
+    "meaning": "손"
+  },
+  {
+    "hanja": "病気",
+    "hiragana": "びょうき",
+    "meaning": "병"
+  },
+  {
+    "hanja": "目",
+    "hiragana": "め",
+    "meaning": "눈"
+  },
+  {
+    "hanja": "背",
+    "hiragana": "せ",
+    "meaning": "키, 신장"
+  },
+  {
+    "hanja": "お腹",
+    "hiragana": "おなか",
+    "meaning": "배, 위장"
+  },
+  {
+    "hanja": "髪",
+    "hiragana": "かみ",
+    "meaning": "머리카락"
+  },
+  {
+    "hanja": "気持ち",
+    "hiragana": "きもち",
+    "meaning": "기분, 감정"
+  },
+  {
+    "hanja": "具合",
+    "hiragana": "ぐあい",
+    "meaning": "상태, 컨디션"
+  },
+  {
+    "hanja": "怪我",
+    "hiragana": "けが",
+    "meaning": "부상"
+  },
+  {
+    "hanja": "習慣",
+    "hiragana": "しゅうかん",
+    "meaning": "습관"
+  },
+  {
+    "hanja": "血",
+    "hiragana": "ち",
+    "meaning": "피"
+  },
+  {
+    "hanja": "熱",
+    "hiragana": "ねつ",
+    "meaning": "열"
+  },
+  {
+    "hanja": "歯",
+    "hiragana": "は",
+    "meaning": "이, 치아"
+  },
+  {
+    "hanja": "体",
+    "hiragana": "からだ",
+    "meaning": "몸"
+  },
+  {
+    "hanja": "頭",
+    "hiragana": "あたま",
+    "meaning": "머리"
+  },
+  {
+    "hanja": "顔",
+    "hiragana": "かお",
+    "meaning": "얼굴"
+  },
+  {
+    "hanja": "薬",
+    "hiragana": "くすり",
+    "meaning": "약"
+  },
+  {
+    "hanja": "首",
+    "hiragana": "くび",
+    "meaning": "목, 고개"
+  },
+  {
+    "hanja": "心",
+    "hiragana": "こころ",
+    "meaning": "마음"
+  },
+  {
+    "hanja": "退院する",
+    "hiragana": "たいいんする",
+    "meaning": "퇴원하다"
+  },
+  {
+    "hanja": "入院する",
+    "hiragana": "にゅういんする",
+    "meaning": "입원하다"
+  },
+  {
+    "hanja": "耳",
+    "hiragana": "みみ",
+    "meaning": "귀"
+  },
+  {
+    "hanja": "お見舞い",
+    "hiragana": "おみまい",
+    "meaning": "병문안"
+  },
+  {
+    "hanja": "腕",
+    "hiragana": "うで",
+    "meaning": "팔"
+  },
+  {
+    "hanja": "風邪",
+    "hiragana": "かぜ",
+    "meaning": "감기"
+  },
+  {
+    "hanja": "傷",
+    "hiragana": "きず",
+    "meaning": "상처"
+  },
+  {
+    "hanja": "禁煙",
+    "hiragana": "きんえん",
+    "meaning": "금연"
+  },
+  {
+    "hanja": "毛",
+    "hiragana": "け",
+    "meaning": "털"
+  },
+  {
+    "hanja": "健康",
+    "hiragana": "けんこう",
+    "meaning": "건강"
+  },
+  {
+    "hanja": "背中",
+    "hiragana": "せなか",
+    "meaning": "등"
+  },
+  {
+    "hanja": "喉",
+    "hiragana": "のど",
+    "meaning": "목, 목구멍"
+  },
+  {
+    "hanja": "指",
+    "hiragana": "ゆび",
+    "meaning": "손가락"
+  },
+  {
+    "hanja": "死ぬ",
+    "hiragana": "しぬ",
+    "meaning": "죽다"
+  },
+  {
+    "hanja": "閉じる",
+    "hiragana": "とじる",
+    "meaning": "(책을) 덮다, (눈을) 감다, (문을) 닫다"
+  },
+  {
+    "hanja": "治る",
+    "hiragana": "なおる",
+    "meaning": "(병이) 낫다"
+  },
+  {
+    "hanja": "磨く",
+    "hiragana": "みがく",
+    "meaning": "(이를) 닦다"
+  },
+  {
+    "hanja": "辞める",
+    "hiragana": "やめる",
+    "meaning": "(담배 등을) 끊다"
+  },
+  {
+    "hanja": "倒れる",
+    "hiragana": "たおれる",
+    "meaning": "쓰러지다"
+  },
+  {
+    "hanja": "塗る",
+    "hiragana": "ぬる",
+    "meaning": "바르다"
+  },
+  {
+    "hanja": "痩せる",
+    "hiragana": "やせる",
+    "meaning": "마르다"
+  },
+  {
+    "hanja": "太る",
+    "hiragana": "ふとる",
+    "meaning": "살찌다"
+  },
+  {
+    "hanja": "低い",
+    "hiragana": "ひくい",
+    "meaning": "낮다, 작다"
+  },
+  {
+    "hanja": "眠い",
+    "hiragana": "ねむい",
+    "meaning": "졸리다"
+  },
+  {
+    "hanja": "太い",
+    "hiragana": "ふとい",
+    "meaning": "굵다"
+  },
+  {
+    "hanja": "細い",
+    "hiragana": "ほそい",
+    "meaning": "가늘다, 좁다"
+  },
+  {
+    "hanja": "痛い",
+    "hiragana": "いたい",
+    "meaning": "아프다"
+  },
+  {
+    "hanja": "強い",
+    "hiragana": "つよい",
+    "meaning": "세다, 강하다"
+  },
+  {
+    "hanja": "弱い",
+    "hiragana": "よわい",
+    "meaning": "약하다"
+  },
+  {
+    "hanja": "元気だ",
+    "hiragana": "げんきだ",
+    "meaning": "건강하다, 활발하다"
+  },
+  {
+    "hanja": "心配だ",
+    "hiragana": "しんぱいだ",
+    "meaning": "걱정스럽다"
+  },
+  {
+    "hanja": "",
+    "hiragana": "きゅうに",
+    "meaning": "갑자기"
+  },
+  {
+    "hanja": "",
+    "hiragana": "べつに",
+    "meaning": "별로, 특별히"
+  },
+  {
+    "hanja": "",
+    "hiragana": "たぶん",
+    "meaning": "아마도"
+  },
+  {
+    "hanja": "",
+    "hiragana": "とくに",
+    "meaning": "특히"
+  },
+  {
+    "hanja": "",
+    "hiragana": "たまに",
+    "meaning": "가끔"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ひじょうに",
+    "meaning": "대단히"
+  },
+  {
+    "hanja": "文",
+    "hiragana": "ぶん",
+    "meaning": "글, 문장"
+  },
+  {
+    "hanja": "意味",
+    "hiragana": "いみ",
+    "meaning": "의미"
+  },
+  {
+    "hanja": "会話",
+    "hiragana": "かいわ",
+    "meaning": "회화"
+  },
+  {
+    "hanja": "漢字",
+    "hiragana": "かんじ",
+    "meaning": "한자"
+  },
+  {
+    "hanja": "国語",
+    "hiragana": "こくご",
+    "meaning": "국어"
+  },
+  {
+    "hanja": "研究する",
+    "hiragana": "けんきゅうする",
+    "meaning": "연구하다"
+  },
+  {
+    "hanja": "試験する",
+    "hiragana": "しけんする",
+    "meaning": "시험하다"
+  },
+  {
+    "hanja": "質問する",
+    "hiragana": "しつもんする",
+    "meaning": "질문하다"
+  },
+  {
+    "hanja": "出席する",
+    "hiragana": "しゅっせきする",
+    "meaning": "출석하다"
+  },
+  {
+    "hanja": "説明する",
+    "hiragana": "せつめいする",
+    "meaning": "설명하다"
+  },
+  {
+    "hanja": "地理",
+    "hiragana": "ちり",
+    "meaning": "지리"
+  },
+  {
+    "hanja": "発音する",
+    "hiragana": "はつおんする",
+    "meaning": "발음하다"
+  },
+  {
+    "hanja": "教室",
+    "hiragana": "きょうしつ",
+    "meaning": "교실"
+  },
+  {
+    "hanja": "問題",
+    "hiragana": "もんだい",
+    "meaning": "문제"
+  },
+  {
+    "hanja": "講義する",
+    "hiragana": "こうぎする",
+    "meaning": "강의하다"
+  },
+  {
+    "hanja": "後輩",
+    "hiragana": "こうはい",
+    "meaning": "후배"
+  },
+  {
+    "hanja": "字",
+    "hiragana": "じ",
+    "meaning": "글씨"
+  },
+  {
+    "hanja": "冗談",
+    "hiragana": "じょうだん",
+    "meaning": "농담"
+  },
+  {
+    "hanja": "線",
+    "hiragana": "せん",
+    "meaning": "선"
+  },
+  {
+    "hanja": "専門",
+    "hiragana": "せんもん",
+    "meaning": "전문, 전공"
+  },
+  {
+    "hanja": "遅刻する",
+    "hiragana": "ちこくする",
+    "meaning": "지각하다"
+  },
+  {
+    "hanja": "夏休み",
+    "hiragana": "なつやすみ",
+    "meaning": "여름 방학"
+  },
+  {
+    "hanja": "二十歳",
+    "hiragana": "はたち",
+    "meaning": "스무 살"
+  },
+  {
+    "hanja": "文法",
+    "hiragana": "ぶんぽう",
+    "meaning": "문법"
+  },
+  {
+    "hanja": "歴史",
+    "hiragana": "れきし",
+    "meaning": "역사"
+  },
+  {
+    "hanja": "意見",
+    "hiragana": "いけん",
+    "meaning": "의견"
+  },
+  {
+    "hanja": "英語",
+    "hiragana": "えいご",
+    "meaning": "영어"
+  },
+  {
+    "hanja": "科学",
+    "hiragana": "かがく",
+    "meaning": "과학"
+  },
+  {
+    "hanja": "文学",
+    "hiragana": "ぶんがく",
+    "meaning": "문학"
+  },
+  {
+    "hanja": "校長",
+    "hiragana": "こうちょう",
+    "meaning": "교장"
+  },
+  {
+    "hanja": "作文する",
+    "hiragana": "さくぶんする",
+    "meaning": "작문하다"
+  },
+  {
+    "hanja": "辞書",
+    "hiragana": "じしょ",
+    "meaning": "사전"
+  },
+  {
+    "hanja": "授業する",
+    "hiragana": "じゅぎょうする",
+    "meaning": "수업하다"
+  },
+  {
+    "hanja": "席",
+    "hiragana": "せき",
+    "meaning": "자리"
+  },
+  {
+    "hanja": "体育",
+    "hiragana": "たいいく",
+    "meaning": "체육"
+  },
+  {
+    "hanja": "図書館",
+    "hiragana": "としょかん",
+    "meaning": "도서관"
+  },
+  {
+    "hanja": "文化",
+    "hiragana": "ぶんか",
+    "meaning": "문화"
+  },
+  {
+    "hanja": "勉強する",
+    "hiragana": "べんきょうする",
+    "meaning": "공부하다"
+  },
+  {
+    "hanja": "消しゴム",
+    "hiragana": "けしゴム",
+    "meaning": "지우개"
+  },
+  {
+    "hanja": "高校",
+    "hiragana": "こうこう",
+    "meaning": "고등학교"
+  },
+  {
+    "hanja": "黒板",
+    "hiragana": "こくばん",
+    "meaning": "칠판"
+  },
+  {
+    "hanja": "小学校",
+    "hiragana": "しょうがっこう",
+    "meaning": "초등학교"
+  },
+  {
+    "hanja": "数学",
+    "hiragana": "すうがく",
+    "meaning": "수학"
+  },
+  {
+    "hanja": "先輩",
+    "hiragana": "せんぱい",
+    "meaning": "선배"
+  },
+  {
+    "hanja": "卒業する",
+    "hiragana": "そつぎょうする",
+    "meaning": "졸업하다"
+  },
+  {
+    "hanja": "中学校",
+    "hiragana": "ちゅうがっこう",
+    "meaning": "중학교"
+  },
+  {
+    "hanja": "入学する",
+    "hiragana": "にゅうがくする",
+    "meaning": "입학하다"
+  },
+  {
+    "hanja": "復習する",
+    "hiragana": "ふくしゅうする",
+    "meaning": "복습하다"
+  },
+  {
+    "hanja": "予習する",
+    "hiragana": "よしゅうする",
+    "meaning": "예習하다"
+  },
+  {
+    "hanja": "練習する",
+    "hiragana": "れんしゅうする",
+    "meaning": "연습하다"
+  },
+  {
+    "hanja": "行う",
+    "hiragana": "おこなう",
+    "meaning": "행하다"
+  },
+  {
+    "hanja": "帰る",
+    "hiragana": "かえる",
+    "meaning": "돌아가(오)다"
+  },
+  {
+    "hanja": "通う",
+    "hiragana": "かよう",
+    "meaning": "다니다"
+  },
+  {
+    "hanja": "受かる",
+    "hiragana": "うかる",
+    "meaning": "(시험에) 합격하다"
+  },
+  {
+    "hanja": "覚える",
+    "hiragana": "おぼえる",
+    "meaning": "익히다, 외우다"
+  },
+  {
+    "hanja": "騒ぐ",
+    "hiragana": "さわぐ",
+    "meaning": "떠들다"
+  },
+  {
+    "hanja": "尋ねる",
+    "hiragana": "たずねる",
+    "meaning": "묻다, 질문하다"
+  },
+  {
+    "hanja": "申し込む",
+    "hiragana": "もうしこむ",
+    "meaning": "신청하다"
+  },
+  {
+    "hanja": "教える",
+    "hiragana": "おしえる",
+    "meaning": "가르치다"
+  },
+  {
+    "hanja": "数える",
+    "hiragana": "かぞえる",
+    "meaning": "(수를) 세다"
+  },
+  {
+    "hanja": "苛める",
+    "hiragana": "いじめる",
+    "meaning": "괴롭히다"
+  },
+  {
+    "hanja": "受ける",
+    "hiragana": "うける",
+    "meaning": "받다, (시험을) 치르다"
+  },
+  {
+    "hanja": "頑張る",
+    "hiragana": "がんばる",
+    "meaning": "분발하다, 힘내다"
+  },
+  {
+    "hanja": "済む",
+    "hiragana": "すむ",
+    "meaning": "끝나다, 해결되다"
+  },
+  {
+    "hanja": "出来る",
+    "hiragana": "できる",
+    "meaning": "생기다, 가능하다"
+  },
+  {
+    "hanja": "煩い",
+    "hiragana": "うるさい",
+    "meaning": "시끄럽다"
+  },
+  {
+    "hanja": "懐かしい",
+    "hiragana": "なつかしい",
+    "meaning": "그립다"
+  },
+  {
+    "hanja": "難しい",
+    "hiragana": "むずかしい",
+    "meaning": "어렵다"
+  },
+  {
+    "hanja": "易しい",
+    "hiragana": "やさしい",
+    "meaning": "쉽다, 용이하다"
+  },
+  {
+    "hanja": "簡単だ",
+    "hiragana": "かんたんだ",
+    "meaning": "간단하다, 쉽다"
+  },
+  {
+    "hanja": "熱心だ",
+    "hiragana": "ねっしんだ",
+    "meaning": "열심이다"
+  },
+  {
+    "hanja": "一生懸命だ",
+    "hiragana": "いっしょうけんめいだ",
+    "meaning": "열심히 하다"
+  },
+  {
+    "hanja": "営業する",
+    "hiragana": "えいぎょうする",
+    "meaning": "영업하다"
+  },
+  {
+    "hanja": "工業",
+    "hiragana": "こうぎょう",
+    "meaning": "공업"
+  },
+  {
+    "hanja": "産業",
+    "hiragana": "さんぎょう",
+    "meaning": "산업"
+  },
+  {
+    "hanja": "市民",
+    "hiragana": "しみん",
+    "meaning": "시민"
+  },
+  {
+    "hanja": "住所",
+    "hiragana": "じゅうしょ",
+    "meaning": "주소"
+  },
+  {
+    "hanja": "新聞",
+    "hiragana": "しんぶん",
+    "meaning": "신문"
+  },
+  {
+    "hanja": "世界",
+    "hiragana": "せかい",
+    "meaning": "세계"
+  },
+  {
+    "hanja": "無料",
+    "hiragana": "むりょう",
+    "meaning": "무료"
+  },
+  {
+    "hanja": "海外",
+    "hiragana": "かいがい",
+    "meaning": "해외"
+  },
+  {
+    "hanja": "お金持ち",
+    "hiragana": "おかねもち",
+    "meaning": "부자"
+  },
+  {
+    "hanja": "原料",
+    "hiragana": "げんりょう",
+    "meaning": "원료"
+  },
+  {
+    "hanja": "情報",
+    "hiragana": "じょうほう",
+    "meaning": "정보"
+  },
+  {
+    "hanja": "政治",
+    "hiragana": "せいじ",
+    "meaning": "정치"
+  },
+  {
+    "hanja": "石油",
+    "hiragana": "せきゆ",
+    "meaning": "석유"
+  },
+  {
+    "hanja": "日本製",
+    "hiragana": "にほんせい",
+    "meaning": "일본 제품"
+  },
+  {
+    "hanja": "農業",
+    "hiragana": "のうぎょう",
+    "meaning": "농업"
+  },
+  {
+    "hanja": "売店",
+    "hiragana": "ばいてん",
+    "meaning": "매점"
+  },
+  {
+    "hanja": "料金",
+    "hiragana": "りょうきん",
+    "meaning": "요금"
+  },
+  {
+    "hanja": "国産",
+    "hiragana": "こくさん",
+    "meaning": "국산"
+  },
+  {
+    "hanja": "国民",
+    "hiragana": "こくみん",
+    "meaning": "국민"
+  },
+  {
+    "hanja": "品物",
+    "hiragana": "しなもの",
+    "meaning": "물건, 상품"
+  },
+  {
+    "hanja": "社会",
+    "hiragana": "しゃかい",
+    "meaning": "사회"
+  },
+  {
+    "hanja": "人口",
+    "hiragana": "じんこう",
+    "meaning": "인구"
+  },
+  {
+    "hanja": "西洋",
+    "hiragana": "せいよう",
+    "meaning": "서양"
+  },
+  {
+    "hanja": "電話代",
+    "hiragana": "でんわだい",
+    "meaning": "전화 요금"
+  },
+  {
+    "hanja": "お釣り",
+    "hiragana": "おつり",
+    "meaning": "거스름돈"
+  },
+  {
+    "hanja": "経済",
+    "hiragana": "けいざい",
+    "meaning": "경제"
+  },
+  {
+    "hanja": "機械",
+    "hiragana": "きかい",
+    "meaning": "기계"
+  },
+  {
+    "hanja": "国際",
+    "hiragana": "こくさい",
+    "meaning": "국제"
+  },
+  {
+    "hanja": "書類",
+    "hiragana": "しょるい",
+    "meaning": "서류"
+  },
+  {
+    "hanja": "製品",
+    "hiragana": "せいひん",
+    "meaning": "제품"
+  },
+  {
+    "hanja": "貯金",
+    "hiragana": "ちょきん",
+    "meaning": "저금하다"
+  },
+  {
+    "hanja": "値段",
+    "hiragana": "ねだん",
+    "meaning": "가격"
+  },
+  {
+    "hanja": "貿易",
+    "hiragana": "ぼうえき",
+    "meaning": "무역"
+  },
+  {
+    "hanja": "輸出する",
+    "hiragana": "ゆしゅつする",
+    "meaning": "수출하다"
+  },
+  {
+    "hanja": "輸入する",
+    "hiragana": "ゆにゅうする",
+    "meaning": "수입하다"
+  },
+  {
+    "hanja": "売る",
+    "hiragana": "うる",
+    "meaning": "팔다"
+  },
+  {
+    "hanja": "足す",
+    "hiragana": "たす",
+    "meaning": "더하다"
+  },
+  {
+    "hanja": "上がる",
+    "hiragana": "あがる",
+    "meaning": "(물가 등이) 오르다"
+  },
+  {
+    "hanja": "払う",
+    "hiragana": "はらう",
+    "meaning": "지불하다"
+  },
+  {
+    "hanja": "売れる",
+    "hiragana": "うれる",
+    "meaning": "팔리다"
+  },
+  {
+    "hanja": "買う",
+    "hiragana": "かう",
+    "meaning": "사다"
+  },
+  {
+    "hanja": "足りる",
+    "hiragana": "たりる",
+    "meaning": "충분하다"
+  },
+  {
+    "hanja": "配る",
+    "hiragana": "くばる",
+    "meaning": "나눠 주다"
+  },
+  {
+    "hanja": "安い",
+    "hiragana": "やすい",
+    "meaning": "싸다"
+  },
+  {
+    "hanja": "高い",
+    "hiragana": "たかい",
+    "meaning": "비싸다, 높다"
+  },
+  {
+    "hanja": "欲しい",
+    "hiragana": "ほしい",
+    "meaning": "갖고 싶다, 원하다"
+  },
+  {
+    "hanja": "盛んだ",
+    "hiragana": "さかんだ",
+    "meaning": "활발하다, 번창하다"
+  },
+  {
+    "hanja": "",
+    "hiragana": "そろそろ",
+    "meaning": "이제 곧, 슬슬"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ときどき",
+    "meaning": "때때로, 가끔"
+  },
+  {
+    "hanja": "",
+    "hiragana": "どきどき",
+    "meaning": "두근두근"
+  },
+  {
+    "hanja": "",
+    "hiragana": "にこにこ",
+    "meaning": "생글생글, 싱글벙글"
+  },
+  {
+    "hanja": "",
+    "hiragana": "だんだん",
+    "meaning": "점점"
+  },
+  {
+    "hanja": "",
+    "hiragana": "とうとう",
+    "meaning": "드디어"
+  },
+  {
+    "hanja": "",
+    "hiragana": "どんどん",
+    "meaning": "점점, 순조롭게, 계속해서"
+  },
+  {
+    "hanja": "朝",
+    "hiragana": "あさ",
+    "meaning": "아침"
+  },
+  {
+    "hanja": "今度",
+    "hiragana": "こんど",
+    "meaning": "이번, 다음번"
+  },
+  {
+    "hanja": "一度",
+    "hiragana": "いちど",
+    "meaning": "한 번, 일회, 한 차례"
+  },
+  {
+    "hanja": "今朝",
+    "hiragana": "けさ",
+    "meaning": "오늘 아침"
+  },
+  {
+    "hanja": "今夜",
+    "hiragana": "こんや",
+    "meaning": "오늘 밤"
+  },
+  {
+    "hanja": "午後",
+    "hiragana": "ごご",
+    "meaning": "오후"
+  },
+  {
+    "hanja": "午前",
+    "hiragana": "ごぜん",
+    "meaning": "오전"
+  },
+  {
+    "hanja": "昼",
+    "hiragana": "ひる",
+    "meaning": "낮, 정오"
+  },
+  {
+    "hanja": "昼休み",
+    "hiragana": "ひるやすみ",
+    "meaning": "점심시간"
+  },
+  {
+    "hanja": "昼間",
+    "hiragana": "ひるま",
+    "meaning": "낮 동안"
+  },
+  {
+    "hanja": "夕方",
+    "hiragana": "ゆうがた",
+    "meaning": "저녁 무렵"
+  },
+  {
+    "hanja": "夕べ",
+    "hiragana": "ゆうべ",
+    "meaning": "어제 저녁, 어젯밤"
+  },
+  {
+    "hanja": "頃",
+    "hiragana": "ころ",
+    "meaning": "요즘"
+  },
+  {
+    "hanja": "正月",
+    "hiragana": "しょうがつ",
+    "meaning": "설, 정초"
+  },
+  {
+    "hanja": "一月",
+    "hiragana": "ひとつき",
+    "meaning": "한 달"
+  },
+  {
+    "hanja": "昔",
+    "hiragana": "むかし",
+    "meaning": "옛날"
+  },
+  {
+    "hanja": "色",
+    "hiragana": "いろ",
+    "meaning": "색, 색깔"
+  },
+  {
+    "hanja": "時計",
+    "hiragana": "とけい",
+    "meaning": "시계"
+  },
+  {
+    "hanja": "洋服",
+    "hiragana": "ようふく",
+    "meaning": "양복"
+  },
+  {
+    "hanja": "上着",
+    "hiragana": "うわぎ",
+    "meaning": "겉옷"
+  },
+  {
+    "hanja": "試着する",
+    "hiragana": "しちゃくする",
+    "meaning": "시착하다, 입어 봄"
+  },
+  {
+    "hanja": "指輪",
+    "hiragana": "ゆびわ",
+    "meaning": "반지"
+  },
+  {
+    "hanja": "着物",
+    "hiragana": "きもの",
+    "meaning": "기모노(일본 전통의옷)"
+  },
+  {
+    "hanja": "以下",
+    "hiragana": "いか",
+    "meaning": "이하"
+  },
+  {
+    "hanja": "이상",
+    "hiragana": "いじょう",
+    "meaning": "이상"
+  },
+  {
+    "hanja": "以内",
+    "hiragana": "いない",
+    "meaning": "이내"
+  },
+  {
+    "hanja": "以外",
+    "hiragana": "いがい",
+    "meaning": "이외"
+  },
+  {
+    "hanja": "以前",
+    "hiragana": "いぜん",
+    "meaning": "이전"
+  },
+  {
+    "hanja": "以後",
+    "hiragana": "いご",
+    "meaning": "이후"
+  },
+  {
+    "hanja": "最近",
+    "hiragana": "さいきん",
+    "meaning": "최근"
+  },
+  {
+    "hanja": "最初",
+    "hiragana": "さいしょ",
+    "meaning": "최초"
+  },
+  {
+    "hanja": "最後",
+    "hiragana": "さいご",
+    "meaning": "최후"
+  },
+  {
+    "hanja": "時代",
+    "hiragana": "じだい",
+    "meaning": "시대"
+  },
+  {
+    "hanja": "毎朝",
+    "hiragana": "まいあさ",
+    "meaning": "매일 아침"
+  },
+  {
+    "hanja": "間",
+    "hiragana": "あいだ",
+    "meaning": "일전, 요전"
+  },
+  {
+    "hanja": "将来",
+    "hiragana": "しょうらい",
+    "meaning": "장래, 미래"
+  },
+  {
+    "hanja": "途中",
+    "hiragana": "とちゅう",
+    "meaning": "도중"
+  },
+  {
+    "hanja": "普通",
+    "hiragana": "ふつう",
+    "meaning": "보통"
+  },
+  {
+    "hanja": "都合",
+    "hiragana": "つごう",
+    "meaning": "형편, 사정"
+  },
+  {
+    "hanja": "服",
+    "hiragana": "ふく",
+    "meaning": "옷"
+  },
+  {
+    "hanja": "茶色",
+    "hiragana": "ちゃいろ",
+    "meaning": "갈색"
+  },
+  {
+    "hanja": "緑",
+    "hiragana": "みどり",
+    "meaning": "녹색, 새싹"
+  },
+  {
+    "hanja": "下着",
+    "hiragana": "したぎ",
+    "meaning": "속옷"
+  },
+  {
+    "hanja": "手袋",
+    "hiragana": "てぶくろ",
+    "meaning": "장갑"
+  },
+  {
+    "hanja": "腕時計",
+    "hiragana": "うでどけい",
+    "meaning": "손목시계"
+  },
+  {
+    "hanja": "格好",
+    "hiragana": "かっこう",
+    "meaning": "모습, 모양, 꼴"
+  },
+  {
+    "hanja": "合う",
+    "hiragana": "あう",
+    "meaning": "맞다, 어울리다"
+  },
+  {
+    "hanja": "着る",
+    "hiragana": "きる",
+    "meaning": "입다"
+  },
+  {
+    "hanja": "遅れる",
+    "hiragana": "おくれる",
+    "meaning": "늦다"
+  },
+  {
+    "hanja": "違う",
+    "hiragana": "ちがう",
+    "meaning": "다르다"
+  },
+  {
+    "hanja": "取り替える",
+    "hiragana": "とりかえる",
+    "meaning": "바꾸다, 교환하다"
+  },
+  {
+    "hanja": "履く",
+    "hiragana": "はく",
+    "meaning": "신다, (바지 등을) 입다"
+  },
+  {
+    "hanja": "空く",
+    "hiragana": "あく",
+    "meaning": "(자리·시간이) 비다"
+  },
+  {
+    "hanja": "選ぶ",
+    "hiragana": "えらぶ",
+    "meaning": "선택하다"
+  },
+  {
+    "hanja": "被る",
+    "hiragana": "かぶる",
+    "meaning": "(모자 등을) 쓰다"
+  },
+  {
+    "hanja": "取れる",
+    "hiragana": "とれる",
+    "meaning": "떨어지다, 빠지다"
+  },
+  {
+    "hanja": "脱ぐ",
+    "hiragana": "ぬぐ",
+    "meaning": "벗다"
+  },
+  {
+    "hanja": "間に合う",
+    "hiragana": "まニアう",
+    "meaning": "시간에 맞게 당도하다"
+  },
+  {
+    "hanja": "青い",
+    "hiragana": "あおい",
+    "meaning": "파랗다"
+  },
+  {
+    "hanja": "赤い",
+    "hiragana": "あかい",
+    "meaning": "빨갛다"
+  },
+  {
+    "hanja": "黒い",
+    "hiragana": "くろい",
+    "meaning": "까맣다"
+  },
+  {
+    "hanja": "早い",
+    "hiragana": "はやい",
+    "meaning": "(시간이) 이르다"
+  },
+  {
+    "hanja": "珍しい",
+    "hiragana": "めずらしい",
+    "meaning": "진귀하다, 드물다"
+  },
+  {
+    "hanja": "白い",
+    "hiragana": "しろい",
+    "meaning": "하얗다"
+  },
+  {
+    "hanja": "新しい",
+    "hiragana": "あたらしい",
+    "meaning": "새롭다"
+  },
+  {
+    "hanja": "長い",
+    "hiragana": "ながい",
+    "meaning": "길다"
+  },
+  {
+    "hanja": "短い",
+    "hiragana": "みじかい",
+    "meaning": "짧다"
+  },
+  {
+    "hanja": "黄色い",
+    "hiragana": "きいろい",
+    "meaning": "노랗다"
+  },
+  {
+    "hanja": "同じだ",
+    "hiragana": "おなじだ",
+    "meaning": "같다"
+  },
+  {
+    "hanja": "",
+    "hiragana": "さっき",
+    "meaning": "아까, 조금 전"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ちょうど",
+    "meaning": "마침, 꼭"
+  },
+  {
+    "hanja": "",
+    "hiragana": "うっかり",
+    "meaning": "깜빡, 무심코"
+  },
+  {
+    "hanja": "",
+    "hiragana": "しっかり",
+    "meaning": "제대로"
+  },
+  {
+    "hanja": "",
+    "hiragana": "はっきり",
+    "meaning": "확실히"
+  },
+  {
+    "hanja": "",
+    "hiragana": "やっぱり / やはり",
+    "meaning": "역시"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ずっと",
+    "meaning": "쭉, 계속"
+  },
+  {
+    "hanja": "",
+    "hiragana": "はやく",
+    "meaning": "빨리, 급히"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ぐっすり",
+    "meaning": "푹(깊은 잠을 자는 모양)"
+  },
+  {
+    "hanja": "",
+    "hiragana": "すっかり",
+    "meaning": "완전히, 모두"
+  },
+  {
+    "hanja": "",
+    "hiragana": "びっくり",
+    "meaning": "깜짝 놀람"
+  },
+  {
+    "hanja": "",
+    "hiragana": "ゆっくり",
+    "meaning": "천천히"
+  }
+]
+
