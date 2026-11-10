@@ -232,7 +232,7 @@ with tab1:
         # 모드별 제시 문제 표시
         st.markdown("---")
         if quiz_mode == "한자 ➡️ 한국어 뜻":
-            st.subheader(f"한자: {item['kanji']}")
+            st.subheader(f"한자: {item['kanji']},""")
             st.caption(f"발음: {item['hiragana']}")
             st.markdown("### 1) 알맞은 **한국어 뜻**을 선택하세요:")
         elif quiz_mode == "한자 ➡️ 히라가나 읽기":
