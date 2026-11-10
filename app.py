@@ -162,7 +162,7 @@ def generate_options(current_item, all_words, quiz_mode):
     elif quiz_mode == "한자 ➡️ 히라가나 읽기":
         target_key = "hiragana"
     else:  # "히라가나 ➡️ 한자 표기"
-        target_key = "kanji"
+        target_key = "hanja"
 
     correct_answer = current_item[target_key]
     
