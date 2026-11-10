@@ -114,7 +114,6 @@ def get_ai_feedback(word_info, user_sentence):
 def init_quiz_session():
     all_words = load_words()
     random.shuffle(all_words)
-    # 한 번에 30개만 추출 (단어가 30개 미만이면 전체 사용)
     st.session_state.words_db = all_words[:30] if len(all_words) > 30 else all_words
     st.session_state.total_pool_size = len(all_words)
     st.session_state.current_idx = 0
@@ -138,10 +137,8 @@ def generate_options(current_item, all_words, quiz_mode):
 
     correct_answer = current_item.get(target_key, "")
     
-    # 중복 오답 보기 추출 (정답과 같은 항목 제외)
     other_candidates = list({w.get(target_key) for w in all_words if w.get(target_key) and w.get(target_key) != correct_answer})
     
-    # 오답 후보가 부족할 경우 더미 데이터 보충
     if len(other_candidates) < 3:
         dummy_data = {
             "meaning": ["약속", "준비", "출발", "도착", "공부", "여행"],
@@ -175,7 +172,6 @@ with tab1:
             init_quiz_session()
             st.rerun()
     else:
-        # 퀴즈 모드 선택 라디오 버튼
         quiz_mode = st.radio(
             "🎯 **퀴즈 모드 선택**",
             ["한자 ➡️ 한국어 뜻", "한자 ➡️ 히라가나 읽기", "히라가나 ➡️ 한자 표기"],
@@ -186,7 +182,6 @@ with tab1:
         idx = st.session_state.current_idx
         item = st.session_state.words_db[idx]
 
-        # 퀴즈 모드가 변경되거나 첫 문제일 때 보기 재생성
         if not st.session_state.options or st.session_state.get("last_quiz_mode") != quiz_mode:
             st.session_state.options, st.session_state.correct_answer = generate_options(item, st.session_state.words_db, quiz_mode)
             st.session_state.last_quiz_mode = quiz_mode
@@ -195,7 +190,6 @@ with tab1:
         st.progress((idx) / total)
         st.caption(f"문제 {idx + 1} / {total} (세션 단어 30개 중)")
 
-        # 모드별 제시 문제 표시
         st.markdown("---")
         if quiz_mode == "한자 ➡️ 한국어 뜻":
             st.subheader(f"한자: {item.get('hanja', '')}")
@@ -205,7 +199,7 @@ with tab1:
             st.subheader(f"한자: {item.get('hanja', '')}")
             st.caption(f"뜻: {item.get('meaning', '')}")
             st.markdown("### 1) 알맞은 **히라가나 읽기**를 선택하세요:")
-        else:  # 히라가나 ➡️ 한자 표기
+        else:  
             st.subheader(f"히라가나: {item.get('hiragana', '')}")
             st.caption(f"뜻: {item.get('meaning', '')}")  
             st.markdown("### 1) 알맞은 **한자 표기**를 선택하세요:")
@@ -229,6 +223,16 @@ with tab1:
             else:
                 st.error(f"❌ 아쉽네요! 정답은 '{st.session_state.correct_answer}' 입니다.")
 
+            # 👉 정답 확인 바로 아래에 '다음 문제' 버튼 배치
+            if st.button("다음 문제 ➡️", key=f"next_btn_{idx}", use_container_width=True, type="primary"):
+                if st.session_state.current_idx + 1 < total:
+                    st.session_state.current_idx += 1
+                    st.session_state.options = []
+                    st.session_state.answered = False
+                else:
+                    st.session_state.quiz_finished = True
+                st.rerun()
+
         st.divider()
 
         # 2. AI 문장 교정
@@ -242,17 +246,6 @@ with tab1:
                     st.markdown(feedback)
             else:
                 st.warning("문장을 입력해 주세요.")
-
-        st.divider()
-
-        if st.button("다음 문제 ➡️", use_container_width=True):
-            if st.session_state.current_idx + 1 < total:
-                st.session_state.current_idx += 1
-                st.session_state.options = []
-                st.session_state.answered = False
-            else:
-                st.session_state.quiz_finished = True
-            st.rerun()
 
 # ================= TAB 2: 사진 스캔 단어 추가 =================
 with tab2:
@@ -297,5 +290,4 @@ with tab2:
                             added_count += 1
                     
                     save_words(current_db)
-                    # 현재 세션 단어 DB 리프레시 필요시 반영
                     st.success(f"🎉 성공! 총 {added_count}개의 새로운 단어가 DB에 자동 추가되었습니다!")
