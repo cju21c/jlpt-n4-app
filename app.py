@@ -167,7 +167,7 @@ def generate_options(current_item, all_words, quiz_mode):
     correct_answer = current_item[target_key]
     
     # 중복 오답 보기 추출 (정답과 같은 항목 제외)
-    other_candidates = list({w[target_key] for w in all_words if w[target_key] != correct_answer and w[target_key]})
+    other_candidates = list({w.get(target_key) for w in all_words if w.get(target_key) and w.get(target_key) != correct_answer})
     
     # 오답 후보가 부족할 경우 더미 데이터 보충
     if len(other_candidates) < 3:
