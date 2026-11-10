@@ -110,18 +110,23 @@ def get_ai_feedback(word_info, user_sentence):
             else:
                 return f"❌ 오류 발생: {e}"
 
-# --- 세션 상태 초기화 (30개 단어 세션 제한) ---
-def init_quiz_session():
-    all_words = load_words()
-    random.shuffle(all_words)
-    st.session_state.words_db = all_words[:30] if len(all_words) > 30 else all_words
-    st.session_state.total_pool_size = len(all_words)
+# --- 세션 상태 초기화 (30개 단어 세션 제한 및 오답 노트 관리) ---
+def init_quiz_session(custom_words=None):
+    if custom_words is not None:
+        all_words = custom_words
+    else:
+        all_words = load_words()
+        random.shuffle(all_words)
+        all_words = all_words[:30] if len(all_words) > 30 else all_words
+        
+    st.session_state.words_db = all_words
     st.session_state.current_idx = 0
     st.session_state.score = 0
     st.session_state.quiz_finished = False
     st.session_state.options = []
     st.session_state.answered = False
     st.session_state.user_choice = None
+    st.session_state.wrong_words = [] # 이번 세션에서 틀린 단어들을 담을 리스트
 
 if "words_db" not in st.session_state:
     init_quiz_session()
@@ -157,20 +162,18 @@ def generate_options(current_item, all_words, quiz_mode):
 
 # --- UI 화면 구현 ---
 st.title("🌸 JLPT N4 학습 & 단어 스캐너")
-st.caption("💡 각 모드별로 새롭게 30문제씩 풀 수 있습니다!")
+st.caption("💡 각 모드별로 30문제씩 풀고, 틀린 단어는 오답 노트로 다시 복습하세요!")
 
 tab1, tab2 = st.tabs(["📝 4지선다 퀴즈", "📸 교재 사진 단어 추가"])
 
 # ================= TAB 1: 4지선다 퀴즈 =================
 with tab1:
-    # 퀴즈 모드 선택 라디오 버튼 (상단 배치)
     quiz_mode = st.radio(
         "🎯 **퀴즈 모드 선택**",
         ["한자 ➡️ 한국어 뜻", "한자 ➡️ 히라가나 읽기", "히라가나 ➡️ 한자 표기"],
         horizontal=True
     )
 
-    # 💡 모드가 바뀔 때마다 해당 모드 전용 세션을 새로고침(새로운 30문제 세팅)
     if st.session_state.get("last_quiz_mode") != quiz_mode:
         init_quiz_session()
         st.session_state.last_quiz_mode = quiz_mode
@@ -180,21 +183,32 @@ with tab1:
         st.info("등록된 단어가 없습니다. '📸 교재 사진 단어 추가' 탭에서 교재 사진을 올려 단어를 등록해보세요!")
     elif st.session_state.quiz_finished:
         st.balloons()
-        st.success(f"🎉 [{quiz_mode}] 30개 단어 퀴즈를 완료했습니다! 최종 점수: {st.session_state.score} / {len(st.session_state.words_db)}")
-        if st.button("🔄 이 모드에서 새로운 30문제 다시 풀기", use_container_width=True):
-            init_quiz_session()
-            st.rerun()
+        st.success(f"🎉 [{quiz_mode}] 퀴즈 완료! 점수: {st.session_state.score} / {len(st.session_state.words_db)}")
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("🔄 새로운 30문제 다시 풀기", use_container_width=True):
+                init_quiz_session()
+                st.rerun()
+        with col2:
+            wrong_list = st.session_state.get("wrong_words", [])
+            if wrong_list:
+                if st.button(f"❌ 틀린 문제만 다시 풀기 ({len(wrong_list)}개)", use_container_width=True, type="primary"):
+                    init_quiz_session(custom_words=wrong_list)
+                    st.rerun()
+            else:
+                st.info("✨ 틀린 문제가 없습니다! 완벽해요!")
     else:
         total = len(st.session_state.words_db)
         idx = st.session_state.current_idx
         item = st.session_state.words_db[idx]
 
         if not st.session_state.options:
-            st.session_state.options, st.session_state.correct_answer = generate_options(item, st.session_state.words_db, quiz_mode)
+            st.session_state.options, st.session_state.correct_answer = generate_options(item, load_words(), quiz_mode)
             st.session_state.answered = False
 
         st.progress((idx) / total)
-        st.caption(f"문제 {idx + 1} / {total} (현재 모드 세션)")
+        st.caption(f"문제 {idx + 1} / {total}")
 
         st.markdown("---")
         if quiz_mode == "한자 ➡️ 한국어 뜻":
@@ -222,6 +236,10 @@ with tab1:
             st.session_state.user_choice = user_choice
             if user_choice == st.session_state.correct_answer:
                 st.session_state.score += 1
+            else:
+                # 틀린 경우 오답 리스트에 추가 (중복 방지)
+                if item not in st.session_state.wrong_words:
+                    st.session_state.wrong_words.append(item)
 
         if st.session_state.answered:
             if st.session_state.user_choice == st.session_state.correct_answer:
